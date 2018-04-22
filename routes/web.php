@@ -16,11 +16,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-
-Route::get('admin/login','AdminController@getLogin')->name('admin-login');
-Route::post('admin/login','AdminController@postLogin')->name('admin-post-login');
-Route::group(['prefix'=>'admin','middleware'=>'check_admin'],function(){
-    Route::get('dashboard','AdminController@index')->name('dashboard');
-    Route::get('logout','AdminController@logout')->name('logout');
+Route::group(['namespace' => 'Admin'],function(){
+    Route::get('admin/login','AdminController@getLogin')->name('admin-login');
+    Route::post('admin/login','AdminController@postLogin')->name('admin-post-login');
+    Route::group(['prefix'=>'admin','middleware'=>'check_admin'],function(){
+        Route::get('dashboard','AdminController@index')->name('dashboard');
+        Route::get('logout','AdminController@logout')->name('admin-logout');
+    });
 });
+
+
