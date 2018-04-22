@@ -236,7 +236,7 @@ var config = {
 	// If false, all failing tests will be expanded
 	collapse: true,
 
-	// By default, scroll to top of the page when suite is done
+	// By default, scroll to top of the pages when suite is done
 	scrolltop: true,
 
 	// Depth up-to which object will be dumped
@@ -485,7 +485,7 @@ extend( QUnit, {
 					"QUnit.config.autostart was true" );
 			} else if ( !config.pageLoaded ) {
 
-				// The page isn't completely loaded yet, so bail out and let `QUnit.load` handle it
+				// The pages isn't completely loaded yet, so bail out and let `QUnit.load` handle it
 				config.autostart = true;
 				return;
 			}
@@ -2574,7 +2574,7 @@ function toolbarChanged() {
 	params[ field.name ] = value;
 	updatedUrl = setUrl( params );
 
-	// Check if we can apply the change without a page refresh
+	// Check if we can apply the change without a pages refresh
 	if ( "hidepassed" === field.name && "replaceState" in window.history ) {
 		QUnit.urlParams[ field.name ] = value;
 		config[ field.name ] = value || false;
@@ -2878,7 +2878,7 @@ QUnit.begin( function( details ) {
 		return a.localeCompare( b );
 	} );
 
-	// Capture fixture HTML from the page
+	// Capture fixture HTML from the pages
 	storeFixture();
 
 	// Initialize QUnit elements

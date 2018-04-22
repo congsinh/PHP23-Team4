@@ -208,7 +208,7 @@
                 document.createStyleSheet().cssText = css;
                 return;
             } catch (e) {
-                // IE <= 9 maxes out at 31 stylesheets; inject into page instead.
+                // IE <= 9 maxes out at 31 stylesheets; inject into pages instead.
                 iefail = true;
             }
         }
