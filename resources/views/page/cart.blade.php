@@ -1,3 +1,4 @@
+@extends('layouts.master')
 @section('content')
     <div class="product-big-title-area">
         <div class="container">

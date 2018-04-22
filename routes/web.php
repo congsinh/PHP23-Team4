@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('home');
 });
 
+
+Route::get('test', function ()
+{
+    return view('page.home');
+});
+
 Auth::routes();
 Route::group(['namespace' => 'Admin'],function(){
     Route::get('admin/login','AdminController@getLogin')->name('admin-login');
@@ -24,5 +30,6 @@ Route::group(['namespace' => 'Admin'],function(){
         Route::get('logout','AdminController@logout')->name('admin-logout');
     });
 });
+
 
 

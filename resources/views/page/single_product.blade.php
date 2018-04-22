@@ -1,3 +1,4 @@
+@extends('layouts.master')
 @section('content')
     <div class="product-big-title-area">
         <div class="container">
@@ -155,7 +156,7 @@
                             <div class="related-products-carousel">
                                 <div class="single-product">
                                     <div class="product-f-image">
-                                        <img src="{{asset("img/product-1.jpg"")}} alt="">
+                                        <img src="{{asset("img/product-2.jpg")}}" alt="">
                                         <div class="product-hover">
                                             <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
