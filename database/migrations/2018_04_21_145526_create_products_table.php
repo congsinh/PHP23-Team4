@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug')->unique();
-            $table->json('configuration');
+            $table->text('configuration');
             $table->string('description');
             $table->integer('quantity_store');
             $table->integer('price');
