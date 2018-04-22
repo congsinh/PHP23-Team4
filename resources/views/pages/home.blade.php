@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('pages.layouts.master')
 @section('content')
     <div class="slider-area">
         <!-- Slider -->

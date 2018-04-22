@@ -82,7 +82,7 @@ Licensed under the MIT license.
 				if (window.G_vmlCanvasManager) {
 					element = window.G_vmlCanvasManager.initElement(element);
 				} else {
-					throw new Error("Canvas is not available. If you're using IE with a fall-back such as Excanvas, then there's either a mistake in your conditional include, or the page has no DOCTYPE and is rendering in Quirks Mode.");
+					throw new Error("Canvas is not available. If you're using IE with a fall-back such as Excanvas, then there's either a mistake in your conditional include, or the pages has no DOCTYPE and is rendering in Quirks Mode.");
 				}
 			}
 		}

@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<!--
-	ustora by freshdesignweb.com
-	Twitter: https://twitter.com/freshdesignweb
-	URL: https://www.freshdesignweb.com/ustora/
--->
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ustora Demo</title>
+    <title>{{config('app.name')}}</title>
 
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
@@ -17,24 +12,15 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap -->
-    {{--<link rel="stylesheet" href="../../../public/css/bootstrap.min.css">--}}
-    <link rel="stylesheet" href="{{elixir('css/bootstrap.min.css')}}">
-
-    <!-- Font Awesome -->
-    {{--<link rel="stylesheet" href="../../../public/css/font-awesome.min.css">--}}
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset("css/font-awesome.min.css")}}">
 
     <!-- Custom CSS -->
-    {{--<link rel="stylesheet" href="../../../public/css/owl.carousel.css">--}}
     <link rel="stylesheet" href="{{asset("css/owl.carousel.css")}}">
-    {{--<link rel="stylesheet" href="../../../public/style.css">--}}
     <link rel="stylesheet" href="{{asset("style.css")}}">
-    {{--<link rel="stylesheet" href="../../../public/css/responsive.css">--}}
     <link rel="stylesheet" href="{{asset("css/responsive.css")}}">
-
 </head>
 <body>
-
     <div class="header-area">
         <div class="container">
             <div class="row">
@@ -43,8 +29,8 @@
                         <ul>
                             <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
                             <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                            <li><a href="../page/cart.blade.php"><i class="fa fa-user"></i> My Cart</a></li>
-                            <li><a href="../page/checkout.blade.php"><i class="fa fa-user"></i> Checkout</a></li>
+                            <li><a href="../cart.blade.php"><i class="fa fa-user"></i> My Cart</a></li>
+                            <li><a href="../checkout.blade.php"><i class="fa fa-user"></i> Checkout</a></li>
                             <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
                         </ul>
                     </div>
@@ -88,7 +74,7 @@
 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="../page/cart.blade.php">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                        <a href="../cart.blade.php">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                     </div>
                 </div>
             </div>
@@ -108,11 +94,11 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="../page/home.blade.php">Home</a></li>
-                        <li><a href="../page/shop.blade.php">Shop page</a></li>
-                        <li><a href="../page/single_product.blade.php">Single product</a></li>
-                        <li><a href="../page/cart.blade.php">Cart</a></li>
-                        <li><a href="../page/cart.blade.php">Checkout</a></li>
+                        <li class="active"><a href="../home.blade.php">Home</a></li>
+                        <li><a href="../shop.blade.php">Shop page</a></li>
+                        <li><a href="../single_product.blade.php">Single product</a></li>
+                        <li><a href="../cart.blade.php">Cart</a></li>
+                        <li><a href="../cart.blade.php">Checkout</a></li>
                         <li><a href="#">Category</a></li>
                         <li><a href="#">Others</a></li>
                         <li><a href="#">Contact</a></li>
@@ -204,23 +190,19 @@
     </div> <!-- End footer bottom area -->
 
     <!-- Latest jQuery form server -->
-    <script src="{{asset("js/app.js")}}"></script>
-
+    <script src="https://code.jquery.com/jquery.min.js"></script>
     <!-- Bootstrap JS form CDN -->
-    {{--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>--}}
-
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <!-- jQuery sticky menu -->
-    <script src="../../../public/js/owl.carousel.min.js"></script>
-    <script src="../../../public/js/jquery.sticky.js"></script>
-
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/jquery.sticky.js')}}"></script>
     <!-- jQuery easing -->
-    <script src="../../../public/js/jquery.easing.1.3.min.js"></script>
+    <script src="{{asset('js/jquery.easing.1.3.min.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
+    <!-- Slider -->
+    <script type="text/javascript" src="{{asset('js/bxslider.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/script.slider.js')}}"></script>
 
     <!-- Main Script -->
-    <script src="../../../public/js/main.js"></script>
-
-    <!-- Slider -->
-    <script type="text/javascript" src="../../../public/js/bxslider.min.js"></script>
-    <script type="text/javascript" src="../../../public/js/script.slider.js"></script>
 </body>
 </html>

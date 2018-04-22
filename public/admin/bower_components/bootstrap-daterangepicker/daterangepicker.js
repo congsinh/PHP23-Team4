@@ -1161,7 +1161,7 @@
 
         outsideClick: function(e) {
             var target = $(e.target);
-            // if the page is clicked anywhere except within the daterangerpicker/button
+            // if the pages is clicked anywhere except within the daterangerpicker/button
             // itself then call this.hide()
             if (
                 // ie modal dialog fix
