@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
         // $this->call(UsersTableSeeder::class);
 
         Model::unguard();
@@ -24,5 +25,6 @@ class DatabaseSeeder extends Seeder
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1');
         Model::reguard();
+
     }
 }
