@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('home');
 });
@@ -32,4 +33,8 @@ Route::group(['namespace' => 'Admin'],function(){
 });
 
 
+
+Route::group(['namespace' => 'Web'],function(){
+    Route::get('/','HomeController@index')->name('home');
+});
 

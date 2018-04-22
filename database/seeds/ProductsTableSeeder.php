@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Models\Category;
+use App\Models\Manufacturer;
+use App\Models\Product;
 class ProductsTableSeeder extends Seeder
 {
     /**
@@ -11,16 +13,13 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        if (Schema::hasTable('products')) {
-            DB::table('products')->truncate();
-        }
         $faker = \Faker\Factory::create();
-        $cate = \App\Category::where('parent_id','<>','null')->pluck('id')->toArray();
-        $manufacturer = App\Manufacturer::pluck('id')->toArray();
+        $cate = Category::where('parent_id','<>','null')->pluck('id')->toArray();
+        $manufacturer = Manufacturer::pluck('id')->toArray();
         for($i = 0; $i < 20; $i++){
             $faker_name = $faker->unique()->name;
             $arr = [$faker->name=>$faker->title];
-            App\Product::create([
+            Product::create([
                 'name' => $faker->name,
                 'slug' => str_slug($faker_name),
                 'description' => $faker->sentence(10,true),
