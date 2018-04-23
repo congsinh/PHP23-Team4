@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Models\Category;
 class CategoriesTableSeeder extends Seeder
 {
     /**
@@ -11,21 +11,18 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        if (Schema::hasTable('categories')) {
-            DB::table('categories')->truncate();
-        }
         $faker = \Faker\Factory::create();
         for($i = 0; $i < 4; $i++){
             $faker_name = $faker->unique()->name;
-            App\Category::create([
+            Category::create([
                 'name' => $faker_name,
                 'slug' => str_slug($faker_name),
             ]);
         }
-        $parent = App\Category::pluck('id')->toArray();
+        $parent = Category::pluck('id')->toArray();
         for($i = 0; $i < 12; $i++){
             $faker_name = $faker->unique()->name;
-            App\Category::create([
+            Category::create([
                 'name' => $faker_name,
                 'slug' => str_slug($faker_name),
                 'parent_id' => $parent[array_rand($parent)]

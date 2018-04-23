@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Models\Manufacturer;
 class ManufacturersTableSeeder extends Seeder
 {
     /**
@@ -11,12 +11,9 @@ class ManufacturersTableSeeder extends Seeder
      */
     public function run()
     {
-        if (Schema::hasTable('manufacturers')) {
-            DB::table('manufacturers')->truncate();
-        }
         $faker = \Faker\Factory::create();
         for($i = 0; $i < 4; $i++){
-            App\Manufacturer::create([
+            Manufacturer::create([
                 'name' => $faker->name,
             ]);
         }
