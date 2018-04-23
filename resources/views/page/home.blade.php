@@ -5,8 +5,7 @@
         <div class="block-slider block-slider4">
             <ul class="" id="bxslider-home4">
                 <li>
-                    {{--<img src="public/img/h4-slide.png" alt="Slide">--}}
-                    {!! Html::image('img/h4-slide.png', 'Slide') !!}
+                    <img src="{{asset("img/h4-slide.png")}}" alt="Slide">
                     <div class="caption-group">
                         <h2 class="caption title">
                             iPhone <span class="primary">6 <strong>Plus</strong></span>
@@ -15,7 +14,7 @@
                         <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
                     </div>
                 </li>
-                <li>{!! Html::image('img/h4-slide2.png', 'Slide') !!}
+                <li><img src="{{asset("img/h4-slide2.png")}}" alt="Slide">
                     <div class="caption-group">
                         <h2 class="caption title">
                             by one, get one <span class="primary">50% <strong>off</strong></span>
@@ -181,7 +180,8 @@
                 </div>
             </div>
         </div>
-    </div> <!-- End main content area -->
+    </div>
+    <!-- End main content area -->
 
     <div class="brands-area">
         <div class="zigzag-bottom"></div>
