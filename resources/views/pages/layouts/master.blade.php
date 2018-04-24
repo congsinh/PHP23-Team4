@@ -31,15 +31,6 @@
     @include('pages.layouts.footer')
 
     <!-- Latest jQuery form server -->
-    {!! Html::script('js/app.js') !!}
-    <!-- Bootstrap JS form CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!-- jQuery sticky menu -->
-    <script src="../../../public/js/owl.carousel.min.js"></script>
-    <script src="{{asset("js/owl.carousel.min.js")}}"></script>
-    <script src="../../../public/js/jquery.sticky.js"></script>
-
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <!-- Bootstrap JS form CDN -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -52,13 +43,6 @@
     <!-- Slider -->
     <script type="text/javascript" src="{{asset('js/bxslider.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/script.slider.js')}}"></script>
-
-    <!-- Main Script -->
-    <script src="{{asset("js/main.js")}}"></script>
-
-    <!-- Slider -->
-    {!! Html::script('js/bxslider.min.js') !!}
-    <script type="text/javascript" src="../../../public/js/script.slider.js"></script>
 
 </body>
 </html>
