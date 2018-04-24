@@ -27,9 +27,9 @@
  * Smalltalk, Lisp-like, or CAML-like languages without an explicit lang class.
  * <p>
  * Usage: <ol>
- * <li> include this source file in an html page via
+ * <li> include this source file in an html pages via
  *   {@code <script type="text/javascript" src="/path/to/prettify.js"></script>}
- * <li> define style rules.  See the example page for examples.
+ * <li> define style rules.  See the example pages for examples.
  * <li> mark the {@code <pre>} and {@code <code>} tags in your source with
  *    {@code class=prettyprint.}
  *    You can also use the (html deprecated) {@code <xmp>} tag, but the pretty
@@ -1362,7 +1362,7 @@ var REGEXP_PRECEDER_PATTERN = '(?:^^\\.?|[+-]|\\!|\\!=|\\!==|\\#|\\%|\\%=|&|&&|&
     }
 
     // The loop is broken into a series of continuations to make sure that we
-    // don't make the browser unresponsive when rewriting a large page.
+    // don't make the browser unresponsive when rewriting a large pages.
     var k = 0;
     var prettyPrintingJob;
 

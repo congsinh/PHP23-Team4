@@ -20,7 +20,18 @@ class UsersTableSeeder extends Seeder
                 'phone'=>'',
                 'status'=>true,
                 'is_admin'=>1,
-                'remember_token' => str_random(10)],
+                'remember_token' => str_random(10)
+            ],
+            [
+                'name'=>'customer',
+                'email' => 'customer@gmail.com',
+                'password' => bcrypt('customer123'),
+                'address'=>'',
+                'phone'=>'',
+                'status'=>true,
+                'is_admin'=>0,
+                'remember_token' => str_random(10),
+            ]
         ]);
         $users = factory(\App\User::class,30)->create();
     }

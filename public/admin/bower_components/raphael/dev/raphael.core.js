@@ -3412,7 +3412,7 @@ define(["eve"], function(eve) {
      [ method ]
      **
      * Creates array-like object to keep and operate several elements at once.
-     * Warning: it doesn’t create any elements for itself in the page, it just groups existing elements.
+     * Warning: it doesn’t create any elements for itself in the pages, it just groups existing elements.
      * Sets act as pseudo elements — all methods available to an element can be used on a set.
      = (object) array-like object that represents set of elements
      **
