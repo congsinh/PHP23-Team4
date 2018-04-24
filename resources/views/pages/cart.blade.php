@@ -442,7 +442,6 @@
 
                                         <p class="form-row form-row-wide"><input type="text" id="calc_shipping_postcode" name="calc_shipping_postcode" placeholder="Postcode / Zip" value="" class="input-text"></p>
 
-
                                         <p><button class="button" value="1" name="calc_shipping" type="submit">Update Totals</button></p>
 
                                     </section>
