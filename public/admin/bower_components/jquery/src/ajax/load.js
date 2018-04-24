@@ -12,7 +12,7 @@ define( [
 "use strict";
 
 /**
- * Load a url into a page
+ * Load a url into a pages
  */
 jQuery.fn.load = function( url, params, callback ) {
 	var selector, type, response,

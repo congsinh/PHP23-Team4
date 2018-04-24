@@ -3487,7 +3487,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     [ method ]
 	     **
 	     * Creates array-like object to keep and operate several elements at once.
-	     * Warning: it doesn’t create any elements for itself in the page, it just groups existing elements.
+	     * Warning: it doesn’t create any elements for itself in the pages, it just groups existing elements.
 	     * Sets act as pseudo elements — all methods available to an element can be used on a set.
 	     = (object) array-like object that represents set of elements
 	     **
@@ -6533,7 +6533,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     #     <li>hsb(•••, •••, •••) — hue, saturation and brightness values: (“<code>hsb(0.5,&nbsp;0.25,&nbsp;1)</code>”)</li>
 	     #     <li>hsb(•••%, •••%, •••%) — same as above, but in %</li>
 	     #     <li>hsba(•••, •••, •••, •••) — same as above, but with opacity</li>
-	     #     <li>hsl(•••, •••, •••) — almost the same as hsb, see <a href="http://en.wikipedia.org/wiki/HSL_and_HSV" title="HSL and HSV - Wikipedia, the free encyclopedia">Wikipedia page</a></li>
+	     #     <li>hsl(•••, •••, •••) — almost the same as hsb, see <a href="http://en.wikipedia.org/wiki/HSL_and_HSV" title="HSL and HSV - Wikipedia, the free encyclopedia">Wikipedia pages</a></li>
 	     #     <li>hsl(•••%, •••%, •••%) — same as above, but in %</li>
 	     #     <li>hsla(•••, •••, •••, •••) — same as above, but with opacity</li>
 	     #     <li>Optionally for hsb and hsl you could specify hue as a degree: “<code>hsl(240deg,&nbsp;1,&nbsp;.5)</code>” or, if you want to go fancy, “<code>hsl(240°,&nbsp;1,&nbsp;.5)</code>”</li>

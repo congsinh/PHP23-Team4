@@ -2138,7 +2138,7 @@ var GlobalEmitter = /** @class */ (function () {
             _this.handleTouchMove($.Event(ev));
         }, { passive: false } // allows preventDefault()
         );
-        // attach a handler to get called when ANY scroll action happens on the page.
+        // attach a handler to get called when ANY scroll action happens on the pages.
         // this was impossible to do with normal on/off because 'scroll' doesn't bubble.
         // http://stackoverflow.com/a/32954565/96342
         window.addEventListener('scroll', this.handleScrollProxy = function (ev) {
@@ -2551,7 +2551,7 @@ function datepickerLocale(localeCode, dpLocaleCode, dpOptions) {
         fcOptions[name] = func(dpOptions);
     });
     var jqDatePicker = $.datepicker;
-    // is jQuery UI Datepicker is on the page?
+    // is jQuery UI Datepicker is on the pages?
     if (jqDatePicker) {
         // Register the locale data.
         // FullCalendar and MomentJS use locale codes like "pt-br" but Datepicker

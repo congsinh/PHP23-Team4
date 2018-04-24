@@ -201,7 +201,7 @@ return $.widget("ui.sortable", $.ui.mouse, {
 		//Get the next scrolling parent
 		this.scrollParent = this.helper.scrollParent();
 
-		//The element's absolute position on the page minus margins
+		//The element's absolute position on the pages minus margins
 		this.offset = this.currentItem.offset();
 		this.offset = {
 			top: this.offset.top - this.margins.top,

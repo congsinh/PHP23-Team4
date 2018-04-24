@@ -190,7 +190,7 @@ $.widget("ui.draggable", $.ui.mouse, {
 				return $( this ).css( "position" ) === "fixed";
 			}).length > 0;
 
-		//The element's absolute position on the page minus margins
+		//The element's absolute position on the pages minus margins
 		this.positionAbs = this.element.offset();
 		this._refreshOffsets( event );
 
@@ -718,7 +718,7 @@ $.ui.plugin.add( "draggable", "connectToSortable", {
 
 				// refreshPositions is called at drag start to refresh the containerCache
 				// which is used in drag. This ensures it's initialized and synchronized
-				// with any changes that might have happened on the page since initialization.
+				// with any changes that might have happened on the pages since initialization.
 				sortable.refreshPositions();
 				sortable._trigger("activate", event, uiSortable);
 			}
