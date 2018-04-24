@@ -30,3 +30,13 @@ Route::group(['namespace' => 'Web'],function(){
     Route::get('/','HomeController@index')->name('home');
 });
 
+
+Route::get('test', function ()
+{
+    return view('pages.home');
+});
+Route::get('shop', function ()
+{
+    return view('page.shop');
+});
+
