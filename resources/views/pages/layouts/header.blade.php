@@ -6,8 +6,8 @@
                     <ul>
                         <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
                         <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                        <li><a href="../page/cart.blade.php"><i class="fa fa-user"></i> My Cart</a></li>
-                        <li><a href="../page/checkout.blade.php"><i class="fa fa-user"></i> Checkout</a></li>
+                        <li><a href="{{asset("page/cart.blade.php")}}"><i class="fa fa-user"></i> My Cart</a></li>
+                        <li><a href="{{asset("page/checkout.blade.php")}}"><i class="fa fa-user"></i> Checkout</a></li>
                         <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
                     </ul>
                 </div>
@@ -51,7 +51,7 @@
 
             <div class="col-sm-6">
                 <div class="shopping-item">
-                    <a href="../page/cart.blade.php">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    <a href="{{asset("pages/cart.blade.php")}}">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                 </div>
             </div>
         </div>
@@ -71,14 +71,26 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="../page/home.blade.php">Home</a></li>
-                    @foreach($categories as $category)
-                        @if($category['parent_id'] == null)
-                            <li><a href="#">{!! $category["name"] !!}</a></li>
-                        @endif {{--dung xoa nha--}}
-                        {{--<li><a href="">{{$category->name}}</a></li>--}}
+                    <li class="active"><a href="{{asset("pages/home.blade.php")}}">Home</a></li>
 
+
+                    @foreach($categories as $item)
+                        @if($item->children->count() > 0)
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    {{$item->name}}
+                                    <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    @foreach($item->children as $submenu)
+                                        <li><a href="#">{{$submenu->name}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                            @else
+                            <li><a href="#">{{$item->name}}</a></li>
+                        @endif
                     @endforeach
+
                 </ul>
             </div>
         </div>

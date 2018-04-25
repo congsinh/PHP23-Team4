@@ -141,12 +141,12 @@ z-index: 999;}
 }
 
 .mainmenu-area{
-    background: #9EDA89;
+    background: #D7DFA9;
 }
 
 .mainmenu-area ul.navbar-nav li a {
     color: #6e6a6a;
-    font-size: 14px;
+    font-size: 18px;
     padding: 20px;
 }
 

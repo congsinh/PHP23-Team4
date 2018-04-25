@@ -29,6 +29,7 @@ Route::group(['namespace' => 'Admin'],function(){
 Route::group(['namespace' => 'Web'],function(){
     Route::get('/','HomeController@index')->name('home');
     Route::get('/','HomeController@menu');
+//    Route::get('/','HomeController@subMenu');
 });
 
 
@@ -40,4 +41,3 @@ Route::get('shop', function ()
 {
     return view('page.shop');
 });
-
