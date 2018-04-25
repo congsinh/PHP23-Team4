@@ -140,6 +140,9 @@ z-index: 999;}
     background: none repeat scroll 0 0 #000;
 }
 
+.mainmenu-area{
+    background: #9EDA89;
+}
 
 .mainmenu-area ul.navbar-nav li a {
     color: #6e6a6a;

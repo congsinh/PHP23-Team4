@@ -72,13 +72,13 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="../page/home.blade.php">Home</a></li>
-                    <li><a href="../page/shop.blade.php">Shop page</a></li>
-                    <li><a href="../page/single_product.blade.php">Single product</a></li>
-                    <li><a href="../page/cart.blade.php">Cart</a></li>
-                    <li><a href="../page/cart.blade.php">Checkout</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">Others</a></li>
-                    <li><a href="#">Contact</a></li>
+                    @foreach($categories as $category)
+                        @if($category['parent_id'] == null)
+                            <li><a href="#">{!! $category["name"] !!}</a></li>
+                        @endif {{--dung xoa nha--}}
+                        {{--<li><a href="">{{$category->name}}</a></li>--}}
+
+                    @endforeach
                 </ul>
             </div>
         </div>

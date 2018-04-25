@@ -28,6 +28,7 @@ Route::group(['namespace' => 'Admin'],function(){
 
 Route::group(['namespace' => 'Web'],function(){
     Route::get('/','HomeController@index')->name('home');
+    Route::get('/','HomeController@menu');
 });
 
 
