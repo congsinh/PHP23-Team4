@@ -11,14 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< HEAD
 
 
 
-        Model::unguard();
-        DB::statement('SET FOREIGN_KEY_CHECKS=0');
-        $this->call(UsersTableSeeder::class);
-=======
+
+
         Model::unguard();
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         //get all table in database
@@ -32,7 +29,6 @@ class DatabaseSeeder extends Seeder
         }
 
          $this->call(UsersTableSeeder::class);
->>>>>>> ba912f410a1d457c0bf23c82a8c178e27b51e195
          $this->call(CategoriesTableSeeder::class);
          $this->call(ManufacturersTableSeeder::class);
          $this->call(ProductsTableSeeder::class);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Manufacturer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 class ManufacturerController extends Controller
@@ -13,7 +14,8 @@ class ManufacturerController extends Controller
      */
     public function index()
     {
-        //
+        $manufacturers = Manufacturer::all();
+        return view('admin.Manufacturer.index',compact('manufacturers'));
     }
 
     /**
@@ -34,7 +36,12 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $manufacturer = new Manufacturer;
+        $manufacturer->name = $request->name;
+        $manufacturer->slug = str_slug($request->name);
+        $manufacturer->save();
+        $count = Manufacturer::count();
+        return response()->json([$manufacturer,$count],200);
     }
 
     /**
@@ -79,6 +86,7 @@ class ManufacturerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $manufacturer = Manufacturer::destroy($id);
+        return response()->json($manufacturer,200);
     }
 }
