@@ -36,10 +36,9 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
-        $manufacturer = new Manufacturer;
-        $manufacturer->name = $request->name;
-        $manufacturer->slug = str_slug($request->name);
-        $manufacturer->save();
+        $manufacturer_array = $request->all();
+        $manufacturer_array['slug'] = $request->name;
+        $manufacturer = Manufacturer::create($manufacturer_array);
         $count = Manufacturer::count();
         return response()->json([$manufacturer,$count],200);
     }
@@ -52,7 +51,8 @@ class ManufacturerController extends Controller
      */
     public function show($id)
     {
-        //
+        $manufacturer = Manufacturer::findorFail($id);
+        return response()->json($manufacturer,200);
     }
 
     /**
@@ -75,7 +75,11 @@ class ManufacturerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $manufacturer_array = $request->all();
+        $manufacturer_array['slug'] = str_slug($request->name);
+        $manufacturer = Manufacturer::findorFail($id);
+        $manufacturer->update($manufacturer_array);
+        return response()->json($manufacturer,200);
     }
 
     /**

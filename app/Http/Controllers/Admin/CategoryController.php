@@ -41,19 +41,16 @@ class CategoryController extends Controller
             'name'=> 'required'
         ]);
         if($request->parent_id){
-            $category = new Category;
-            $category->name = $request->name;
-            $category->slug = str_slug($request->name);
-            $category->parent_id = $request->parent_id;
-            $category->save();
+            $category_array = $request->all();
+            $category_array['slug'] = str_slug($request->name);
+            $category = Category::create($category_array);
             $count = Category::where('parent_id',null)->count();
             $nameCategory = Category::select('name')->where('parent_id',null)->where('id',$request->parent_id)->first();
             return response()->json([$category,$count,$nameCategory],200);
         }else{
-            $category = new Category;
-            $category->name = $request->name;
-            $category->slug = str_slug($request->name);
-            $category->save();
+            $category_array = $request->all();
+            $category_array['slug'] = str_slug($request->name);
+            $category = Category::create($category_array);
             $count = Category::where('parent_id',null)->count();
             return response()->json([$category,$count],200);
         }
@@ -93,18 +90,17 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         if($request->parent_id){
+            $category_array = $request->all();
+            $category_array['slug'] = str_slug($request->name);
             $category = Category::findorFail($id);
-            $category->name = $request->name;
-            $category->slug = str_slug($request->name);
-            $category->parent_id = $request->parent_id;
-            $category->save();
+            $category->update($category_array);
             $nameCategory = Category::select('name')->where('parent_id',null)->where('id',$request->parent_id)->first();
             return response()->json([$category,$nameCategory],200);
         }else{
+            $category_array = $request->all();
+            $category_array['slug'] = str_slug($request->name);
             $category = Category::findorFail($id);
-            $category->name = $request->name;
-            $category->slug = str_slug($request->name);
-            $category->save();
+            $category->update($category_array);
             return response()->json($category,200);
         }
 

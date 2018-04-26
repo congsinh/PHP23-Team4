@@ -74,7 +74,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-outline" id="save-manufacturer">Save changes</button>
+                        <button type="submit" class="btn btn-outline" id="save-manufacturer" data-id="">Save changes</button>
                     </div>
                 </form>
             </div>
@@ -183,6 +183,55 @@
                         $('#modal-danger').modal('hide');
                     },
                 })
+            })
+
+            $("body").on('click','.edit-manufacturer',function(){
+                $('#title-modal').html("Edit Manufacturer");
+                $('#manufacturerForm').trigger("reset");
+                $('#modal-manufacturer').modal('show');
+                $('#save-manufacturer').val('edit-manufacturer');
+                var id = $(this).val();
+                $('#save-manufacturer').attr('data-id',id);
+                $.get('{{url('/admin/manufacturer')}}/'+id,function (data) {
+                    $('#name-manufacturer').val(data.name);
+                })
+            });
+
+            $('#save-manufacturer').on('click',function(){
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    }
+                });
+                var form = $("#manufacturerForm");
+
+                if(form.valid() === false){
+                    console.log('loi');
+                }else{
+                    var state = $(this).val();
+                    if(state === 'edit-manufacturer'){
+                        var id = $(this).attr('data-id');
+                        var name = $('#name-manufacturer').val();
+                        $.ajax({
+                            url: '{{url('/admin/manufacturer')}}/'+id,
+                            type:'PUT',
+                            data:{name:name},
+                            dataType:'json',
+                            success:function (data) {
+                                var edit = '<tr id="delete-coloum-'+data.id+'">\n' +
+                                    '<td>Đã Sửa</td>\n' +
+                                    '<td>'+data.name+'</td>\n' +
+                                    '<td class="text-center">\n' +
+                                    '<button class="btn btn-warning btn-xs edit-manufacturer" value="'+data.id+'">Sửa</button> &ensp;\n' +
+                                    '<button class="btn btn-danger btn-xs" id="delete-manufacturer" value="'+data.id+'">Xóa</button>\n' +
+                                    '</td>\n' +
+                                    '</tr>';
+                                $("#delete-coloum-"+data.id).replaceWith(edit);
+                                $('#modal-manufacturer').modal('hide');
+                            }
+                        })
+                    }
+                }
             })
         })
     </script>
