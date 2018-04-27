@@ -7,23 +7,18 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 
-class HomeController extends Controller
+class ProductDetailController extends Controller
 {
-
     function __construct()
     {
         $categories = Category::with('children')->where('parent_id', null)->get();
         view()->share('categories', $categories);
     }
-
     public function index()
     {
-        return view('pages.home');
+        $products = Product::all();
+        return view('pages.single_product',['products' => $products]);
     }
-    public function lastedProduct()
-    {
-        $products = Product::all()->sortByDesc('created_at')->take(10);
-        return view('pages.home',['products' => $products]);
-    }
+
 
 }

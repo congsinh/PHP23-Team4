@@ -11,8 +11,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="single-product-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
@@ -30,7 +28,7 @@
                         <h2 class="sidebar-title">Products</h2>
                         <div class="thubmnail-recent">
                             <img src="{{asset("img/product-thumb-1.jpg")}}" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
+                            <h2><a href="">{{$product}}</a></h2>
                             <div class="product-sidebar-price">
                                 <ins>$700.00</ins> <del>$100.00</del>
                             </div>
