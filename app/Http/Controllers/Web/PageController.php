@@ -7,18 +7,21 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 
-class HomeController extends Controller
+class PageController extends Controller
 {
-
     function __construct()
     {
         $categories = Category::with('children')->where('parent_id', null)->get();
         view()->share('categories', $categories);
     }
 
-    public function index()
+    public function home()
     {
         return view('pages.home');
+    }
+    public function shop()
+    {
+        return view('pages.shop');
     }
     public function lastedProduct()
     {

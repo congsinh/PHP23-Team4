@@ -7,9 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 
-class HomeController extends Controller
+class ShopController extends Controller
 {
-
     function __construct()
     {
         $categories = Category::with('children')->where('parent_id', null)->get();
@@ -18,11 +17,12 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('pages.home');
+        return view('pages.shop');
     }
-    public function lastedProduct()
+    public function showProduct()
     {
-        $products = Product::all()->sortByDesc('created_at')->take(10);
-        return view('pages.home',['products' => $products]);
+        $products = Product::all();
+        return view('pages.shop',['products' => $products]);
     }
+
 }

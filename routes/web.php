@@ -24,20 +24,34 @@ Route::group(['namespace' => 'Admin'],function(){
     });
 });
 
+/*Route::get('shop', function (){
+    $categories = \App\Models\Category::with('children')->where('parent_id', null)->get();
+    return view('pages.shop',['categories'=>$categories]);
+});*/
 
-
-Route::group(['namespace' => 'Web'],function(){
+/*Route::group(['namespace' => 'Web'],function(){
     Route::get('/','HomeController@index')->name('home');
     Route::get('/','HomeController@menu');
-//    Route::get('/','HomeController@subMenu');
+   // Route::get('/','HomeController@lastedProduct');
+
+});*/
+
+Route::group(['namespace' => 'Web'],function(){
+//    Route::get('home','PageController@home');
+//    Route::get('home','PageController@lastedProduct');
+//
+//    Route::get('shop','PageController@shop');
+    Route::group(['prefix'=>'/'],function(){
+        Route::get('', 'HomeController@index');
+        Route::get('', 'HomeController@lastedProduct');
+    });
+    Route::group(['prefix' => 'shop'], function (){
+        Route::get('', 'ShopController@index');
+        Route::get('', 'ShopController@showProduct');
+    });
+
+
+
 });
 
 
-Route::get('test', function ()
-{
-    return view('pages.home');
-});
-Route::get('shop', function ()
-{
-    return view('page.shop');
-});
