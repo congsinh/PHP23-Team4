@@ -1,13 +1,9 @@
 @extends('admin.layouts.master')
 @section('title')
-    <h1>
-        Nhà sản xuất
-        <small>Control panel</small>
-    </h1>
+    Đối tác
 @endsection
-
-@section('page')
-    Nhà sản xuất
+@section('action')
+    Danh sách
 @endsection
 @section('style')
     <style>

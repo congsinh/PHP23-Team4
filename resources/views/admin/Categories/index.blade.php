@@ -5,16 +5,11 @@
     </style>
     @endsection
 @section('title')
-    <h1>
-        Category
-        <small>Control panel</small>
-    </h1>
-    @endsection
-
-@section('page')
-    Category
-    @endsection
-
+    Danh mục sản phẩm
+@endsection
+@section('action')
+    Danh sách
+@endsection
 @section('content')
 
     <section class="content container-fluid">

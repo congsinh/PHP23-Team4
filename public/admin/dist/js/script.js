@@ -4,3 +4,14 @@ $.ajaxSetup({//add this when call ajax
     }
 });
 
+//Modal delete
+$(document).on('click', '.del', function () {
+    $form = $(this).find("form");
+    $("#btnDel").on("click", function () {
+        $form.submit();
+    });
+});
+
+$(document).ready(function(){
+    $(".notify.success").delay(6000).slideUp();
+});

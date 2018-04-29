@@ -6,7 +6,8 @@
     Thêm mới
 @endsection
 @section('content')
-        <div class="col-lg-12" style="padding-bottom:120px">
+
+    <div class="col-lg-12" style="padding-bottom:120px">
             @include('admin.layouts.notify')
             <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data" >
                 {{csrf_field()}}
@@ -43,7 +44,6 @@
                                 <div class="row">
                                     <div class="col-xs-8">
                                         <label>Giá (VNĐ)</label>
-                                        {{--<input class="form-control" type="hidden"  name="price" id="price" />--}}
                                         <input class="form-control" type="text"  name="price" id="price" placeholder="Xin nhập giá" min="1000" max="999999999999" value="{{ old('price')}}"/>
                                     </div>
                                     <div class="col-xs-4">
@@ -57,7 +57,10 @@
                                 <label>Thông số kỹ thuật</label>
                                 <table class="table configuration">
                                     @if(Input::old('category_id'))
-                                        {!!  view('admin.ajax.configuration.smartphone')->render() !!}
+                                        <?php
+                                        $configurations = array_combine(Input::old('configuration')['key'],Input::old('configuration')['value']);
+                                        ?>
+                                        {!! view('admin.ajax.configuration.config',compact('configurations'))->render()  !!}
                                     @endif
                                 </table>
                                 <button id="btn-add" type="button" class="btn btn-sm btn-primary pull-left">
@@ -130,7 +133,6 @@
             //         }
             //     });
             // });
-
             // ckeditor
             CKEDITOR.replace( 'description', {
                 filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',

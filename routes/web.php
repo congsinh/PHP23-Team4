@@ -21,7 +21,7 @@ Route::group(['namespace' => 'Admin'],function(){
     Route::group(['prefix'=>'admin','middleware'=>'check_admin'],function(){
         Route::get('dashboard','AdminController@index')->name('dashboard');
         Route::get('logout','AdminController@logout')->name('admin-logout');
-        Route::resource('/products','ProductController');
+        Route::resource('products','ProductController');
         Route::resource('category', 'CategoryController');
         Route::resource('manufacturer', 'ManufacturerController');
     });
