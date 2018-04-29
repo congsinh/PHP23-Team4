@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="<?php echo e(asset('admin/bower_components/Ionicons/css/ionicons.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('admin/dist/css/AdminLTE.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('admin/dist/css/skins/skin-blue.min.css')); ?>">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the pages via file:// -->
     <!--[if lt IE 9]>
@@ -22,6 +21,7 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <link rel="stylesheet" href="<?php echo e(asset('admin/dist/css/style.css')); ?>">
+    <?php echo $__env->yieldContent('style'); ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -45,7 +45,7 @@
                 <li class="active"><?php echo $__env->yieldContent('action'); ?></li>
             </ol>
         </section>
-        <div class="container " style="padding-top: 30px">
+        <div class="container" style="padding-top: 30px">
             <?php echo $__env->yieldContent('content'); ?>
         </div>
     </div>
@@ -63,6 +63,8 @@
 <script src="//cdn.ckeditor.com/4.9.2/full/ckeditor.js"></script>
 <!-- script -->
 <script src="<?php echo e(asset('admin/dist/js/script.js')); ?>"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+
 <?php echo $__env->yieldContent('script'); ?>
 </body>
 </html>

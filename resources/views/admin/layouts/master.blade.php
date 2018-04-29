@@ -46,7 +46,7 @@
                 <li class="active">@yield('action')</li>
             </ol>
         </section>
-        <div class="container " style="padding-top: 30px">
+        <div class="container" style="padding-top: 30px">
             @yield('content')
         </div>
     </div>
