@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>eShop | Smartphone, Laptop online</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('admin/bower_components/bootstrap/dist/css/bootstrap.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('admin/bower_components/font-awesome/css/font-awesome.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('admin/bower_components/Ionicons/css/ionicons.min.css')); ?>">
@@ -20,6 +21,7 @@
     <!-- Google Font -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="<?php echo e(asset('admin/dist/css/style.css')); ?>">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -39,23 +41,28 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-                <li class="active"><?php echo $__env->yieldContent('page'); ?></li>
+                <li class="active"><?php echo $__env->yieldContent('title'); ?></li>
+                <li class="active"><?php echo $__env->yieldContent('action'); ?></li>
             </ol>
         </section>
-    <?php echo $__env->yieldContent('content'); ?>
-        <!-- /.content -->
+        <div class="container " style="padding-top: 30px">
+            <?php echo $__env->yieldContent('content'); ?>
+        </div>
     </div>
     <!-- /.content-wrapper -->
     <!-- Main Footer -->
     <?php echo $__env->make('admin.layouts.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 </div>
 <script src="<?php echo e(asset('admin/bower_components/jquery/dist/jquery.min.js')); ?>"></script>
+<script src="<?php echo e(asset('js/accounting.min.js')); ?>"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo e(asset('admin/bower_components/bootstrap/dist/js/bootstrap.min.js')); ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo e(asset('admin/dist/js/adminlte.min.js')); ?>"></script>
-
-
+<!-- CKEditor JavaScript -->
+<script src="//cdn.ckeditor.com/4.9.2/full/ckeditor.js"></script>
+<!-- script -->
+<script src="<?php echo e(asset('admin/dist/js/script.js')); ?>"></script>
 <?php echo $__env->yieldContent('script'); ?>
 </body>
 </html>

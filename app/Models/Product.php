@@ -9,15 +9,15 @@ class Product extends Model
     protected $casts = [
         'configuration' => 'array'
     ];
-    protected $fillable = ['name','slug','configuration','description','quantity_store','price','rating','sales','image','category_id','manufacture_id'];
+    protected $fillable = ['name','slug','configuration','description','quantity_store','price','rating','sales','category_id','manufacture_id'];
 
     public function category (){
-        return $this->belongsTo('App\Category');
+        return $this->belongsTo('App\Models\Category');
     }
     public function manufacturer (){
-        return $this->belongsTo('App\Manufacturer');
+        return $this->belongsTo('App\Models\Manufacturer');
     }
     public function imageDetail(){
-        return $this->hasMany('App\ImageDetail');
+        return $this->hasMany('App\Models\ImageDetail','product_id','id');
     }
 }
