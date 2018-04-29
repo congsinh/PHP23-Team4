@@ -15,6 +15,7 @@ class ManufacturersTableSeeder extends Seeder
         for($i = 0; $i < 4; $i++){
             Manufacturer::create([
                 'name' => $faker->name,
+                'slug' => $faker->name
             ]);
         }
     }
