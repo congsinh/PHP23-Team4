@@ -4,6 +4,7 @@
 @endsection
 @section('action')
     Danh sách
+
 @endsection
 @section('content')
     @include('admin.layouts.notify')
@@ -23,7 +24,11 @@
                 <th style="width: 50px">Số lượng</th>
                 <th style="width: 100px">Giá</th>
                 <th style="width: 50px">Đã bán</th>
-                <th style="width: 50px">Thao tác</th>
+                <th style="width: 50px">
+                    <a href="{{route('products.create')}}"  class="btn btn-sm btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp;Thêm
+                    </a>
+                </th>
             </tr>
             </thead>
             <tbody>
@@ -43,10 +48,11 @@
                         <td>{{$product->price}}VND</td>
                         <td>{{$product->sales}}</td>
                         <td>
-                            <a href="{{ route('products.show',['id'=>$product->id]) }}"
-                               class="btn btn-info btn-xs" style="margin:2px !important"><i class="fa fa-eye fa-fw"></i><span>View</span></a>
-                            <a href="" class="btn btn-danger btn-xs  del" style="margin:2px !important" data-toggle="modal"
-                               data-target="#modal-del"><i class="glyphicon glyphicon-trash fa-fw"></i><span>Delete</span>
+                            <a href="{{ route('products.show',['id'=>$product->id]) }}" class="btn btn-info btn-xs" style="margin:2px !important">
+                                <i class="fa fa-eye fa-fw"></i><span>Sửa</span>
+                            </a>
+                            <a href="" class="btn btn-danger btn-xs  del" style="margin:2px !important" data-toggle="modal" data-target="#modal-del">
+                                <i class="glyphicon glyphicon-trash fa-fw"></i><span>Xóa</span>
                                 <form method="post" action="{{route('products.destroy',['id'=>$product->id]) }}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE">
@@ -59,7 +65,7 @@
                 @endforelse
             </tbody>
         </table>
-        <div class="row pull-right">
+        <div class="pull-right">
             {{ $products->links() }}
         </div>
 @include('admin.layouts.modal-del')

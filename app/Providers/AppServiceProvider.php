@@ -16,8 +16,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         \Schema::defaultStringLength(191);
-        $categories = Category::where('parent_id',null)->with('subcate')->get();
-        View::share('categories',$categories);
     }
 
     /**

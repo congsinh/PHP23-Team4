@@ -24,6 +24,7 @@ class ProductsRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required|unique:products,name,'.$this->id,
             'name' => 'required',
             'description' => 'required|min:100',
             'quantity_store' => 'required',
@@ -39,12 +40,13 @@ class ProductsRequest extends FormRequest
     public function messages(){
         return [
             'name.required' => 'Tên sản phẩm không được để trống !',
+            'name.unique' => 'Tên sản phẩm đã bi trùng !',
             'category_id.required' => 'Danh mục sản phẩm không được để trống !',
             'description.required' => 'Mô tả không được để trống !',
             'description.min' => 'Mô tả ít nhất 100 ký tự !',
             'image_detail.required' => 'Hình ảnh không được để trống !',
             'image_detail.*.image' => 'File không phải là hình ảnh !',
-            'image_detail.*.mimes' => 'Chỉ hỗ trợ định dạng đuôi jpeg,png,jpg,gif và svg !',
+            'image_detail.*.mimes' => 'Chỉ hỗ trợ định dạng đuôi jpeg, png, jpg, gif và svg !',
             'image_detail.*.max' => 'Kích thướt file không quá 2MB!',
             'price.required' => 'Bạn chưa nhập giá sản phẩm !',
             'price.numeric' => 'Giá tiền phải là số !',

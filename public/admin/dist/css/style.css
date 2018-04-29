@@ -68,3 +68,15 @@ button#btn-add{
 .table.configuration>tbody>tr>td{
     padding:0px !important;
 }
+div.wp-image{
+    position: relative;
+    display: inline-block !important;
+}
+img.listimage-edit{
+    display:inline-block;
+    float:left;
+    min-width: 100px !important;
+    max-width:120px !important;
+    max-height: 120px !important;
+    margin:5px;
+}

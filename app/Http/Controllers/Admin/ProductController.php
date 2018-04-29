@@ -81,7 +81,10 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $category = Category::with('subcate')->where('parent_id',null)->get();
+        $manufacturers = Manufacturer::all();
+        return view('admin.products.edit',compact(['product','category','manufacturers']));
     }
 
     /**
@@ -102,9 +105,46 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductsRequest $request, $id)
     {
-        //
+        $key = $request->configuration['key'];
+        $value = $request->configuration['value'];
+        $configuration = array_combine($key,$value);
+        try {
+            DB::beginTransaction();
+            $product = Product::findOrFail($id);
+            $data = $request->all();
+            $data['slug'] = str_slug($request->name);
+            $data['configuration'] = $configuration;
+            $product->update($data);
+            $images = $request->file('image_detail');
+            if(!empty($images_del)){
+                $array_img = explode(',',$images_del);
+                foreach($array_img as $id_del){
+                    $img = ImageDetail::find($id_del);
+                    $path = 'uploads/images/products/'.$img->image_detail;
+                    if(file_exists($path)){
+                        unlink($path);
+                    }
+                    $img->delete();
+                }
+            }
+            if($images){
+                foreach ($images as $image){
+                    $name = time() . "_" . $image->getClientOriginalName();
+                    ImageDetail::create([
+                        'image_detail' => $name,
+                        'product_id' => $product->id,
+                    ]);
+                    $image->move('uploads/images/products',$name);
+                }
+            }
+            DB::commit();
+            return redirect()->route('products.index')->with('success','Đã cập nhật thành công !');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->withInput()->with('error',"Đã xảy ra lỗi. Xin thử lại : ".$e->getMessage());
+        }
     }
 
     /**
@@ -115,6 +155,23 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+            DB::beginTransaction();
+            $product = Product::findOrFail($id);
+            $image = $product->imageDetail;
+            foreach($image as $img){
+                $path = 'uploads/images/products/'.$img->image_detail;
+                if(file_exists($path)){
+                unlink($path);
+                }
+            }
+            $product->delete();
+            DB::commit();
+            return redirect()->route('products.index')->with(['success'=>'Đã xóa thành công !']);
+        }catch( \Exception $e){
+            DB::rollBack();
+            return redirect()->route('products.index')->with(['error'=>'Đã xảy ra lỗi. Không thể xóa !']);
+        }
+
     }
 }

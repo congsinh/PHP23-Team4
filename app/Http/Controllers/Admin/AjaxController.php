@@ -11,15 +11,54 @@ class AjaxController extends Controller
         $category = Category::findOrFail($request->id)->category->id;
         switch ($category){
             case '1':
-                $view = view('admin.ajax.configuration.smartphone')->render();
+                $configurations = [
+                    'Màn hình' => '',
+                    'Hệ điều hành' => '',
+                    'Camera sau' => '',
+                    'Camera trước' => '',
+                    'CPU' => '',
+                    'RAM' => '',
+                    'Thẻ SIM' => '',
+                    'Dung lượng pin' => '',
+                ];
                 break;
             case '2':
-                $view = view('admin.ajax.configuration.smartphone')->render();
+                $configurations = [
+                    'CPU' => '',
+                    'RAM' => '',
+                    'Ổ cứng' => '',
+                    'Màn hình' => '',
+                    'Cổng kết nối' => '',
+                    'Hệ điều hành' => '',
+                    'Thiết kế' => '',
+                    'Kích thước' => '',
+                ];
                 break;
             case '3':
-                $view = view('admin.ajax.configuration.smartphone')->render();
+                $configurations = [];
                 break;
         }
+        $view = view('admin.ajax.configuration.config',compact(['configurations']))->render();
         return response()->json(['success' => true, 'view'=>$view]);
     }
+
+
+    public function filterProducts(){
+//        $query = User::query();
+//
+//        if ($this == $that) {
+//        $query = $query->where('this', 'that');
+//        }
+//
+//        if ($this == $another_thing) {
+//            $query = $query->where('this', 'another_thing');
+//        }
+//
+//        if ($this == $yet_another_thing) {
+//            $query = $query->orderBy('this');
+//        }
+//
+//        $results = $query->get();
+    }
 }
+
