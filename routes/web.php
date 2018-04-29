@@ -21,7 +21,10 @@ Route::group(['namespace' => 'Admin'],function(){
     Route::group(['prefix'=>'admin','middleware'=>'check_admin'],function(){
         Route::get('dashboard','AdminController@index')->name('dashboard');
         Route::get('logout','AdminController@logout')->name('admin-logout');
+        Route::resource('/products','ProductController');
     });
+
+    Route::post('configuration','AjaxController@getConfiguration')->name('configuration');
 });
 
 
@@ -40,3 +43,5 @@ Route::get('shop', function ()
     return view('page.shop');
 });
 
+
+//Ajax

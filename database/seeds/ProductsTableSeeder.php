@@ -27,7 +27,6 @@ class ProductsTableSeeder extends Seeder
                 'price' => $faker->randomNumber(2),
                 'rating' => $faker->numberBetween(1,5),
                 'sales' => $faker->randomNumber(2),
-                'image' => $faker->imageUrl(300,300,null,true),
                 'category_id' => $cate[array_rand($cate)],
                 'manufacture_id' => $manufacturer[array_rand($manufacturer)],
                 'configuration' => [

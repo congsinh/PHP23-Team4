@@ -1,0 +1,70 @@
+table tr,table th,table td {
+    vertical-align: middle !important;
+}
+
+div.drop-area{
+    height: auto !important;
+    border: 1px dashed #999 !important;
+    text-align: center;
+    padding:10px;
+    cursor:pointer;
+    min-height: 230px;
+}
+div#thumbnail{
+    z-index: 9;
+}
+div#thumbnail img{
+    width:100px;
+    height:100px;
+    margin:5px;
+}
+div#thumbnail img::before{
+    content: 'X';
+    position: absolute;
+    top:5px;
+    right:-5px;
+}
+canvas{
+    border:1px solid red;
+}
+div.box-image{
+    display: inline-block !important;
+    position: relative;
+    margin: 5px !important;
+    z-index: 9999;
+}
+button.del{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    font-size: 10px;
+    line-height: 1.42;
+    padding: 2px 0;
+    text-align: center;
+
+}
+div.wp-image{
+    position: relative;
+    display: inline-block !important;
+}
+table.configuration input{
+    border: none !important;
+    background-color: transparent !important;
+    outline: none !important;
+}
+table.configuration input::placeholder{
+    color: #0a0a0a !important;
+}
+table.configuration tr,table.configuration td{
+    border-top: none !important;
+    border-bottom: 1px dotted #000000 !important;
+}
+button#btn-add{
+    margin-top:2px;
+}
+.table.configuration>tbody>tr>td{
+    padding:0px !important;
+}
