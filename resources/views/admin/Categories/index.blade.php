@@ -196,6 +196,7 @@
                 $('#modal-info').modal('show');
                 $('#btn-save').val('add-category');
                 $('#select-category').remove();
+                $('#name-category-error').remove();
             });
             $('#btn-save').on('click',function(){
                 $.ajaxSetup({
@@ -203,6 +204,17 @@
                         'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                     }
                 });
+
+                $.get('{{url('/admin/category/create')}}',function (data) {
+                    $.each(data, function( index, value ) {
+                        var name_category = $('#name-category').val();
+                        if(value.name === name_category){
+                            var add = '<label id="name-category-error" class="error" for="name-category">Tên danh mục đã bị trùng </label>';
+                            $("#name-category").after(add);
+                        }
+                    });
+                });
+
                 var form = $("#categoryForm");
                 if(form.valid() === false){
                     console.log('loi');
@@ -276,6 +288,7 @@
                 $('#btn-save').val('edit-category');
                 var id = $(this).val();
                 $('#btn-save').attr('data-id',id);
+                $('#name-category-error').remove();
                 $.get('{{url('/admin/category')}}/'+id+'/edit',function (data) {
                     $('#name-category').val(data.name);
                 })
@@ -340,6 +353,7 @@
                 $('#categoryChildrenForm').trigger("reset");
                 $('#modal-category-children').modal('show');
                 $('#btn-save-category-children').val('add-category-children');
+                $('#name-category-children-error').remove();
             })
 
             $('#btn-save-category-children').on('click',function(e){
@@ -348,6 +362,16 @@
                         'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                     }
                 });
+                $.get('{{url('/admin/category/create')}}',function (data) {
+                    $.each(data, function( index, value ) {
+                        var name_category = $('#name-category-children').val();
+                        if(value.name === name_category){
+                            var add_1 = '<label id="name-category-children-error" class="error" for="name-category-children">Tên danh mục đã có </label>';
+                            $("#name-category-children").after(add_1);
+                        }
+                    });
+                });
+
                 e.preventDefault();
                 var form = $("#categoryChildrenForm");
                 if(form.valid() === false){
@@ -412,6 +436,7 @@
                 $('#modal-category-children').modal('show');
                 $('#categoryChildrenForm').trigger("reset");
                 $('#btn-save-category-children').val('edit-category-children');
+                $('#name-category-children-error').remove();
                 var id = $(this).val();
                 $('#btn-save-category-children').attr('data-id',id);
                 $.get('{{url('/admin/category')}}/'+id+'/edit',function (data) {
