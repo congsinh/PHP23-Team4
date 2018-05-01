@@ -34,7 +34,7 @@ class MemcachedProfilerStorage extends BaseMemcacheProfilerStorage
     {
         if (null === $this->memcached) {
             if (!preg_match('#^memcached://(?(?=\[.*\])\[(.*)\]|(.*)):(.*)$#', $this->dsn, $matches)) {
-                throw new \RuntimeException(sprintf('Please check your configuration. You are trying to use Memcached with an invalid dsn "%s". The expected format is "memcached://[host]:port".', $this->dsn));
+                throw new \RuntimeException(sprintf('Please check your components. You are trying to use Memcached with an invalid dsn "%s". The expected format is "memcached://[host]:port".', $this->dsn));
             }
 
             $host = $matches[1] ?: $matches[2];

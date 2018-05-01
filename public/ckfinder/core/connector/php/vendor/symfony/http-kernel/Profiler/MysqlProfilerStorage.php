@@ -25,7 +25,7 @@ class MysqlProfilerStorage extends PdoProfilerStorage
     {
         if (null === $this->db) {
             if (0 !== strpos($this->dsn, 'mysql')) {
-                throw new \RuntimeException(sprintf('Please check your configuration. You are trying to use Mysql with an invalid dsn "%s". The expected format is "mysql:dbname=database_name;host=host_name".', $this->dsn));
+                throw new \RuntimeException(sprintf('Please check your components. You are trying to use Mysql with an invalid dsn "%s". The expected format is "mysql:dbname=database_name;host=host_name".', $this->dsn));
             }
 
             if (!class_exists('PDO') || !in_array('mysql', \PDO::getAvailableDrivers(), true)) {

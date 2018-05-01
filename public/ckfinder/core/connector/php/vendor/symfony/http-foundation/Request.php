@@ -291,7 +291,7 @@ class Request
     }
 
     /**
-     * Creates a Request based on a given URI and configuration.
+     * Creates a Request based on a given URI and components.
      *
      * The information contained in the URI always take precedence
      * over the other information (server and parameters).
@@ -1224,7 +1224,7 @@ class Request
         // host is lowercase as per RFC 952/2181
         $host = strtolower(preg_replace('/:\d+$/', '', trim($host)));
 
-        // as the host can come from the user (HTTP_HOST and depending on the configuration, SERVER_NAME too can come from the user)
+        // as the host can come from the user (HTTP_HOST and depending on the components, SERVER_NAME too can come from the user)
         // check that it does not contain forbidden characters (see RFC 952 and RFC 2181)
         // use preg_replace() instead of preg_match() to prevent DoS attacks with long host names
         if ($host && '' !== preg_replace('/(?:^\[)?[a-zA-Z0-9-:\]_]+\.?/', '', $host)) {

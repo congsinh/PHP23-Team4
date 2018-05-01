@@ -62,7 +62,7 @@
                                 <?php
                                 $configurations = $product->configuration;
                                 ?>
-                                {!! view('admin.ajax.configuration.config',compact('configurations'))->render()  !!}
+                                {!! view('admin.ajax.components.config',compact('configurations'))->render()  !!}
                             @endif
                         </table>
                         <button id="btn-add" type="button" class="btn btn-sm btn-primary pull-left">
@@ -115,7 +115,7 @@
                 var id = this.value;
                 $.ajax({
                     url:"{{route('configuration')}}",
-                    type:'POST',
+                    type:'GET',
                     data: {
                         id:id
                     },

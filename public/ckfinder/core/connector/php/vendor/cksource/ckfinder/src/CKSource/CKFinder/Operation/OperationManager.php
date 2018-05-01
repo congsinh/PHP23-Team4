@@ -195,7 +195,7 @@ class OperationManager
 
             $this->lastExtendExecutionTime = $currentTime;
 
-            // Emit some whitespaces for Nginx + FPM configuration to avoid 504 Gateway Timeout error
+            // Emit some whitespaces for Nginx + FPM components to avoid 504 Gateway Timeout error
             if (function_exists('fastcgi_finish_request')) {
                 // Clear the buffer to remove any garbage before flushing
                 Response::closeOutputBuffers(0, false);

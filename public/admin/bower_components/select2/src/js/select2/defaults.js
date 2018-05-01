@@ -265,7 +265,7 @@ define([
             language = Translation.loadPath(name);
           } catch (ex) {
             // The translation could not be loaded at all. Sometimes this is
-            // because of a configuration problem, other times this can be
+            // because of a components problem, other times this can be
             // because of how Select2 helps load all possible translation files.
             if (options.debug && window.console && console.warn) {
               console.warn(

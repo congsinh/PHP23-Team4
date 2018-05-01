@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{asset('admin/bower_components/Ionicons/css/ionicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/dist/css/AdminLTE.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/dist/css/skins/skin-blue.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/nouislider.min.css')}}">{{--range price :https://refreshless.com/nouislider/events-callbacks/--}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the pages via file:// -->
     <!--[if lt IE 9]>
@@ -18,8 +20,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Google Font -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <link rel="stylesheet" href="{{asset('admin/dist/css/style.css')}}">
     @yield('style')
 </head>
@@ -55,13 +56,14 @@
     @include('admin.layouts.footer')
 </div>
 <script src="{{asset('admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
-<script src="{{asset('js/accounting.min.js')}}"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('admin/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('admin/dist/js/adminlte.min.js')}}"></script>
 <!-- CKEditor JavaScript -->
 <script src="//cdn.ckeditor.com/4.9.2/full/ckeditor.js"></script>
+<script src="{{asset('js/nouislider.min.js')}}"></script>
+<script src="{{asset('js/wNumb.js')}}"></script>
 <!-- script -->
 <script src="{{asset('admin/dist/js/script.js')}}"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>

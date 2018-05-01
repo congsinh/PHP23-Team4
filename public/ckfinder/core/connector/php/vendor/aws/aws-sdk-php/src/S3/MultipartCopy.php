@@ -17,7 +17,7 @@ class MultipartCopy extends AbstractUploadManager
     /**
      * Creates a multipart upload for copying an S3 object.
      *
-     * The valid configuration options are as follows:
+     * The valid components options are as follows:
      *
      * - acl: (string) ACL to set on the object being upload. Objects are
      *   private by default.
