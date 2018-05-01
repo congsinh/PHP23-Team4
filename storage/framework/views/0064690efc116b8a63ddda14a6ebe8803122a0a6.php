@@ -37,7 +37,7 @@
                 <a href="<?php echo e(route('products.index')); ?>"><i class="fa fa-link"></i> <span>Sản phẩm</span></a>
             </li>
             <li  class="" >
-                <a href="#"><i class="fa fa-link"></i> <span>Đơn hàng</span></a>
+                <a href="<?php echo e(route('orders.index')); ?>"><i class="fa fa-link"></i> <span>Đơn hàng</span></a>
             </li>
             <li  class="" >
                 <a href="<?php echo e(route('manufacturer.index')); ?>"><i class="fa fa-link"></i> <span>Đối tác</span></a>

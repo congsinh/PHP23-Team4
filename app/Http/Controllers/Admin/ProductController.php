@@ -18,10 +18,58 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::with('imageDetail')->paginate(10);
-        return view('admin.products.list',compact(['products']));
+        $status = Product::getListStatusWithBootstrapLabels();
+        $query = Product::query();
+        if ($request->has('cate') && !empty($request->cate)) {
+            $query = $query->where('category_id', $request->cate);
+        }
+
+        if ($request->has('manu') && !empty($request->manu)) {
+            $query = $query->where('manufacture_id', $request->manu);
+        }
+
+        if ($request->has('status') && !empty($request->status)) {
+            switch ($request->status){
+                case 1://bán chạy
+                    $query = $query->orderByDesc('sales')->limit(5);
+                    break;
+                case 2://bán it
+                    $query = $query->orderBy('sales','asc')->limit(5);
+                    break;
+                case 3:// sắp hết hàng
+                    $query = $query->where('quantity_store', '<=',5);
+                    break;
+                case 4:// hết hàng
+                    $query = $query->where('quantity_store',0);
+                    break;
+            }
+        }
+        if($request->has('min_price') && $request->has('max_price')){
+            $min = $request->min_price;
+            $max = $request->max_price;
+            $query = $query->whereBetween('price',[$min,$max]);
+        }
+        if($request->ajax()){
+            $products = $query
+                ->with('imageDetail')
+                ->paginate(10)
+                ->appends([
+                    'cate' => $request->cate,
+                    'manu' => $request->manu,
+                    'status' => $request->status,
+                    'min_price' => $request->min_price,
+                    'max_price' => $request->max_price,
+                ]); // appends :  gán params request lên url paginate
+            $view = view('admin.ajax.components.products',compact(['products','status']))->render();
+            return response()->json(['view' => $view],200);
+        }else{
+            $products = $query->with('imageDetail')->orderByDesc('created_at')->paginate(10);
+            $categories = Category::with('subcate')->where('parent_id',null)->get();
+            $manufacturers = Manufacturer::all();
+            return view('admin.products.list',compact(['products','categories','manufacturers','status']));
+        }
     }
 
     /**

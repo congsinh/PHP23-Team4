@@ -5,7 +5,7 @@
     </style>
     @endsection
 @section('title')
-    Danh mục sản phẩm
+    Quản lý danh mục
 @endsection
 @section('action')
     Danh sách

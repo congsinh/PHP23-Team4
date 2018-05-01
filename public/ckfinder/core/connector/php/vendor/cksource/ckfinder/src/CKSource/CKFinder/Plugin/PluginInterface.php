@@ -31,10 +31,10 @@ interface PluginInterface
     public function setContainer(CKFinder $app);
 
     /**
-     * Returns an array with the default configuration for this plugin. Any of
-     * the plugin configuration options can be overwritten in the CKFinder configuration file.
+     * Returns an array with the default components for this plugin. Any of
+     * the plugin components options can be overwritten in the CKFinder components file.
      *
-     * @return array default plugin configuration
+     * @return array default plugin components
      */
     public function getDefaultConfig();
 }

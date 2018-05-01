@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 class OrderController extends Controller
@@ -11,9 +12,15 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if($request->ajax()){
+
+        }
+        else{
+            $orders = Order::with('products')->orderByDesc('created_at')->paginate(10);
+            return view('admin.orders.list',compact(['orders']));
+        }
     }
 
     /**

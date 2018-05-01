@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 class AjaxController extends Controller
 {
     public function getConfiguration(Request $request){
@@ -39,26 +40,7 @@ class AjaxController extends Controller
                 break;
         }
         $view = view('admin.ajax.configuration.config',compact(['configurations']))->render();
-        return response()->json(['success' => true, 'view'=>$view]);
-    }
-
-
-    public function filterProducts(){
-//        $query = User::query();
-//
-//        if ($this == $that) {
-//        $query = $query->where('this', 'that');
-//        }
-//
-//        if ($this == $another_thing) {
-//            $query = $query->where('this', 'another_thing');
-//        }
-//
-//        if ($this == $yet_another_thing) {
-//            $query = $query->orderBy('this');
-//        }
-//
-//        $results = $query->get();
+        return response()->json(['view'=>$view],200);
     }
 }
 

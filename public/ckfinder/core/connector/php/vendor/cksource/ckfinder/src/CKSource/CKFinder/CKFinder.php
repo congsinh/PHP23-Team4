@@ -77,8 +77,8 @@ class CKFinder extends Container implements HttpKernelInterface
     /**
      * Constructor.
      *
-     * @param array|string $config an array containing configuration options or a path
-     *                             to the configuration file.
+     * @param array|string $config an array containing components options or a path
+     *                             to the components file.
      *
      * @see config.php
      */
@@ -397,7 +397,7 @@ class CKFinder extends Container implements HttpKernelInterface
     }
 
     /**
-     * Registers plugins defined in the configuration file.
+     * Registers plugins defined in the components file.
      *
      * @throws \LogicException in case the plugin was not found or is invalid.
      */

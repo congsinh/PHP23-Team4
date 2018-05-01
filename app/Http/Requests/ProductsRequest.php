@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use Illuminate\Http\Request;
 class ProductsRequest extends FormRequest
 {
     /**
@@ -24,8 +24,6 @@ class ProductsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:products,name,'.$this->id,
-            'name' => 'required',
             'description' => 'required|min:100',
             'quantity_store' => 'required',
             'category_id' => 'required',
@@ -34,6 +32,7 @@ class ProductsRequest extends FormRequest
             'price' => 'required|numeric|min:1000',
             'manufacture_id' => 'required',
             'configuration' => 'required',
+            'name' => 'required|unique:products,name,'
         ];
     }
 

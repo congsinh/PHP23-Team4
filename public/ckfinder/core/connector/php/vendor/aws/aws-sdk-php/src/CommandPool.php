@@ -16,7 +16,7 @@ class CommandPool implements PromisorInterface
     private $each;
 
     /**
-     * The CommandPool constructor accepts a hash of configuration options:
+     * The CommandPool constructor accepts a hash of components options:
      *
      * - concurrency: (callable|int) Maximum number of commands to execute
      *   concurrently. Provide a function to resize the pool dynamically. The
@@ -82,7 +82,7 @@ class CommandPool implements PromisorInterface
      * @param array              $config   Configuration options.
      *
      * @return array
-     * @see \Aws\CommandPool::__construct for available configuration options.
+     * @see \Aws\CommandPool::__construct for available components options.
      */
     public static function batch(
         AwsClientInterface $client,

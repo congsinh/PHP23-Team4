@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * The "unauthorized exception" class.
  *
- * Thrown when ACL configuration does not allow for an operation,
+ * Thrown when ACL components does not allow for an operation,
  * e.g. uploading a file to a folder without the `FILE_CREATE` permission.
  *
  * @copyright 2016 CKSource - Frederico Knabben
