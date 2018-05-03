@@ -97,7 +97,7 @@ class ResizedImageRepository
 
         if (!$this->acl->isAllowed($sourceFileResourceType->getName(), $sourceFileDir, Permission::IMAGE_RESIZE_CUSTOM) &&
             !$this->isSizeAllowedInConfig($requestedWidth, $requestedHeight)) {
-            throw new UnauthorizedException('Provided size is not allowed in images.sizes configuration');
+            throw new UnauthorizedException('Provided size is not allowed in images.sizes components');
         }
 
         if (!$resizedImage->exists() && $resizedImage->requestedSizeIsValid()) {
@@ -159,7 +159,7 @@ class ResizedImageRepository
     }
 
     /**
-     * Checks if the provided image size is allowed in the configuration.
+     * Checks if the provided image size is allowed in the components.
      *
      * This is checked when `Permission::IMAGE_RESIZE_CUSTOM`
      * is not allowed in the source file folder.
@@ -167,7 +167,7 @@ class ResizedImageRepository
      * @param int $width
      * @param int $height
      *
-     * @return bool `true` if the provided size is allowed in the configuration.
+     * @return bool `true` if the provided size is allowed in the components.
      */
     protected function isSizeAllowedInConfig($width, $height)
     {
@@ -183,17 +183,17 @@ class ResizedImageRepository
     }
 
     /**
-     * Returns the size name defined in the configuration, where width
+     * Returns the size name defined in the components, where width
      * or height are equal to those given in parameters.
      *
      * Resized images keep the original image aspect ratio.
-     * When an image is resized using the size from the configuration,
+     * When an image is resized using the size from the components,
      * at least one of the borders has the same length.
      *
      * @param int $width
      * @param int $height
      *
-     * @return bool `true` if the size from the configuration was used.
+     * @return bool `true` if the size from the components was used.
      */
     protected function getSizeNameFromConfig($width, $height)
     {
@@ -308,7 +308,7 @@ class ResizedImageRepository
      * @param string       $sourceFilePath         source file backend-relative path
      * @param string       $sourceFileName         source file name
      * @param array        $filterSizes            array containing names of sizes defined
-     *                                             in the `images.sizes` configuration
+     *                                             in the `images.sizes` components
      *
      * @return array
      */

@@ -94,7 +94,7 @@ interface AwsClientInterface
     public function getApi();
 
     /**
-     * Get a client configuration value.
+     * Get a client components value.
      *
      * @param string|null $option The option to retrieve. Pass null to retrieve
      *                            all options.
@@ -138,9 +138,9 @@ interface AwsClientInterface
      * Wait until a resource is in a particular state.
      *
      * @param string|callable $name Name of the waiter that defines the wait
-     *                              configuration and conditions.
+     *                              components and conditions.
      * @param array  $args          Args to be used with each command executed
-     *                              by the waiter. Waiter configuration options
+     *                              by the waiter. Waiter components options
      *                              can be provided in an associative array in
      *                              the @waiter key.
      * @return void
@@ -157,9 +157,9 @@ interface AwsClientInterface
      *     $waiter->promise()->then(function () { echo 'Done!'; });
      *
      * @param string|callable $name Name of the waiter that defines the wait
-     *                              configuration and conditions.
+     *                              components and conditions.
      * @param array  $args          Args to be used with each command executed
-     *                              by the waiter. Waiter configuration options
+     *                              by the waiter. Waiter components options
      *                              can be provided in an associative array in
      *                              the @waiter key.
      * @return \Aws\Waiter

@@ -23,7 +23,7 @@ abstract class AbstractUploadManager implements Promise\PromisorInterface
 {
     const DEFAULT_CONCURRENCY = 5;
 
-    /** @var array Default values for base multipart configuration */
+    /** @var array Default values for base multipart components */
     private static $defaultConfig = [
         'part_size'       => null,
         'state'           => null,

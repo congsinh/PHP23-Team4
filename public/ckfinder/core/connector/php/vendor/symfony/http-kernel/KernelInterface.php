@@ -32,7 +32,7 @@ interface KernelInterface extends HttpKernelInterface, \Serializable
     public function registerBundles();
 
     /**
-     * Loads the container configuration.
+     * Loads the container components.
      *
      * @param LoaderInterface $loader A LoaderInterface instance
      */

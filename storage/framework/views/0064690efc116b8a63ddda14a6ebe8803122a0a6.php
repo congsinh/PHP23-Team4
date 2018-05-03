@@ -6,7 +6,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?php echo e(asset('admin/dist/img/user2-160x160.jpg')); ?>" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>Admin</p>
@@ -37,7 +37,7 @@
                 <a href="<?php echo e(route('products.index')); ?>"><i class="fa fa-link"></i> <span>Sản phẩm</span></a>
             </li>
             <li  class="" >
-                <a href="#"><i class="fa fa-link"></i> <span>Đơn hàng</span></a>
+                <a href="<?php echo e(route('orders.index')); ?>"><i class="fa fa-link"></i> <span>Đơn hàng</span></a>
             </li>
             <li  class="" >
                 <a href="<?php echo e(route('manufacturer.index')); ?>"><i class="fa fa-link"></i> <span>Đối tác</span></a>

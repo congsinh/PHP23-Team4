@@ -5,21 +5,42 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 class AjaxController extends Controller
 {
     public function getConfiguration(Request $request){
         $category = Category::findOrFail($request->id)->category->id;
         switch ($category){
             case '1':
-                $view = view('admin.ajax.configuration.smartphone')->render();
+                $configurations = [
+                    'Màn hình' => '',
+                    'Hệ điều hành' => '',
+                    'Camera sau' => '',
+                    'Camera trước' => '',
+                    'CPU' => '',
+                    'RAM' => '',
+                    'Thẻ SIM' => '',
+                    'Dung lượng pin' => '',
+                ];
                 break;
             case '2':
-                $view = view('admin.ajax.configuration.smartphone')->render();
+                $configurations = [
+                    'CPU' => '',
+                    'RAM' => '',
+                    'Ổ cứng' => '',
+                    'Màn hình' => '',
+                    'Cổng kết nối' => '',
+                    'Hệ điều hành' => '',
+                    'Thiết kế' => '',
+                    'Kích thước' => '',
+                ];
                 break;
             case '3':
-                $view = view('admin.ajax.configuration.smartphone')->render();
+                $configurations = [];
                 break;
         }
-        return response()->json(['success' => true, 'view'=>$view]);
+        $view = view('admin.ajax.components.config',compact(['configurations']))->render();
+        return response()->json(['view'=>$view],200);
     }
 }
+

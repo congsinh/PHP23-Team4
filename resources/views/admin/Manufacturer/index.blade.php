@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title')
-    Đối tác
+    Quản lý đối tác
 @endsection
 @section('action')
     Danh sách

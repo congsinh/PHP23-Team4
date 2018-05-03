@@ -24,8 +24,10 @@ Route::group(['namespace' => 'Admin'],function(){
         Route::resource('products','ProductController');
         Route::resource('category', 'CategoryController');
         Route::resource('manufacturer', 'ManufacturerController');
+        Route::resource('orders', 'OrderController');
     });
-    Route::post('configuration','AjaxController@getConfiguration')->name('configuration');
+    Route::get('configuration','AjaxController@getConfiguration')->name('configuration');
+    Route::get('filter-products','AjaxController@getfilterProducts')->name('filter-product');
 });
 
 

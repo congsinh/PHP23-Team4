@@ -1,3 +1,9 @@
+.plr-5{
+    padding:0 5px !important;;
+}
+.pt-5{
+    padding-top: 5px;
+}
 table tr,table th,table td {
     vertical-align: middle !important;
 }
@@ -67,4 +73,55 @@ button#btn-add{
 }
 .table.configuration>tbody>tr>td{
     padding:0px !important;
+}
+div.wp-image{
+    position: relative;
+    display: inline-block !important;
+}
+img.listimage-edit{
+    display:inline-block;
+    float:left;
+    min-width: 100px !important;
+    max-width:120px !important;
+    max-height: 120px !important;
+    margin:5px;
+}
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em  !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+    box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: normal !important;
+    text-align: left !important;
+    width:auto;
+    padding:0 10px;
+    border-bottom:none;
+}
+#range-price.noUi-horizontal .noUi-handle {
+    height: 15px !important;
+    width: 20px !important;
+    top: -4px !important;
+}
+#range-price.noUi-horizontal {
+    height: 10px !important;
+}
+.noUi-handle:after, .noUi-handle:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 8px;
+    width: 1px;
+    background: #E8E7E6;
+    top: 2px;
+}
+.noUi-handle:after {
+    left: 6px !important;
+}
+.noUi-handle:before {
+    left: 10px !important;
 }

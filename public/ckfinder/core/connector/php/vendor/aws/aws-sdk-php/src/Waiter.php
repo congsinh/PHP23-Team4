@@ -16,7 +16,7 @@ use GuzzleHttp\Promise\RejectedPromise;
  * conditions. You can use waiters in a blocking or non-blocking way, depending
  * on whether you call wait() on the promise.
 
- * The configuration for the waiter must include information about the operation
+ * The components for the waiter must include information about the operation
  * and the conditions for wait completion.
  */
 class Waiter implements PromisorInterface
@@ -30,13 +30,13 @@ class Waiter implements PromisorInterface
     /** @var array Params to use with each attempt operation. */
     private $args;
 
-    /** @var array Waiter configuration. */
+    /** @var array Waiter components. */
     private $config;
 
-    /** @var array Default configuration options. */
+    /** @var array Default components options. */
     private static $defaults = ['initDelay' => 0, 'before' => null];
 
-    /** @var array Required configuration options. */
+    /** @var array Required components options. */
     private static $required = [
         'acceptors',
         'delay',
@@ -45,7 +45,7 @@ class Waiter implements PromisorInterface
     ];
 
     /**
-     * The array of configuration options include:
+     * The array of components options include:
      *
      * - acceptors: (array) Array of acceptor options
      * - delay: (int) Number of seconds to delay between attempts
@@ -58,7 +58,7 @@ class Waiter implements PromisorInterface
      * @param array              $args   Command arguments.
      * @param array              $config Waiter config that overrides defaults.
      *
-     * @throws \InvalidArgumentException if the configuration is incomplete.
+     * @throws \InvalidArgumentException if the components is incomplete.
      */
     public function __construct(
         AwsClientInterface $client,
@@ -75,7 +75,7 @@ class Waiter implements PromisorInterface
         foreach (self::$required as $key) {
             if (!isset($this->config[$key])) {
                 throw new \InvalidArgumentException(
-                    'The provided waiter configuration was incomplete.'
+                    'The provided waiter components was incomplete.'
                 );
             }
         }
@@ -176,7 +176,7 @@ class Waiter implements PromisorInterface
 
     /**
      * @param result $result   Result or exception.
-     * @param array  $acceptor Acceptor configuration being checked.
+     * @param array  $acceptor Acceptor components being checked.
      *
      * @return bool
      */
@@ -189,7 +189,7 @@ class Waiter implements PromisorInterface
 
     /**
      * @param result $result   Result or exception.
-     * @param array  $acceptor Acceptor configuration being checked.
+     * @param array  $acceptor Acceptor components being checked.
      *
      * @return bool
      */
@@ -211,7 +211,7 @@ class Waiter implements PromisorInterface
 
     /**
      * @param result $result   Result or exception.
-     * @param array  $acceptor Acceptor configuration being checked.
+     * @param array  $acceptor Acceptor components being checked.
      *
      * @return bool
      */
@@ -233,7 +233,7 @@ class Waiter implements PromisorInterface
 
     /**
      * @param result $result   Result or exception.
-     * @param array  $acceptor Acceptor configuration being checked.
+     * @param array  $acceptor Acceptor components being checked.
      *
      * @return bool
      */
@@ -250,7 +250,7 @@ class Waiter implements PromisorInterface
 
     /**
      * @param result $result   Result or exception.
-     * @param array  $acceptor Acceptor configuration being checked.
+     * @param array  $acceptor Acceptor components being checked.
      *
      * @return bool
      */
