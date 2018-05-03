@@ -30,16 +30,17 @@ class ProductController extends Controller
             $query = $query->where('manufacture_id', $request->manu);
         }
 
+
         if ($request->has('status') && !empty($request->status)) {
             switch ($request->status){
                 case 1://bán chạy
-                    $query = $query->orderByDesc('sales')->limit(5);
+                    $query = $query->orderByDesc('sales')->limit(10);
                     break;
                 case 2://bán it
-                    $query = $query->orderBy('sales','asc')->limit(5);
+                    $query = $query->orderBy('sales','asc')->limit(10);
                     break;
                 case 3:// sắp hết hàng
-                    $query = $query->where('quantity_store', '<=',5);
+                    $query = $query->where('quantity_store', '<=',10);
                     break;
                 case 4:// hết hàng
                     $query = $query->where('quantity_store',0);
@@ -64,12 +65,11 @@ class ProductController extends Controller
                 ]); // appends :  gán params request lên url paginate
             $view = view('admin.ajax.components.products',compact(['products','status']))->render();
             return response()->json(['view' => $view],200);
-        }else{
-            $products = $query->with('imageDetail')->orderByDesc('created_at')->paginate(10);
-            $categories = Category::with('subcate')->where('parent_id',null)->get();
-            $manufacturers = Manufacturer::all();
-            return view('admin.products.list',compact(['products','categories','manufacturers','status']));
         }
+        $products = $query->with('imageDetail')->orderByDesc('created_at')->paginate(10);
+        $categories = Category::with('subcate')->where('parent_id',null)->get();
+        $manufacturers = Manufacturer::all();
+        return view('admin.products.list',compact(['products','categories','manufacturers','status']));
     }
 
     /**

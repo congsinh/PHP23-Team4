@@ -4,18 +4,12 @@
         <tr style="background-color: #3c8dbc;color:white;">
             <th style="width: 20px">STT</th>
             <th style="width: 50px">Tên khách hàng</th>
-            <th style="width: 200px">Phone</th>
+            <th style="width: 50px">Phone</th>
             <th style="width: 50px">Địa chỉ</th>
             <th style="width: 50px">Tiền thanh toán</th>
-            <th style="width: 50px">Ghi chú</th>
-            <th style="width: 50px">Ngày tạo</th>
-            {{--<th style="width: 50px">Sản phẩm</th>--}}
+            <th style="width: 80px">Ngày tạo</th>
             <th style="width: 50px">Trạng thái</th>
-            <th style="width: 50px">
-                <a href="{{route('products.create')}}"  class="btn btn-sm btn-success">
-                    <span class="glyphicon glyphicon-plus"></span>&nbsp;Thêm
-                </a>
-            </th>
+            <th style="width: 50px">Thao tác</th>
         </tr>
         </thead>
         <tbody>
@@ -25,18 +19,12 @@
                 <td>{{$order->name}}</td>
                 <td>{{$order->phone}}</td>
                 <td>{{$order->address}}</td>
-                <td>{{$order->total_pay}}</td>
-                <td>{{$order->note}}</td>
+                <td>{{ number_format($order->total_pay) }}&nbsp;VNĐ</td>
                 <td>{{$order->created_at}}</td>
-                {{--<td>--}}
-                    {{--@foreach($order->products as $product)--}}
-                        {{--{{$product->name}}--}}
-                    {{--@endforeach--}}
-                {{--</td>--}}
-                <td>{{$order->status}}</td>
+                <td>{!! $listStatusWithLabels[$order->status] !!}</td>
                 <td>
-                    <a href="{{ route('orders.show',['id'=>$order->id]) }}" class="btn btn-info btn-xs" style="margin:2px !important">
-                        <i class="fa fa-eye fa-fw"></i><span>Sửa</span>
+                    <a href="{{ route('orders.edit',['id'=>$order->id]) }}" class="btn btn-info btn-xs" style="margin:2px !important">
+                        <i class="fa fa-eye fa-fw"></i><span>Xem</span>
                     </a>
                     <a href="" class="btn btn-danger btn-xs  del" style="margin:2px !important" data-toggle="modal" data-target="#modal-del">
                         <i class="glyphicon glyphicon-trash fa-fw"></i><span>Xóa</span>

@@ -58,7 +58,7 @@
                                 <table class="table configuration">
                                     @if(Input::old('category_id'))
                                         <?php
-                                        $configurations = array_combine(Input::old('components')['key'],Input::old('components')['value']);
+                                        $configurations = array_combine(Input::old('configuration')['key'],Input::old('configuration')['value']);
                                         ?>
                                         {!! view('admin.ajax.components.config',compact('configurations'))->render()  !!}
                                     @endif
@@ -108,15 +108,15 @@
                         id:id
                     },
                     success:function(data){
-                        $('table.components').html(data.view)
+                        $('table.configuration').html(data.view)
                     }
                 });
             })
             $('#btn-add').on('click',function(){
-                $('table.components').append(
+                $('table.configuration').append(
                     '    <tr>' +
-                    '        <td width="120px"><input class="form-control" name=\'components[key][]\' type=\'text\' /></td>\n' +
-                    '        <td><input class="form-control" name=\'components[value][]\' type=\'text\' /></td>\n' +
+                    '        <td width="120px"><input class="form-control" name=\'configuration[key][]\' type=\'text\' /></td>\n' +
+                    '        <td><input class="form-control" name=\'configuration[value][]\' type=\'text\' /></td>\n' +
                     '    </tr>'
                 );
             });

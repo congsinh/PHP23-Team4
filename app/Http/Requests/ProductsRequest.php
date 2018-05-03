@@ -23,16 +23,25 @@ class ProductsRequest extends FormRequest
      */
     public function rules()
     {
+        switch ($this->method()){
+            case 'PUT':
+                $rule_image = '';
+                break;
+            default :
+                $rule_image = 'required';
+                break;
+        }
+
         return [
+            'name' => 'required|unique:products,name,' . $this->product,
             'description' => 'required|min:100',
             'quantity_store' => 'required',
             'category_id' => 'required',
-            'image_detail' => 'required',
+            'image_detail' => $rule_image,
             'image_detail.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'price' => 'required|numeric|min:1000',
             'manufacture_id' => 'required',
-            'configuration' => 'required',
-            'name' => 'required|unique:products,name,'
+            'configuration' => 'required'
         ];
     }
 
@@ -41,6 +50,7 @@ class ProductsRequest extends FormRequest
             'name.required' => 'Tên sản phẩm không được để trống !',
             'name.unique' => 'Tên sản phẩm đã bi trùng !',
             'category_id.required' => 'Danh mục sản phẩm không được để trống !',
+            'quantity_store.required' => 'Số lượng trong kho không được để trống !',
             'description.required' => 'Mô tả không được để trống !',
             'description.min' => 'Mô tả ít nhất 100 ký tự !',
             'image_detail.required' => 'Hình ảnh không được để trống !',
