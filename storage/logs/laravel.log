@@ -11641,3 +11641,41 @@ Did you mean one of these?
 #61 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/server.php(21): require_once('/Applications/M...')
 #62 {main}
 "} 
+[2018-05-03 20:20:20] local.ERROR: Cannot use App\Models\Category as Category because the name is already in use {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot use App\\Models\\Category as Category because the name is already in use at /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/app/Providers/AppServiceProvider.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2018-05-03 20:37:09] local.ERROR: Cannot use App\Models\Category as Category because the name is already in use {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot use App\\Models\\Category as Category because the name is already in use at /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/app/Providers/AppServiceProvider.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2018-05-03 20:38:14] local.ERROR: Cannot use App\Models\Category as Category because the name is already in use {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot use App\\Models\\Category as Category because the name is already in use at /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/app/Providers/AppServiceProvider.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2018-05-03 20:38:51] local.ERROR: Call to undefined relationship [children] on model [App\Models\Category]. {"exception":"[object] (Illuminate\\Database\\Eloquent\\RelationNotFoundException(code: 0): Call to undefined relationship [children] on model [App\\Models\\Category]. at /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Database/Eloquent/RelationNotFoundException.php:34)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(550): Illuminate\\Database\\Eloquent\\RelationNotFoundException::make(Object(App\\Models\\Category), 'children')
+#1 [internal function]: Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}()
+#2 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Relation.php(89): call_user_func(Object(Closure))
+#3 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(552): Illuminate\\Database\\Eloquent\\Relations\\Relation::noConstraints(Object(Closure))
+#4 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(520): Illuminate\\Database\\Eloquent\\Builder->getRelation('children')
+#5 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(500): Illuminate\\Database\\Eloquent\\Builder->eagerLoadRelation(Array, 'children', Object(Closure))
+#6 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(468): Illuminate\\Database\\Eloquent\\Builder->eagerLoadRelations(Array)
+#7 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/app/Providers/AppServiceProvider.php(19): Illuminate\\Database\\Eloquent\\Builder->get()
+#8 [internal function]: App\\Providers\\AppServiceProvider->boot()
+#9 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#10 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#11 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(794): Illuminate\\Container\\Container->call(Array)
+#14 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(777): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\AppServiceProvider))
+#15 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\AppServiceProvider), 16)
+#16 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(778): array_walk(Array, Object(Closure))
+#17 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#18 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#19 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(297): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#20 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#21 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 {main}
+"} 
