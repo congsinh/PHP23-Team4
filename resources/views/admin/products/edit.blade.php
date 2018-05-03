@@ -17,7 +17,7 @@
                         <label>Danh mục</label>
                         <select class="form-control" name="category_id" id="category" >
                             <option value="">Xin chọn danh mục sản phẩm..</option>
-                            @forelse($category as $cate)
+                            @forelse($categories as $cate)
                                 <optgroup label="----{{$cate->name}}----">
                                     @forelse($cate->subcate as $sub)
                                         <option value="{{$sub->id}}" @if($sub->id == $product->category_id) selected @endif>{{$sub->name}} </option>
@@ -100,7 +100,7 @@
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-success">Lưu</button>
-                <button type="reset" class="btn btn-default">Làm lại</button>
+                <a href="{{url()->previous()}}" class="btn btn-default">Làm lại</a>
             </div>
         </form>
     </div>

@@ -4,6 +4,19 @@
 .pt-5{
     padding-top: 5px;
 }
+.pr-0{
+    padding-right: 0px;
+}
+.pl-0{
+    padding-left: 0px;
+}
+.pt-10{
+    padding-top: 10px;
+}
+input.none-style, textarea.none-style{
+    border:none;
+    outline: none;
+}
 table tr,table th,table td {
     vertical-align: middle !important;
 }
@@ -124,4 +137,6 @@ legend.scheduler-border {
 }
 .noUi-handle:before {
     left: 10px !important;
+}
+textarea#note{
 }

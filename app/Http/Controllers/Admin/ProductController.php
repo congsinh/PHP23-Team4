@@ -67,9 +67,8 @@ class ProductController extends Controller
             return response()->json(['view' => $view],200);
         }
         $products = $query->with('imageDetail')->orderByDesc('created_at')->paginate(10);
-        $categories = Category::with('subcate')->where('parent_id',null)->get();
-        $manufacturers = Manufacturer::all();
-        return view('admin.products.list',compact(['products','categories','manufacturers','status']));
+
+        return view('admin.products.list',compact(['products','status']));
     }
 
     /**
@@ -79,9 +78,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $category = Category::with('subcate')->where('parent_id',null)->get();
-        $manufacturers = Manufacturer::all();
-        return view('admin.products.add',compact(['category','manufacturers']));
+
+        return view('admin.products.add');
     }
 
     /**
@@ -130,9 +128,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::findOrFail($id);
-        $category = Category::with('subcate')->where('parent_id',null)->get();
-        $manufacturers = Manufacturer::all();
-        return view('admin.products.edit',compact(['product','category','manufacturers']));
+        return view('admin.products.edit',compact(['product']));
     }
 
     /**
