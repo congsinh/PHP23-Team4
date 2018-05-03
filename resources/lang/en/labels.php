@@ -10,6 +10,12 @@ return [
         1 => 'Còn hàng',
         2 => 'Hết hàng',
         3 => 'Sắp hết hàng',
-
+    ],
+    'orders' => [
+        1 => 'Đã hủy',
+        2 => 'Chờ duyệt',
+        3 => 'Đang chuyển hàng',
+        4 => 'Đã thanh toán',
     ]
+
 ];

@@ -28,9 +28,7 @@ class AdminController extends Controller
         if(Auth::viaRemember() || Auth::check()){
             return redirect('admin/dashboard');
         }
-        else{
-            return view('admin.login');
-        }
+        return view('admin.login');
     }
 
     /**

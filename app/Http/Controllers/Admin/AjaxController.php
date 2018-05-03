@@ -39,7 +39,7 @@ class AjaxController extends Controller
                 $configurations = [];
                 break;
         }
-        $view = view('admin.ajax.configuration.config',compact(['configurations']))->render();
+        $view = view('admin.ajax.components.config',compact(['configurations']))->render();
         return response()->json(['view'=>$view],200);
     }
 }
