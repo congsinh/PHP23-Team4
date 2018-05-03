@@ -38,24 +38,19 @@ class CategoryController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-        $this->validate($request,[
-            'name'=> 'required'
-        ]);
+        $category_array = $request->all();
+        $category_array['slug'] = str_slug($request->name);
+        $category = Category::create($category_array);
+        $count = Category::where('parent_id', null)->count();
+
         if($request->parent_id){
-            $category_array = $request->all();
-            $category_array['slug'] = str_slug($request->name);
-            $category = Category::create($category_array);
-            $count = Category::where('parent_id',null)->count();
-            $nameCategory = Category::select('name')->where('parent_id',null)->where('id',$request->parent_id)->first();
+            $nameCategory = Category::select('name')
+                ->where(['parent_id'=> null, 'id' => $request->parent_id])
+                ->first();
             return response()->json([$category,$count,$nameCategory],200);
-        }else{
-            $category_array = $request->all();
-            $category_array['slug'] = str_slug($request->name);
-            $category = Category::create($category_array);
-            $count = Category::where('parent_id',null)->count();
-            return response()->json([$category,$count],200);
         }
 
+        return response()->json([$category,$count],200);
     }
 
     /**
