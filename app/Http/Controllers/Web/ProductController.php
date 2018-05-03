@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 
-class ShopController extends Controller
+class ProductController extends Controller
 {
     function __construct()
     {
@@ -15,14 +15,18 @@ class ShopController extends Controller
         view()->share('categories', $categories);
     }
 
-    public function index()
+    public function index($name)
     {
-        return view('pages.shop');
-    }
-    public function showProduct()
-    {
-        $products = Product::all();
+        $products = Category::where('slug',$name)->with('products')->get();
         return view('pages.shop',['products' => $products]);
     }
+    public function show($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('pages.single_product',['product' => $product]);
+    }
+
+
+
 
 }

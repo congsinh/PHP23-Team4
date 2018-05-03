@@ -18,12 +18,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('pages.home');
-    }
-    public function lastedProduct()
-    {
         $products = Product::all()->sortByDesc('created_at')->take(10);
         return view('pages.home',['products' => $products]);
     }
-
 }

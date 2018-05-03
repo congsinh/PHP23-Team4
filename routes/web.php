@@ -26,23 +26,12 @@ Route::group(['namespace' => 'Admin'],function(){
 
 
 Route::group(['namespace' => 'Web'],function(){
-//    Route::get('home','PageController@home');
-//    Route::get('home','PageController@lastedProduct');
-//    Route::get('home','PageController@detail');
-//    Route::get('shop','PageController@shop');
-
     Route::group(['prefix'=>'/'],function(){
         Route::get('', 'HomeController@index');
-        Route::get('', 'HomeController@lastedProduct');
     });
-    Route::group(['prefix' => 'shop'], function (){
-        Route::get('', 'ShopController@index');
-        Route::get('', 'ShopController@showProduct');
-    });
-    Route::group(['prefix' => 'product-detail'], function ()
-    {
-        Route::get('', 'ProductDetailController@index');
-    });
+    Route::get('/{category}','ProductController@getProducts');
+    Route::get('product/{id}', 'ProductController@show');
+    Route::get('product', 'ProductController@index');
 
 });
 
