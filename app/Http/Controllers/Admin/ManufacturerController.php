@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Manufacturer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 class ManufacturerController extends Controller
@@ -13,7 +14,8 @@ class ManufacturerController extends Controller
      */
     public function index()
     {
-        //
+        $manufacturers = Manufacturer::all();
+        return view('admin.Manufacturer.index',compact('manufacturers'));
     }
 
     /**
@@ -34,7 +36,11 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $manufacturer_array = $request->all();
+        $manufacturer_array['slug'] = $request->name;
+        $manufacturer = Manufacturer::create($manufacturer_array);
+        $count = Manufacturer::count();
+        return response()->json([$manufacturer,$count],200);
     }
 
     /**
@@ -45,7 +51,8 @@ class ManufacturerController extends Controller
      */
     public function show($id)
     {
-        //
+        $manufacturer = Manufacturer::findorFail($id);
+        return response()->json($manufacturer,200);
     }
 
     /**
@@ -68,7 +75,11 @@ class ManufacturerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $manufacturer_array = $request->all();
+        $manufacturer_array['slug'] = str_slug($request->name);
+        $manufacturer = Manufacturer::findorFail($id);
+        $manufacturer->update($manufacturer_array);
+        return response()->json($manufacturer,200);
     }
 
     /**
@@ -79,6 +90,7 @@ class ManufacturerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $manufacturer = Manufacturer::destroy($id);
+        return response()->json($manufacturer,200);
     }
 }

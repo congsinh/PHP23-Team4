@@ -1,5 +1,5 @@
     /**
-     * Default configuration settings
+     * Default components settings
      */
     getDefaults = function () {
         return {
