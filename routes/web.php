@@ -29,17 +29,11 @@ Route::group(['namespace' => 'Admin'],function(){
     Route::get('configuration','AjaxController@getConfiguration')->name('configuration');
     Route::get('filter-products','AjaxController@getfilterProducts')->name('filter-product');
 });
-
-
-Route::group(['namespace' => 'Web'],function(){
-    Route::group(['prefix'=>'/'],function(){
+Route::group(['namespace' => 'Web'],function() {
+    Route::group(['prefix' => '/'], function () {
         Route::get('', 'HomeController@index');
     });
-    Route::get('/{category}','ProductController@getProducts');
+    Route::get('/{category}', 'ProductController@getProducts');
     Route::get('product/{id}', 'ProductController@show');
     Route::get('product', 'ProductController@index');
-
 });
-
-
-//Ajax

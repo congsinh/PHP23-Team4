@@ -146,6 +146,8 @@
                         <a href="" class="wid-view-more">View All</a>
                         <div class="single-wid-product">
                             <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-1.jpg")}}" alt="" class="product-thumb"></a>
+<<<<<<< HEAD
+=======
                             <h2><a href="single_product.blade.php">Apple new mac book 2015</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
@@ -158,6 +160,38 @@
                                 <ins>$400.00</ins> <del>$425.00</del>
                             </div>
                         </div>
+                        {{--<div class="single-wid-product">
+                            <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-2.jpg")}}" alt="" class="product-thumb"></a>
+>>>>>>> 27434d92bebf6d9b9ea9fcb7b7e21bdbb4d7cb63
+                            <h2><a href="single_product.blade.php">Apple new mac book 2015</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-wid-price">
+                                <ins>$400.00</ins> <del>$425.00</del>
+                            </div>
+                        </div>
+<<<<<<< HEAD
+=======
+                        <div class="single-wid-product">
+                            <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-3.jpg")}}" alt="" class="product-thumb"></a>
+                            <h2><a href="single_product.blade.php">Apple new i phone 6</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-wid-price">
+                                <ins>$400.00</ins> <del>$425.00</del>
+                            </div>
+                        </div>--}}
+>>>>>>> 27434d92bebf6d9b9ea9fcb7b7e21bdbb4d7cb63
                     </div>
                 </div>
                 <div class="col-md-4">
