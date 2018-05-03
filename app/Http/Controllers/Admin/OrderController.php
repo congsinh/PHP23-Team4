@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 class OrderController extends Controller
 {
+    public function __construct()
+    {
+        $listStatus = Order::getListStatuses();
+        $listStatusWithLabels = Order::getListStatusWithBootstrapLabels();
+        return view()->share(['listStatus' => $listStatus, 'listStatusWithLabels' => $listStatusWithLabels]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +21,6 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        $listStatus = Order::getListStatuses();
-        $listStatusWithLabels = Order::getListStatusWithBootstrapLabels();
         $query = Order::query();
         if($request->has('status') && !empty($request->status)){
             $query = $query->where('status',$request->status);
@@ -52,7 +57,7 @@ class OrderController extends Controller
                     'status' => $request->status,
                     'search' => $request->search,
                     ]);
-            $view = view('admin.ajax.components.orders',compact(['orders','listStatus','listStatusWithLabels']))->render();
+            $view = view('admin.ajax.components.orders',compact(['orders']))->render();
             return response()->json(['view' => $view],200);
         }
         $orders = $query->orderByDesc('created_at')->paginate(10);
