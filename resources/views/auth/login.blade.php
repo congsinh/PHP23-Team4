@@ -15,15 +15,21 @@
     <br><br><br><br>
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="password">Passwrod</label>
-                <input type="password" class="form-control">
-            </div>
-            <input type="submit" class="btn btn-success" value="Đăng Nhập">
+            <form action="{{ URL::route('login-user') }}" method="POST" >
+                @csrf
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Passwrod</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <input type="submit" class="btn btn-success" value="Đăng Nhập">
+                <a class="btn btn-link" href="{{ route('password.request') }}">
+                {{ __('Forgot Your Password?') }}
+                </a>
+            </form>
         </div>
 
     </div>

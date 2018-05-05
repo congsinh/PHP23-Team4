@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title')
-    Quản lý đối tác
+    Đối tác
 @endsection
 @section('action')
     Danh sách
@@ -24,11 +24,11 @@
                         <div class="col-md-12">
                             <table class="table table-bordered table-hover dataTable">
                                 <thead>
-                                    <tr>
-                                        <th width="10%">STT</th>
-                                        <th>Name</th>
-                                        <th width="20%" class="text-center"><button id="add-manufacturer" class="btn btn-primary btn-xs">Thêm</button></th>
-                                    </tr>
+                                <tr>
+                                    <th width="10%">STT</th>
+                                    <th>Name</th>
+                                    <th width="30%" class="text-center"><button id="add-manufacturer" class="btn btn-primary btn-xs">Thêm</button></th>
+                                </tr>
                                 </thead>
                                 <tbody id="add-row-manufacturer">
                                 @php $i = 1 @endphp
@@ -41,7 +41,7 @@
                                             <button class="btn btn-danger btn-xs" id="delete-manufacturer" value="{{$manufacturer->id}}">Xóa</button>
                                         </td>
                                     </tr>
-                                    @endforeach
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -62,10 +62,10 @@
                 </div>
                 <form id="manufacturerForm">
                     <div class="modal-body">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" name="name" id="name-manufacturer">
-                            </div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" name="name" id="name-manufacturer">
+                        </div>
 
                     </div>
                     <div class="modal-footer">
@@ -96,7 +96,7 @@
     </div>
 
 
-    @endsection
+@endsection
 
 @section('script')
     <script>
@@ -118,6 +118,7 @@
                 $('#manufacturerForm').trigger("reset");
                 $('#modal-manufacturer').modal('show');
                 $('#save-manufacturer').val('add-manufacturer');
+                $('#name-manufacturer-error').remove();
             });
             $('#save-manufacturer').on('click',function(e){
                 e.preventDefault();
@@ -127,10 +128,21 @@
                     }
                 });
 
+                $.get('{{url('/admin/manufacturer/create')}}',function (data) {
+                    $.each(data, function( index, value ) {
+                        var name_category = $('#name-manufacturer').val();
+                        if(value.name === name_category){
+                            var add = '<label id="name-manufacturer-error" class="error" for="name-manufacturer">Tên nhà sản xuất đã tồn tại </label>';
+                            $("#name-manufacturer").after(add);
+                        }
+                    });
+                });
+
                 var form = $("#manufacturerForm");
                 if(form.valid() === false){
                     console.log('loi');
-                }else{
+                }
+                else{
                     var name = $('#name-manufacturer').val();
                     var state = $(this).val();
                     if(state === 'add-manufacturer'){
@@ -141,7 +153,7 @@
                             dataType:'json',
                             success:function(data){
                                 console.log(data);
-                                var col = '<tr>\n' +
+                                var col = '<tr id="delete-coloum-'+data[0].id+'">\n' +
                                     '<td>'+data[1]+'</td>\n' +
                                     '<td>'+data[0].name+'</td>\n' +
                                     '<td class="text-center">\n' +
@@ -175,6 +187,7 @@
                     type : 'DELETE',
                     url : '{{url('admin/manufacturer')}}/'+id,
                     success:function(data){
+                        console.log(data);
                         $('#delete-coloum-'+id).remove();
                         $('#modal-danger').modal('hide');
                     },
@@ -185,6 +198,7 @@
                 $('#title-modal').html("Edit Manufacturer");
                 $('#manufacturerForm').trigger("reset");
                 $('#modal-manufacturer').modal('show');
+                $('#name-manufacturer-error').remove();
                 $('#save-manufacturer').val('edit-manufacturer');
                 var id = $(this).val();
                 $('#save-manufacturer').attr('data-id',id);
@@ -231,4 +245,4 @@
             })
         })
     </script>
-    @stop
+@stop
