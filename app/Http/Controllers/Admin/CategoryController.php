@@ -14,9 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-//        $categories_parent = Category::where('parent_id',null)->get();
-//        $categories_children = Category::where('parent_id','<>',null)->with('category')->get();
-//        return view('admin.Categories.index',compact('categories_parent','categories_children'));
+        $categories_parent = Category::where('parent_id',null)->get();
+        $categories_children = Category::where('parent_id','<>',null)->with('category')->get();
+        return view('admin.Categories.index',compact('categories_parent','categories_children'));
     }
 
     /**
