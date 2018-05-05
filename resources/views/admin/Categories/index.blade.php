@@ -3,9 +3,9 @@
     <style>
         .error{color:red;font-weight:normal}
     </style>
-    @endsection
+@endsection
 @section('title')
-    Quản lý danh mục
+    Danh mục sản phẩm
 @endsection
 @section('action')
     Danh sách
@@ -24,11 +24,11 @@
                         <div class="col-md-12">
                             <table class="table table-bordered table-hover dataTable">
                                 <thead>
-                                    <tr>
-                                        <th width="10%">STT</th>
-                                        <th>name</th>
-                                        <th width="30%" class="text-center"><button id="add-category" class="btn btn-primary btn-xs">Thêm</button></th>
-                                    </tr>
+                                <tr>
+                                    <th width="10%">STT</th>
+                                    <th>name</th>
+                                    <th width="30%" class="text-center"><button id="add-category" class="btn btn-primary btn-xs">Thêm</button></th>
+                                </tr>
                                 </thead>
                                 <tbody id="add-row-category">
                                 <?php $i = 1; $j =1 ?>
@@ -41,7 +41,7 @@
                                             <button class="btn btn-danger btn-xs" id="delete-category" value="{{$category->id}}">Xóa</button>
                                         </td>
                                     </tr>
-                                    @endforeach
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -152,8 +152,8 @@
                                 <label for="select-category">Categoty</label>
                                 <select class="form-control" name="parent_id" id="parent-id" >
                                     @foreach($categories_parent as $value)
-                                    <option value="{{$value->id}}">{{$value->name}}</option>
-                                        @endforeach
+                                        <option value="{{$value->id}}">{{$value->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -169,7 +169,7 @@
 
     </section>
 
-    @endsection
+@endsection
 
 
 @section('script')
@@ -196,6 +196,7 @@
                 $('#modal-info').modal('show');
                 $('#btn-save').val('add-category');
                 $('#select-category').remove();
+                $('#name-category-error').remove();
             });
             $('#btn-save').on('click',function(){
                 $.ajaxSetup({
@@ -203,6 +204,17 @@
                         'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                     }
                 });
+
+                $.get('{{url('/admin/category/create')}}',function (data) {
+                    $.each(data, function( index, value ) {
+                        var name_category = $('#name-category').val();
+                        if(value.name === name_category){
+                            var add = '<label id="name-category-error" class="error" for="name-category">Tên danh mục đã bị trùng </label>';
+                            $("#name-category").after(add);
+                        }
+                    });
+                });
+
                 var form = $("#categoryForm");
                 if(form.valid() === false){
                     console.log('loi');
@@ -268,7 +280,7 @@
                     })
                 }
             })
-        //Sửa Category
+            //Sửa Category
             $("body").on('click','.edit-category',function(){
                 $('#title-modal').html("Edit Category");
                 $('#categoryForm').trigger("reset");
@@ -276,6 +288,7 @@
                 $('#btn-save').val('edit-category');
                 var id = $(this).val();
                 $('#btn-save').attr('data-id',id);
+                $('#name-category-error').remove();
                 $.get('{{url('/admin/category')}}/'+id+'/edit',function (data) {
                     $('#name-category').val(data.name);
                 })
@@ -319,7 +332,7 @@
             })
 
 
-        //    CATEGORY CHILDREN
+            //    CATEGORY CHILDREN
 
 
             // Thêm Category children
@@ -340,6 +353,7 @@
                 $('#categoryChildrenForm').trigger("reset");
                 $('#modal-category-children').modal('show');
                 $('#btn-save-category-children').val('add-category-children');
+                $('#name-category-children-error').remove();
             })
 
             $('#btn-save-category-children').on('click',function(e){
@@ -348,6 +362,16 @@
                         'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                     }
                 });
+                $.get('{{url('/admin/category/create')}}',function (data) {
+                    $.each(data, function( index, value ) {
+                        var name_category = $('#name-category-children').val();
+                        if(value.name === name_category){
+                            var add_1 = '<label id="name-category-children-error" class="error" for="name-category-children">Tên danh mục đã có </label>';
+                            $("#name-category-children").after(add_1);
+                        }
+                    });
+                });
+
                 e.preventDefault();
                 var form = $("#categoryChildrenForm");
                 if(form.valid() === false){
@@ -379,7 +403,7 @@
                     }
                 }
             });
-        //    Xóa category children
+            //    Xóa category children
             $("body").on('click','#delete-category-children',function(){
                 $('#modal-danger').modal('show');
                 $('#delete-save').val('del-category-children');
@@ -406,12 +430,13 @@
                     })
                 }
             })
-        //     Sửa category children
+            //     Sửa category children
             $("body").on('click','.edit-category-children',function(){
                 $('#title-modal-category-children').html("Sửa danh mục con");
                 $('#modal-category-children').modal('show');
                 $('#categoryChildrenForm').trigger("reset");
                 $('#btn-save-category-children').val('edit-category-children');
+                $('#name-category-children-error').remove();
                 var id = $(this).val();
                 $('#btn-save-category-children').attr('data-id',id);
                 $.get('{{url('/admin/category')}}/'+id+'/edit',function (data) {
@@ -459,4 +484,4 @@
             })
         })
     </script>
-    @endsection
+@endsection
