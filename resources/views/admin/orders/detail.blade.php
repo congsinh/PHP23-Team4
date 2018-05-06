@@ -9,81 +9,200 @@
 
     <div class="col-lg-12" style="padding-bottom:120px">
         @include('admin.layouts.notify')
-        <form action="{{route('orders.store')}}" method="POST" class="form-horizontal">
-            {{csrf_field()}}
+        <form action="{{route('orders.update',['id' => $order->id])}}" method="POST" class="form-horizontal" id="form-update">
+            @method('put')
+            @csrf
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="box box-info">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Thông tin khách hàng</h3>
-                        </div>
-                            <div class="box-body">
-                                <div class="col-sm-4">
-                                    <label for="name" class="col-sm-3 ">Tên</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="name" >
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <label for="phone" class="col-sm-3 ">Số điện thoại</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="phone">
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <label for="address" class="col-sm-3 ">Địa chỉ</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="address">
-                                    </div>
-                                </div>
+
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Thông tin đơn hàng: ( Mã: {{  $order->id }})</h3>
+                        <div class="pull-right">
+                            <label for="status" class="col-sm-4 pr-0 ">Tình trạng</label>
+                            <div class="col-sm-8">
+                                    <select name="status" id="status">
+                                        @foreach($listStatus as $key => $status)
+                                            <option value="{{ $key }}" {{ ($order->status == $key) ? 'selected' : ""}}>{{ $status }}</option>
+                                        @endforeach
+                                    </select>
                             </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12">
-                    <div class="box box-success">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Thông tin đơn hàng</h3>
-                        </div>
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <label for="date" class="col-sm-3">Ngày đặt</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="date" >
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <label for="status" class="col-sm-3">Tình trạng</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="status">
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <label for="note" class="col-sm-3 ">Ghi chú</label>
-                                    <div class="col-sm-9">
-                                        <textarea  class="form-control" id="note"></textarea>
-                                    </div>
+                    <div class="box-body">
+                        <div class="col-sm-5">
+                            <div class=" form-group">
+                                <label for="name" class="col-sm-3 pr-0 pt-5 ">Tên</label>
+                                <div class="col-sm-9">
+                                    <input name='name' type="text" class="form-control none-style pl-0" id="name"
+                                           value="{{ old('name') ? old('name') : $order->name}}">
                                 </div>
                             </div>
+                            <div class=" form-group">
+                                <label for="phone" class="col-sm-3 pr-0 pt-5">Số điện thoại</label>
+                                <div class="col-sm-9">
+                                    <input name='phone' type="text" class="form-control none-style pl-0" id="phone"
+                                           value="{{ old('phone') ? old('phone') : $order->phone}}">
+                                </div>
+                            </div>
+                            <div class=" form-group">
+                                <label for="address" class="col-sm-3 pr-0 pt-5">Địa chỉ</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control none-style pl-0 autosize" style="resize: none;"
+                                              id="address" name="address">{!! old('address') ? old('address') : $order->address  !!}</textarea>
+                                </div>
+                            </div>
+                            <div class=" form-group">
+                                <label for="date" class="col-sm-3 pr-0 pt-5 ">Ngày đặt</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control none-style pl-0" id="date"
+                                           value="{{$order->created_at}}" readonly>
+                                </div>
+                            </div>
+
+                            <div class=" form-group">
+                                <label for="note" class="col-sm-3 pr-0 ">Ghi chú</label>
+                                <div class="col-sm-9">
+                                    <textarea name='note' class="form-control none-style pl-0 autosize" style="resize: none;"
+                                              id="note">{!! old('note') ? old('note') : $order->note  !!}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <table class="table table-bordered table-hover text-center">
+                                <thead>
+                                <tr>
+                                    <td>STT</td>
+                                    <td>Sản phẩm</td>
+                                    <td>Số lượng</td>
+                                    <td>Giá</td>
+                                    <td>Hủy</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{--lưu danh sách  xóa product --}}
+                                <input type="hidden" name="del_products" id="del_product"/>
+                                @forelse($order->products as $key => $product)
+                                    <tr product-id="{{$product->id}}">
+                                        <td>{{$key + 1}}</td>
+                                        <td>
+                                            <input type="text"
+                                                   class='product_name none-style form-control'
+                                                   value="{{$product->name}}"  readonly/>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="product[{{$product->id}}][quantity]" class='quantity '
+                                                   data-quantity="{{$key}}" min="1"
+                                                   value="{{$product->pivot->quantity}}"/>
+                                        </td>
+                                        <td>
+                                            <input type='text' class="price none-style "
+                                                   data-price="{{$key}}"
+                                                   price='{{$product->price}}'
+                                                   value="{{number_format($product->price * $product->pivot->quantity)}}" readonly/>&nbsp;VNĐ
+                                        </td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-trash delete-product"
+                                                  aria-hidden="true" data-del="{{$product->id}}"></span>
+
+                                        </td>
+                                    </tr>
+                                @empty
+                                @endforelse
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="3"><strong>Tổng tiền</strong></td>
+                                    <td colspan="2"><strong><span class="total_pay"></span></strong></td>
+                                </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-success">Lưu</button>
-                <a href="{{redirect()->back()}}" class="btn btn-default">Quay lai</a>
+                @if($order->status !== 1 && $order->status !== 4)
+                    <a href="" class="btn btn-success" style="margin:2px !important" data-toggle="modal" id="show-confirm">
+                        Cập nhật
+                    </a>
+                @endif
+
+                <a href="{{ url()->previous() }}" class="btn btn-default">Quay lai</a>
             </div>
         </form>
     </div>
     <!-- Your code to create an instance of Fine Uploader and bind to the DOM/template
     ====================================================================== -->
-
+@include('admin.orders.modal-confirm')
 @endsection
 @section('script')
     <script>
-        $(document).ready(function(){
 
+        $(document).ready(function () {
+
+            const Format = wNumb({
+                decimals: 3,
+                thousand: ',',
+                mark: '',
+            });
+
+            function total_pay() {
+                var total_pay = 0;
+                $('input.price').each(function (i, obj) {
+                    var price = Format.from($(obj).val());
+                    total_pay += +price;
+                });
+                $('.total_pay').text(Format.to(total_pay) + 'VND');
+            }
+            total_pay();
+
+            //auto resize textarea
+            jQuery.fn.extend({
+                autoHeight: function () {
+                    function autoHeight_(element) {
+                        return jQuery(element)
+                            .css({'height': 'auto', 'overflow-y': 'hidden'})
+                            .height(element.scrollHeight);
+                    }
+
+                    return this.each(function () {
+                        autoHeight_(this).on('input', function () {
+                            autoHeight_(this);
+                        });
+                    });
+                }
+            });
+            $('textarea.autosize').autoHeight();
+
+            //event change quantity
+            $('.quantity').on('change', function () {
+                var index = $(this).attr('data-quantity');
+                var ipt_price = $("input[data-price='" + index + "']");
+                var quantity = $(this).val();
+                var price = quantity * ipt_price.attr('price');
+                ipt_price.val(Format.to(price));
+                total_pay();
+            });
+
+            //event onclick trash
+            var list_del = [];
+            $('.delete-product').on('click',function(){
+                var id_product = $(this).attr('data-del');
+                list_del.push(id_product);
+                $('input#del_product').val(list_del);
+                $('tr[product-id="' + id_product + '"]').remove();
+                total_pay();
+            });
         });
+        //confirm change status order
+        $('#show-confirm').on('click',function(){
+            $('#modal-confirm').modal('show');
+            $('#status_confirm').text($('#status option:selected').text());
+            $("#btnConfirm").on("click", function () {
+                $('#form-update').submit();
+            });
+        });
+
     </script>
 
 @endsection

@@ -30,18 +30,24 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header active"><h4>Menu</h4></li>
-            <li  class="" >
-                <a href="<?php echo e(route('category.index')); ?>"><i class="fa fa-link"></i> <span>Danh mục</span></a>
+            <li class="">
+                <a href="<?php echo e(route('dashboard')); ?>"> <i class="fa fa-dashboard"></i> <span>Thống kê</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
             </li>
             <li  class="" >
-                <a href="<?php echo e(route('products.index')); ?>"><i class="fa fa-link"></i> <span>Sản phẩm</span></a>
+                <a href="<?php echo e(route('category.index')); ?>"><i class="fa fa-th"></i> <span>Danh mục</span></a>
             </li>
             <li  class="" >
-                <a href="<?php echo e(route('orders.index')); ?>"><i class="fa fa-link"></i> <span>Đơn hàng</span></a>
+                <a href="<?php echo e(route('products.index')); ?>"><i class="fa fa-product-hunt"></i> <span>Sản phẩm</span></a>
+            </li>
+            <li  class="" >
+                <a href="<?php echo e(route('orders.index')); ?>"><i class="fa fa-shopping-cart"></i> <span>Đơn hàng</span></a>
             </li>
             <li  class="" >
                 <a href="<?php echo e(route('manufacturer.index')); ?>"><i class="fa fa-link"></i> <span>Đối tác</span></a>
             </li>
+
             
                 
                     

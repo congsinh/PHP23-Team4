@@ -5,8 +5,19 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OrderRequest;
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
+
 class OrderController extends Controller
 {
+    public function __construct()
+    {
+        $listStatus = Order::getListStatuses();
+        $listStatusWithLabels = Order::getListStatusWithBootstrapLabels();
+        return view()->share(['listStatus' => $listStatus, 'listStatusWithLabels' => $listStatusWithLabels]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,45 +25,31 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        $listStatus = Order::getListStatuses();
-        $listStatusWithLabels = Order::getListStatusWithBootstrapLabels();
         $query = Order::query();
         if($request->has('status') && !empty($request->status)){
             $query = $query->where('status',$request->status);
         }
         if ($request->has('search') && !empty($request->search)) {
-            $query = $query->where('name', 'like','%'. $request->search.'%')
+            $query = $query->where('id', 'like','%'. $request->search.'%')
+                ->orWhere('name', 'like','%'. $request->search.'%')
                 ->orWhere('phone', 'like','%'. $request->search.'%')
                 ->orWhere('address', 'like','%'. $request->search.'%');
         }
-        if($request->has('ago') && !empty($request->ago)){
-                switch ($request->ago){
-                    case 'hour':
-                        $time = strtotime('-1 hour');
-                        break;
-                    case 'day':
-                        $time = strtotime('-1 day');
-                        break;
-                    case 'week':
-                        $time = strtotime('-1 week');
-                        break;
-                    case 'month':
-                        $time = strtotime('-1 month');
-                        break;
-                }
-                $from = date('Y-m-d h:i:s', $time);
-                $to = date('Y-m-d h:i:s');
-                $query = $query->whereBetween('created_at', [$from, $to]);
+        if(!empty($request->date_start) && !empty($request->date_end)){
+                $date_start = $request->date_start;
+                $date_end = $request->date_end;
+                $query = $query->whereBetween('created_at', [$date_start, $date_end]);
             }
         if($request->ajax()){
             $orders = $query->orderByDesc('created_at')
                 ->paginate(10)
                 ->appends([
-                    'ago' => $request->ago,
+                    'date_start' => $request->date_start,
+                    'date_end' => $request->date_end,
                     'status' => $request->status,
                     'search' => $request->search,
                     ]);
-            $view = view('admin.ajax.components.orders',compact(['orders','listStatus','listStatusWithLabels']))->render();
+            $view = view('admin.ajax.components.orders',compact(['orders']))->render();
             return response()->json(['view' => $view],200);
         }
         $orders = $query->orderByDesc('created_at')->paginate(10);
@@ -118,9 +115,33 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(OrderRequest $request, $id)
     {
-        //
+//        dd($request->all());
+        try{
+            DB::beginTransaction();
+            $order = Order::findOrFail($id);
+            $data = $request->all();
+            if(!empty($request->del_products)){ // xóa products
+                $listDel = explode(',',$request->del_products);
+                   $order->products()->detach($listDel);
+            }
+            $products =  $request->product;
+            $totalPay = 0;
+            foreach( $products as $id => $quantity){
+                $product = Product::findOrFail($id);
+                $totalPay += $product->price * $quantity['quantity'];
+                $order->products()->updateExistingPivot($id,$quantity);
+            }
+            $data['status'] = $request->status;
+            $data['total_pay'] = $totalPay;
+            $order->update($data);
+            DB::commit();
+            return redirect()->route('orders.index')->with('success' , 'Đã cập nhật thành công !');
+        }catch (\Exception $e){
+            DB::rollback();
+            return redirect()->back()->withInput()->with('error',$e->getMessage());
+        }
     }
 
     /**

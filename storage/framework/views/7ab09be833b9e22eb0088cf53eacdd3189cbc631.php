@@ -6,8 +6,8 @@
                     <ul>
                         <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
                         <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                        <li><a href="../page/cart.blade.php"><i class="fa fa-user"></i> My Cart</a></li>
-                        <li><a href="../page/checkout.blade.php"><i class="fa fa-user"></i> Checkout</a></li>
+                        <li><a href="<?php echo e(asset("page/cart.blade.php")); ?>"><i class="fa fa-user"></i> My Cart</a></li>
+                        <li><a href="<?php echo e(asset("page/checkout.blade.php")); ?>"><i class="fa fa-user"></i> Checkout</a></li>
                         <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
                     </ul>
                 </div>
@@ -51,36 +51,11 @@
 
             <div class="col-sm-6">
                 <div class="shopping-item">
-                    <a href="../page/cart.blade.php">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    <a href="<?php echo e(asset("pages/cart.blade.php")); ?>">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                 </div>
             </div>
         </div>
     </div>
 </div> <!-- End site branding area -->
 
-<div class="mainmenu-area">
-    <div class="container">
-        <div class="row">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="../page/home.blade.php">Home</a></li>
-                    <li><a href="../page/shop.blade.php">Shop page</a></li>
-                    <li><a href="../page/single_product.blade.php">Single product</a></li>
-                    <li><a href="../page/cart.blade.php">Cart</a></li>
-                    <li><a href="../page/cart.blade.php">Checkout</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">Others</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div> <!-- End mainmenu area -->
+<?php echo $__env->make('pages.layouts.menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
