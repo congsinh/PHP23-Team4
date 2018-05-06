@@ -71,7 +71,7 @@
                             <table class="table table-bordered table-hover text-center">
                                 <thead>
                                 <tr>
-                                    <td>STT</td>
+                                    <td>Mã SP</td>
                                     <td>Sản phẩm</td>
                                     <td>Số lượng</td>
                                     <td>Giá</td>
@@ -83,7 +83,7 @@
                                 <input type="hidden" name="del_products" id="del_product"/>
                                 @forelse($order->products as $key => $product)
                                     <tr product-id="{{$product->id}}">
-                                        <td>{{$key + 1}}</td>
+                                        <td>{{$product->id}}</td>
                                         <td>
                                             <input type="text"
                                                    class='product_name none-style form-control'

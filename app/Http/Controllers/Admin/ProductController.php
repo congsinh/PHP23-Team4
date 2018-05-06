@@ -30,6 +30,11 @@ class ProductController extends Controller
             $query = $query->where('manufacture_id', $request->manu);
         }
 
+        if ($request->has('search') && !empty($request->search)) {
+            $query = $query->where('id', 'like','%'. $request->search.'%')
+                ->orWhere('name', 'like','%'. $request->search.'%')
+                ->orWhere('configuration', 'like','%'. $request->search.'%');
+        }
 
         if ($request->has('status') && !empty($request->status)) {
             switch ($request->status){
@@ -40,7 +45,7 @@ class ProductController extends Controller
                     $query = $query->orderBy('sales','asc')->limit(10);
                     break;
                 case 3:// sắp hết hàng
-                    $query = $query->where('quantity_store', '<=',10);
+                    $query = $query->where('quantity_store', '<=',5);
                     break;
                 case 4:// hết hàng
                     $query = $query->where('quantity_store',0);
@@ -60,6 +65,7 @@ class ProductController extends Controller
                     'cate' => $request->cate,
                     'manu' => $request->manu,
                     'status' => $request->status,
+                    'search' => $request->search,
                     'min_price' => $request->min_price,
                     'max_price' => $request->max_price,
                 ]); // appends :  gán params request lên url paginate

@@ -8,6 +8,7 @@
             <th style="width: 50px">Địa chỉ</th>
             <th style="width: 40px">Tiền thanh toán</th>
             <th style="width: 80px">Ngày tạo</th>
+            <th style="width: 80px">Ngày thanh toán</th>
             <th style="width: 40px">Trạng thái</th>
             <th style="width: 50px">Thao tác</th>
         </tr>
@@ -21,6 +22,7 @@
                 <td>{{$order->address}}</td>
                 <td>{{ number_format($order->total_pay) }}&nbsp;VNĐ</td>
                 <td>{{$order->created_at}}</td>
+                <td>{{$order->updated_at}}</td>
                 <td>{!! $listStatusWithLabels[$order->status] !!}</td>
                 <td>
                     <a href="{{ route('orders.edit',['id'=>$order->id]) }}" class="btn btn-info btn-xs" style="margin:2px !important">

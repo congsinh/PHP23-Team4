@@ -136,6 +136,15 @@ class OrderController extends Controller
             $data['status'] = $request->status;
             $data['total_pay'] = $totalPay;
             $order->update($data);
+            //nếu đơn hàng đã thanh toán thì trừ số lượng sản phẩm trong kho
+            if($order->status == 4){
+                foreach( $products as $id => $quantity){
+                    $product = Product::findOrFail($id);
+                    $product->quantity_store = $product->quantity_store - $quantity['quantity'];
+                    $product->sales = $product->sales + $quantity['quantity'];
+                    $product->save();
+                }
+            }
             DB::commit();
             return redirect()->route('orders.index')->with('success' , 'Đã cập nhật thành công !');
         }catch (\Exception $e){
