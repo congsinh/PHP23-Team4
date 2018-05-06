@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?php echo e(asset('admin/bower_components/font-awesome/css/font-awesome.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('admin/bower_components/Ionicons/css/ionicons.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('admin/dist/css/AdminLTE.min.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('admin/bower_components/bootstrap-daterangepicker/daterangepicker.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('admin/dist/css/skins/skin-blue.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/nouislider.min.css')); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -57,6 +58,8 @@
 <script src="<?php echo e(asset('admin/bower_components/jquery/dist/jquery.min.js')); ?>"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo e(asset('admin/bower_components/bootstrap/dist/js/bootstrap.min.js')); ?>"></script>
+<script src="<?php echo e(asset('admin/bower_components/moment/moment.js')); ?>"></script>
+<script src="<?php echo e(asset('admin/bower_components/bootstrap-daterangepicker/daterangepicker.js')); ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo e(asset('admin/dist/js/adminlte.min.js')); ?>"></script>
 <!-- CKEditor JavaScript -->

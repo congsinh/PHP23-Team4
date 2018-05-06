@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="<?php echo e(asset("css/owl.carousel.css")); ?>">
     <link rel="stylesheet" href="<?php echo e(asset("style.css")); ?>">
     <link rel="stylesheet" href="<?php echo e(asset("css/responsive.css")); ?>">
+    <?php echo $__env->yieldContent('style'); ?>
 </head>
 <body>
     <?php echo $__env->make('pages.layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

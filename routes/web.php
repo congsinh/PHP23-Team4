@@ -14,6 +14,17 @@
 
 
 Auth::routes();
+Route::get('/login','Auth\LoginController@getLogin')->name('get-login-user');
+Route::post('/login','Auth\LoginController@userLogin')->name('login-user');
+
+
+Route::group(['middleware'=>'check_user'],function(){
+    Route::get('/logout','Auth\LoginController@userLogout')->name('logout');
+    Route::resource('/info','Auth\DetailUserController');
+    Route::get('/edit-password','Auth\DetailUserController@editPassword');
+    Route::put('/edit-password/{id}','Auth\DetailUserController@putPassword');
+});
+
 
 Route::group(['namespace' => 'Admin'],function(){
     Route::get('admin/login','AdminController@getLogin')->name('admin-login');
@@ -31,9 +42,9 @@ Route::group(['namespace' => 'Admin'],function(){
 });
 Route::group(['namespace' => 'Web'],function() {
     Route::group(['prefix' => '/'], function () {
-        Route::get('', 'HomeController@index');
+        Route::get('/', 'HomeController@index');
     });
-//    Route::get('/{category}', 'ProductController@getProducts');
+    Route::get('/{category}', 'ProductController@getProducts');
     Route::get('product/{id}', 'ProductController@show');
     Route::get('product', 'ProductController@index');
 });

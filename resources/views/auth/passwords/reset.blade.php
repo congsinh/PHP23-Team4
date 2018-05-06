@@ -1,11 +1,22 @@
-@extends('pages.layouts.app')
+@extends('pages.layouts.master')
 
 @section('content')
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>{{ __('Reset Password') }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.request') }}">

@@ -30,6 +30,11 @@ class ProductController extends Controller
             $query = $query->where('manufacture_id', $request->manu);
         }
 
+        if ($request->has('search') && !empty($request->search)) {
+            $query = $query->where('id', 'like','%'. $request->search.'%')
+                ->orWhere('name', 'like','%'. $request->search.'%')
+                ->orWhere('configuration', 'like','%'. $request->search.'%');
+        }
 
         if ($request->has('status') && !empty($request->status)) {
             switch ($request->status){
@@ -40,7 +45,7 @@ class ProductController extends Controller
                     $query = $query->orderBy('sales','asc')->limit(10);
                     break;
                 case 3:// sắp hết hàng
-                    $query = $query->where('quantity_store', '<=',10);
+                    $query = $query->where('quantity_store', '<=',5);
                     break;
                 case 4:// hết hàng
                     $query = $query->where('quantity_store',0);
@@ -60,6 +65,7 @@ class ProductController extends Controller
                     'cate' => $request->cate,
                     'manu' => $request->manu,
                     'status' => $request->status,
+                    'search' => $request->search,
                     'min_price' => $request->min_price,
                     'max_price' => $request->max_price,
                 ]); // appends :  gán params request lên url paginate
@@ -67,9 +73,8 @@ class ProductController extends Controller
             return response()->json(['view' => $view],200);
         }
         $products = $query->with('imageDetail')->orderByDesc('created_at')->paginate(10);
-        $categories = Category::with('subcate')->where('parent_id',null)->get();
-        $manufacturers = Manufacturer::all();
-        return view('admin.products.list',compact(['products','categories','manufacturers','status']));
+
+        return view('admin.products.list',compact(['products','status']));
     }
 
     /**
@@ -79,9 +84,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $category = Category::with('subcate')->where('parent_id',null)->get();
-        $manufacturers = Manufacturer::all();
-        return view('admin.products.add',compact(['category','manufacturers']));
+
+        return view('admin.products.add');
     }
 
     /**
@@ -130,9 +134,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::findOrFail($id);
-        $category = Category::with('subcate')->where('parent_id',null)->get();
-        $manufacturers = Manufacturer::all();
-        return view('admin.products.edit',compact(['product','category','manufacturers']));
+        return view('admin.products.edit',compact(['product']));
     }
 
     /**

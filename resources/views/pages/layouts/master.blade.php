@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{asset("css/owl.carousel.css")}}">
     <link rel="stylesheet" href="{{asset("style.css")}}">
     <link rel="stylesheet" href="{{asset("css/responsive.css")}}">
+    @yield('style')
 </head>
 <body>
     @include('pages.layouts.header')

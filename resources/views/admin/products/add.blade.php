@@ -17,7 +17,7 @@
                                 <label>Danh mục</label>
                                 <select class="form-control" name="category_id" id="category" >
                                     <option value="">Xin chọn danh mục sản phẩm..</option>
-                                    @foreach($category as $cate)
+                                    @foreach($categories as $cate)
                                         <optgroup label="----{{$cate->name}}----">
                                             @forelse($cate->subcate as $sub)
                                                 <option value="{{$sub->id}}" @if(Input::old('category_id') == $sub->id) selected @endif>{{$sub->name}} </option>

@@ -4,6 +4,40 @@
 .pt-5{
     padding-top: 5px;
 }
+.pr-0{
+    padding-right: 0px;
+}
+.pl-0{
+    padding-left: 0px;
+}
+.pt-10{
+    padding-top: 10px;
+}
+input.none-style, textarea.none-style, input.none-style:read-only{
+    background-color: transparent;
+    border:none;
+    outline: none;
+    padding-left: 10px;
+
+}
+input.none-style:read-only{
+    cursor: not-allowed !important;
+}
+input.none-style:hover, textarea.none-style:hover{
+    cursor: text;
+}
+input.none-style:focus, textarea.none-style:focus{
+    background-color: #f5f5f5;
+}
+input.quantity{
+    width:30px !important;
+    border:none;
+    background-color: transparent;
+    outline: none;
+}
+input.price{
+    text-align: right;
+}
 table tr,table th,table td {
     vertical-align: middle !important;
 }
@@ -124,4 +158,8 @@ legend.scheduler-border {
 }
 .noUi-handle:before {
     left: 10px !important;
+}
+span.delete-product:hover{
+    cursor: pointer;
+    color:red;
 }

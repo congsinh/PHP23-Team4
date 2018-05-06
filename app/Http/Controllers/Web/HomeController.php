@@ -15,4 +15,5 @@ class HomeController extends Controller
         $products = Product::all()->sortByDesc('created_at')->take(10);
         return view('pages.home',['products' => $products]);
     }
+
 }
