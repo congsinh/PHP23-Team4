@@ -29,14 +29,6 @@
                             </div>
                             <input type="text" class="form-control pull-right" id="daterange" name="datarange">
                         </div>
-                        {{--<label for="">Thời gian:</label>--}}
-                        {{--<select class="filter" id="ago" class="form-control" style="width:100% !important;">--}}
-                            {{--<option value="" >Tất cả</option>--}}
-                            {{--<option value="hour" @if(Request::get('ago') == 'hour') selected @endif>Cách đây 1 giờ</option>--}}
-                            {{--<option value="day" @if(Request::get('ago') == 'day') selected @endif>Cách đây 1 ngày</option>--}}
-                            {{--<option value="week" @if(Request::get('ago') == 'week') selected @endif>Cách đây 1 tuần</option>--}}
-                            {{--<option value="month" @if(Request::get('ago') == 'month') selected @endif>Cách đây 1 tháng</option>--}}
-                        {{--</select>--}}
                     </div>
                     <div class="col-sm-4 form-group">
                         <label for="">Search:</label>

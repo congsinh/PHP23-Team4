@@ -22,7 +22,7 @@
                 <td>{{$order->address}}</td>
                 <td>{{ number_format($order->total_pay) }}&nbsp;VNĐ</td>
                 <td>{{$order->created_at}}</td>
-                <td>{{$order->updated_at}}</td>
+                <td>{{ ( $order->status == 4 ) ? $order->updated_at : '' }}</td>
                 <td>{!! $listStatusWithLabels[$order->status] !!}</td>
                 <td>
                     <a href="{{ route('orders.edit',['id'=>$order->id]) }}" class="btn btn-info btn-xs" style="margin:2px !important">
