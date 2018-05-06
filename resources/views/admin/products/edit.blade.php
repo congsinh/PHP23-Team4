@@ -9,8 +9,8 @@
     <div class="col-lg-12" style="padding-bottom:120px">
         @include('admin.layouts.notify')
         <form action="{{route('products.update',['id' => $product->id])}}" method="POST" enctype="multipart/form-data" >
-            {{csrf_field()}}
-            <input type="hidden" name="_method" value="PUT">
+            @method('put')
+            @csrf
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
