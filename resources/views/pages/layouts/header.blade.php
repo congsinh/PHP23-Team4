@@ -5,7 +5,7 @@
                 <div class="user-menu">
                     <ul>
                         @if(Auth::check() && Auth::user()->is_admin === 0 )
-                            <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
+                            <li><a href="{{ url('/info',Auth::user()->id) }}"><i class="fa fa-user"></i> My Account</a></li>
                             <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
                             <li><a href="{{asset("page/cart.blade.php")}}"><i class="fa fa-user"></i> My Cart</a></li>
                             <li> <a>Xin chào {{ ucfirst(Auth::user()->name) }}</a> </li>
