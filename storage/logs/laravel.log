@@ -13414,8 +13414,7 @@ Did you mean one of these?
 #59 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/public/index.php(46): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #60 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/server.php(21): require_once('/Applications/M...')
 #61 {main}
-"} 
-[2018-05-04 20:46:48] local.ERROR: Parse error: syntax error, unexpected '}' (View: /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/resources/views/admin/orders/detail.blade.php) {"userId":1,"email":"admin@gmail.com","exception":"[object] (ErrorException(code: 0): Parse error: syntax error, unexpected '}' (View: /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/resources/views/admin/orders/detail.blade.php) at /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/storage/framework/views/55ff0eae65ca064e0e06f9baee19c2b89e5fde38.php:78, Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Parse error: syntax error, unexpected '}' at /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/storage/framework/views/55ff0eae65ca064e0e06f9baee19c2b89e5fde38.php:78)
+"} [2018-05-04 20:46:48] local.ERROR: Parse error: syntax error, unexpected '}' (View: /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/resources/views/admin/orders/detail.blade.php) {"userId":1,"email":"admin@gmail.com","exception":"[object] (ErrorException(code: 0): Parse error: syntax error, unexpected '}' (View: /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/resources/views/admin/orders/detail.blade.php) at /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/storage/framework/views/55ff0eae65ca064e0e06f9baee19c2b89e5fde38.php:78, Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Parse error: syntax error, unexpected '}' at /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/storage/framework/views/55ff0eae65ca064e0e06f9baee19c2b89e5fde38.php:78)
 [stacktrace]
 #0 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(47): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError), 0)
 #1 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Applications/M...', Array)
@@ -15420,3 +15419,5 @@ Did you mean one of these?
 #58 /Applications/MAMP/htdocs/SOFT ONE/php23-team4/PHP23-Team4/server.php(21): require_once('/Applications/M...')
 #59 {main}
 "} 
+[2018-05-05 12:57:13] local.ERROR: SQLSTATE[HY000] [2002] Connection refused {"exception":"[object] (Doctrine\\DBAL\\Driver\\PDOException(code: 2002): SQLSTATE[HY000] [2002] Connection refused at /home/phanvan91/Project/PHP23-Team4/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:50, PDOException(code: 2002): SQLSTATE[HY000] [2002] Connection refused at /home/phanvan91/Project/PHP23-Team4/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:46)
+

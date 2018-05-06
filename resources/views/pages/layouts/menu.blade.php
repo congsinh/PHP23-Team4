@@ -13,13 +13,13 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{asset("pages/home.blade.php")}}">Home</a></li>
                     @foreach($categories as $category)
-                        @if($category->children->count() > 0)
+                        @if($category->subcate->count() > 0)
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     {{$category->name}}
                                     <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    @foreach($category->children as $submenu)
+                                    @foreach($category->subcate as $submenu)
                                         <li><a href="#">{{$submenu->name}}</a></li>
                                     @endforeach
                                 </ul>

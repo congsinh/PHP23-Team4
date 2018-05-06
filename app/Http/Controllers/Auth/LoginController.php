@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Auth;
 class LoginController extends Controller
 {
     /*
@@ -32,8 +32,31 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
+//    public function __construct()
+//    {
+//        $this->middleware('auth')->except('logout');
+//    }
+    public function getLogin()
     {
-        $this->middleware('guest')->except('logout');
+        if(Auth::viaRemember() || Auth::check() && Auth::user()->is_admin === 0){
+            return redirect('/');
+        }
+        return view('auth.login');
+    }
+
+    public function userLogin(Request $request)
+    {
+        $remember = $request->has('remember') ? true : false;
+        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password,'is_admin'=>0],$remember)){
+            return redirect('/');
+        }
+        else{
+            return redirect()->back();
+        }
+    }
+
+    public function userLogout(){
+        Auth::logout();
+        return redirect('/');
     }
 }
