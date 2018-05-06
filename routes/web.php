@@ -33,7 +33,7 @@ Route::group(['namespace' => 'Web'],function() {
     Route::group(['prefix' => '/'], function () {
         Route::get('', 'HomeController@index');
     });
-    Route::get('/{category}', 'ProductController@getProducts');
+//    Route::get('/{category}', 'ProductController@getProducts');
     Route::get('product/{id}', 'ProductController@show');
     Route::get('product', 'ProductController@index');
 });

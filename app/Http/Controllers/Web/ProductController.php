@@ -9,18 +9,16 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function index($name)
+    public function index(/*$name*/)
     {
 //        $products = Category::where('slug',$name)->with('products')->get();
 //        return view('pages.shop',['products' => $products]);
+        $products = Product::all();
+        return view('pages.shop',['products' => $products]);
     }
     public function show($id)
     {
         $product = Product::findOrFail($id);
         return view('pages.single_product',['product' => $product]);
     }
-
-
-
-
 }
