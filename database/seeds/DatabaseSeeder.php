@@ -23,13 +23,14 @@ class DatabaseSeeder extends Seeder
             DB::table($name)->truncate();
         }
 
-         $this->call(UsersTableSeeder::class);
-         $this->call(CategoriesTableSeeder::class);
-         $this->call(ManufacturersTableSeeder::class);
-         $this->call(ProductsTableSeeder::class);
-         $this->call(ImageDetailsTableSeeder::class);
-
-
+         $this->call([
+             UsersTableSeeder::class,
+             CategoriesTableSeeder::class,
+             ManufacturersTableSeeder::class,
+             ProductsTableSeeder::class,
+             ImageDetailsTableSeeder::class,
+             OrdersTableSeeder::class,
+         ]);
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1');
         Model::reguard();

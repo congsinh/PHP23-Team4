@@ -5722,7 +5722,7 @@ $.extend(Datepicker.prototype, {
 			(!maxYear || date.getFullYear() <= maxYear));
 	},
 
-	/* Provide the configuration settings for formatting/parsing. */
+	/* Provide the components settings for formatting/parsing. */
 	_getFormatConfig: function(inst) {
 		var shortYearCutoff = this._get(inst, "shortYearCutoff");
 		shortYearCutoff = (typeof shortYearCutoff !== "string" ? shortYearCutoff :

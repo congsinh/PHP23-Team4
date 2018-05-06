@@ -16,18 +16,18 @@ class ProductsTableSeeder extends Seeder
         $faker = \Faker\Factory::create();
         $cate = Category::where('parent_id','<>','null')->pluck('id')->toArray();
         $manufacturer = Manufacturer::pluck('id')->toArray();
-        for($i = 0; $i < 20; $i++){
+        $price = range(149000,59999000,50000);
+        for($i = 0; $i < 200; $i++){
             $faker_name = $faker->unique()->name;
             $arr = [$faker->name=>$faker->title];
             Product::create([
                 'name' => $faker->name,
                 'slug' => str_slug($faker_name),
                 'description' => $faker->sentence(10,true),
-                'quantity_store' => 20,
-                'price' => $faker->randomNumber(2),
+                'quantity_store' => rand(1,20),
+                'price'=>$price[rand(0,count($price)-1)],
                 'rating' => $faker->numberBetween(1,5),
                 'sales' => $faker->randomNumber(2),
-                'image' => $faker->imageUrl(300,300,null,true),
                 'category_id' => $cate[array_rand($cate)],
                 'manufacture_id' => $manufacturer[array_rand($manufacturer)],
                 'configuration' => [

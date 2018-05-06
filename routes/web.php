@@ -21,22 +21,19 @@ Route::group(['namespace' => 'Admin'],function(){
     Route::group(['prefix'=>'admin','middleware'=>'check_admin'],function(){
         Route::get('dashboard','AdminController@index')->name('dashboard');
         Route::get('logout','AdminController@logout')->name('admin-logout');
+        Route::resource('products','ProductController');
+        Route::resource('category', 'CategoryController');
+        Route::resource('manufacturer', 'ManufacturerController');
+        Route::resource('orders', 'OrderController');
     });
+    Route::get('configuration','AjaxController@getConfiguration')->name('configuration');
+    Route::get('filter-products','AjaxController@getfilterProducts')->name('filter-product');
 });
-
-
-
-Route::group(['namespace' => 'Web'],function(){
-    Route::get('/','HomeController@index')->name('home');
+Route::group(['namespace' => 'Web'],function() {
+    Route::group(['prefix' => '/'], function () {
+        Route::get('', 'HomeController@index');
+    });
+    Route::get('/{category}', 'ProductController@getProducts');
+    Route::get('product/{id}', 'ProductController@show');
+    Route::get('product', 'ProductController@index');
 });
-
-
-Route::get('test', function ()
-{
-    return view('pages.home');
-});
-Route::get('shop', function ()
-{
-    return view('page.shop');
-});
-

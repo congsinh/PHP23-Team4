@@ -8,7 +8,7 @@
                     <img src="{{asset("img/h4-slide.png")}}" alt="Slide">
                     <div class="caption-group">
                         <h2 class="caption title">
-                            iPhone <span class="primary">6 <strong>Plus</strong></span>
+                             <span class="primary">iPhone 6 <strong>Plus</strong></span>
                         </h2>
                         <h4 class="caption subtitle">Dual SIM</h4>
                         <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
@@ -83,100 +83,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+
                     <div class="latest-product">
                         <h2 class="section-title">Latest Products</h2>
                         <div class="product-carousel">
+                            @foreach($products as $product)
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="{{asset("img/product-1.jpg")}}" alt="">
+                                    <img src="{{asset('img/product-1.jpg')}}" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                         <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
 
-                                <h2><a href="single_product.blade.php">Samsung Galaxy s5- 2015</a></h2>
+                                <h2><a href="single_product.blade.php">{{$product->name}}</a></h2>
 
                                 <div class="product-carousel-price">
-                                    <ins>$700.00</ins> <del>$100.00</del>
+                                    <ins>{{$product->price}}</ins> <del>$100.00</del>
                                 </div>
                             </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset("img/product-2.jpg")}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-
-                                <h2>Nokia Lumia 1320</h2>
-                                <div class="product-carousel-price">
-                                    <ins>$899.00</ins> <del>$999.00</del>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset("img/product-3.jpg")}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-
-                                <h2>LG Leon 2015</h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$400.00</ins> <del>$425.00</del>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset("img/product-4.jpg")}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-
-                                <h2><a href="single_product.blade.php">Sony microsoft</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$200.00</ins> <del>$225.00</del>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset("img/product-5.jpg")}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-
-                                <h2>iPhone 6</h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$1200.00</ins> <del>$1355.00</del>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset("img/product-6.jpg")}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-
-                                <h2><a href="single_product.blade.php">Samsung gallaxy note 4</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$400.00</ins>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
@@ -215,20 +146,8 @@
                         <a href="" class="wid-view-more">View All</a>
                         <div class="single-wid-product">
                             <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-1.jpg")}}" alt="" class="product-thumb"></a>
-                            <h2><a href="single_product.blade.php">Sony Smart TV - 2015</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-2.jpg")}}" alt="" class="product-thumb"></a>
+<<<<<<< HEAD
+=======
                             <h2><a href="single_product.blade.php">Apple new mac book 2015</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
@@ -241,6 +160,23 @@
                                 <ins>$400.00</ins> <del>$425.00</del>
                             </div>
                         </div>
+                        {{--<div class="single-wid-product">
+                            <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-2.jpg")}}" alt="" class="product-thumb"></a>
+>>>>>>> 27434d92bebf6d9b9ea9fcb7b7e21bdbb4d7cb63
+                            <h2><a href="single_product.blade.php">Apple new mac book 2015</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-wid-price">
+                                <ins>$400.00</ins> <del>$425.00</del>
+                            </div>
+                        </div>
+<<<<<<< HEAD
+=======
                         <div class="single-wid-product">
                             <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-3.jpg")}}" alt="" class="product-thumb"></a>
                             <h2><a href="single_product.blade.php">Apple new i phone 6</a></h2>
@@ -254,7 +190,8 @@
                             <div class="product-wid-price">
                                 <ins>$400.00</ins> <del>$425.00</del>
                             </div>
-                        </div>
+                        </div>--}}
+>>>>>>> 27434d92bebf6d9b9ea9fcb7b7e21bdbb4d7cb63
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -309,9 +246,13 @@
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Top New</h2>
                         <a href="#" class="wid-view-more">View All</a>
+                        <?php
+                            $items = \App\Models\Product::all()->sortByDesc('create_at')->take(3);
+                        ?>
+                        @foreach($items as $item)
                         <div class="single-wid-product">
                             <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-3.jpg")}}" alt="" class="product-thumb"></a>
-                            <h2><a href="single_product.blade.php">Apple new i phone 6</a></h2>
+                            <h2><a href="single_product.blade.php">{{$item->name}}</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -323,34 +264,7 @@
                                 <ins>$400.00</ins> <del>$425.00</del>
                             </div>
                         </div>
-                        <div class="single-wid-product">
-                            <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-4.jpg")}}" alt="" class="product-thumb"></a>
-                            <h2><a href="single_product.blade.php">Samsung gallaxy note 4</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-1.jpg")}}" alt="" class="product-thumb"></a>
-                            <h2><a href="single_product.blade.php">Sony playstation microsoft</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
