@@ -20,6 +20,9 @@ Route::post('/login','Auth\LoginController@userLogin')->name('login-user');
 
 Route::group(['middleware'=>'check_user'],function(){
     Route::get('/logout','Auth\LoginController@userLogout')->name('logout');
+    Route::resource('/info','Auth\DetailUserController');
+    Route::get('/edit-password','Auth\DetailUserController@editPassword');
+    Route::put('/edit-password/{id}','Auth\DetailUserController@putPassword');
 });
 
 
