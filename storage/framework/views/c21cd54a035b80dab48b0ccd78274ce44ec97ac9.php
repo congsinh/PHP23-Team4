@@ -44,6 +44,6 @@
     <!-- Slider -->
     <script type="text/javascript" src="<?php echo e(asset('js/bxslider.min.js')); ?>"></script>
     <script type="text/javascript" src="<?php echo e(asset('js/script.slider.js')); ?>"></script>
-
+    <?php echo $__env->yieldContent('script'); ?>
 </body>
 </html>
