@@ -51,15 +51,31 @@
             <br><br>
         </div>
 
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-1">
             <h2>Đơn hàng gần đây</h2>
             <table class="table table-hover">
                 <tr>
-                    <td>Đơn đặt hàng</td>
+                    <td> STT </td>
                     <td>Ngày đặt hàng</td>
                     <td> Sản phẩm  </td>
                     <td> Giá tiền  </td>
                 </tr>
+                @if($user->orders->count() > 0)
+                @foreach($user->orders as $orders)
+                    @foreach($orders->products->toArray() as $Key => $product)
+                            <tr>
+                                <td> {{$index++}} </td>
+                                <td> {{ Carbon\Carbon::createFromTimestamp(strtotime($product['created_at']))->diffForHumans() }} </td>
+                                <td>{{ $product['name'] }}</td>
+                                <td>{{ number_format($product['price'],0,',','.')}} VND</td>
+                            </tr>
+                        @endforeach
+                    @endforeach
+                @else
+                    <tr class="text-center">
+                        <td colspan="4">Bạn chưa mua sản phẩm nào</td>
+                    </tr>
+                    @endif
             </table>
         </div>
     </div>
