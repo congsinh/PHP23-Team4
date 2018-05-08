@@ -41,10 +41,8 @@ Route::group(['namespace' => 'Admin'],function(){
     Route::get('filter-products','AjaxController@getfilterProducts')->name('filter-product');
 });
 Route::group(['namespace' => 'Web'],function() {
-    Route::group(['prefix' => '/'], function () {
-        Route::get('/', 'HomeController@index');
-    });
-    Route::get('/{category}', 'ProductController@getProducts');
+    Route::get('/', 'HomeController@index');
+    Route::get('/{category}', 'ProductController@index');
     Route::get('product/{id}', 'ProductController@show');
-    Route::get('product', 'ProductController@index');
+
 });

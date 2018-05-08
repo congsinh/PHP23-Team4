@@ -12,13 +12,13 @@ class ProductController extends Controller
 
     public function index($name)
     {
-        $products = Category::where('slug',$name)->with('products')->get();
-        return view('pages.shop',['products' => $products]);
+        $cate = Category::where('slug',$name)->with(['subcate','productsByParent'])->first();
+        $products = $cate->productsByParent()->paginate(15);
+        return view('pages.shop',compact(['cate','products']));
     }
     public function show($id)
     {
         $product = Product::findOrFail($id);
         return view('pages.single_product',['product' => $product]);
     }
-
 }

@@ -48,7 +48,11 @@ class DetailUserController extends Controller
     public function show($id)
     {
         $user = User::findorFail($id);
-        return view('auth.profile_customer.index',compact('user'));
+        $index = 1;
+//        foreach ($user->orders as $orders){
+//            dd($orders->products->toArray());
+//        }
+        return view('auth.profile_customer.index',compact('user','index'));
     }
 
     /**
