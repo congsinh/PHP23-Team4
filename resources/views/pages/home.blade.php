@@ -90,7 +90,7 @@
                             @foreach($products as $product)
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="@if(!empty($product->imageDetail->first())) {{ asset('uploads/images/products/'.$product->imageDetail->first())  }} @endif" alt="">
+                                    <img class='img-product' src="@if(!empty($product->imageDetail->first())) {{ asset('uploads/images/products/'.$product->imageDetail->first()->image_detail)  }} @endif" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                         <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>

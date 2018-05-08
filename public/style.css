@@ -1191,6 +1191,10 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     padding-right: 10px;
 }
 
+img.img-product{
+    object-fit: contain;
+    padding:10px;
+}
 @media screen and (max-width: 1200px){
     .filter li {
         margin-left: 0;
