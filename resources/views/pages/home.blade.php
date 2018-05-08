@@ -90,7 +90,7 @@
                             @foreach($products as $product)
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="{{asset('img/product-1.jpg')}}" alt="">
+                                    <img src="@if(!empty($product->imageDetail->first())) {{ asset('uploads/images/products/'.$product->imageDetail->first())  }} @endif" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                         <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
@@ -105,9 +105,31 @@
                             </div>
                             @endforeach
                         </div>
-
                     </div>
 
+                    <div class="latest-product">
+                        <h2 class="section-title">Điện Thoại</h2>
+                        <div class="product-carousel">
+                            @foreach($phones as $phone)
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="{{asset("img/product-thumb-4.jpg")}}" alt="">
+                                        <div class="product-hover">
+                                            <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="single_product.blade.php">{{$phone->name}}</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>{{$phone->price}}</ins> <del>$100.00</del>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -149,7 +171,7 @@
                         ?>
                         @foreach($new_products as $new)
                             <div class="single-wid-product">
-                                <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-1.jpg")}}" alt="" class="product-thumb"></a>
+                                <a href="single_product.blade.php"><img src="@if(!empty($new->imageDetail->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first())  }} @endif" alt="" class="product-thumb"></a>
                                 <h2><a href="single_product.blade.php">{{$new->name}}</a></h2>
                                 <div class="product-wid-rating">
                                     <i class="fa fa-star"></i>
@@ -217,13 +239,11 @@
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Top New</h2>
                         <a href="#" class="wid-view-more">View All</a>
-                        <?php
-                            $items = \App\Models\Product::all()->sortByDesc('create_at')->take(3);
-                        ?>
-                        @foreach($items as $item)
+
+                        @foreach($news as $new)
                         <div class="single-wid-product">
-                            <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-3.jpg")}}" alt="" class="product-thumb"></a>
-                            <h2><a href="single_product.blade.php">{{$item->name}}</a></h2>
+                            <a href="single_product.blade.php"><img src="@if(!empty($new->imageDetail->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first())  }} @endif" alt="" class="product-thumb"></a>
+                            <h2><a href="single_product.blade.php">{{$new->name}}</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
