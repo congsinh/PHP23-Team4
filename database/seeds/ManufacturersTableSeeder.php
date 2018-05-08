@@ -11,12 +11,29 @@ class ManufacturersTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create();
-        for($i = 0; $i < 4; $i++){
-            Manufacturer::create([
-                'name' => $faker->name,
-                'slug' => $faker->name
-            ]);
+            $data = [
+                [
+                    'name' => 'Nokia',
+                    'slug' => str_slug('Nokia')
+                ],[
+                    'name' => 'Canon',
+                    'slug' => str_slug('Canon')
+                ],[
+                    'name' => 'Apple',
+                    'slug' => str_slug('Apple')
+                ],[
+                    'name' => 'SamSung',
+                    'slug' => str_slug('SamSung')
+                ],[
+                    'name' => 'HTC',
+                    'slug' => str_slug('HTC')
+                ],[
+                    'name' => 'LG',
+                    'slug' => str_slug('LG')
+                ]
+            ];
+        foreach($data as $cate){
+            Manufacturer::create($cate);
         }
     }
 }

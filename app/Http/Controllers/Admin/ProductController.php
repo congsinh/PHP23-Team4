@@ -61,18 +61,11 @@ class ProductController extends Controller
             $products = $query
                 ->with('imageDetail')
                 ->paginate(10)
-                ->appends([
-                    'cate' => $request->cate,
-                    'manu' => $request->manu,
-                    'status' => $request->status,
-                    'search' => $request->search,
-                    'min_price' => $request->min_price,
-                    'max_price' => $request->max_price,
-                ]); // appends :  gán params request lên url paginate
+                ->appends(request()->query()); // appends :  gán params request lên url paginate
             $view = view('admin.ajax.components.products',compact(['products','status']))->render();
             return response()->json(['view' => $view],200);
         }
-        $products = $query->with('imageDetail')->orderByDesc('created_at')->paginate(10);
+        $products = $query->with('imageDetail')->orderByDesc('created_at')->paginate(10)->appends(request()->query());
 
         return view('admin.products.list',compact(['products','status']));
     }
