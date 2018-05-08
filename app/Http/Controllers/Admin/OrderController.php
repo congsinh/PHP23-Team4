@@ -43,16 +43,11 @@ class OrderController extends Controller
         if($request->ajax()){
             $orders = $query->orderByDesc('created_at')
                 ->paginate(10)
-                ->appends([
-                    'date_start' => $request->date_start,
-                    'date_end' => $request->date_end,
-                    'status' => $request->status,
-                    'search' => $request->search,
-                    ]);
+                ->appends(request()->query());
             $view = view('admin.ajax.components.orders',compact(['orders']))->render();
             return response()->json(['view' => $view],200);
         }
-        $orders = $query->orderByDesc('created_at')->paginate(10);
+        $orders = $query->orderByDesc('created_at')->paginate(10)->appends(request()->query());
         return view('admin.orders.list',compact([
             'orders',
             'listStatus',

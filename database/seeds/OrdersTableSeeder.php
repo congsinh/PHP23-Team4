@@ -33,16 +33,14 @@ class OrdersTableSeeder extends Seeder
 
         $orders = Order::all();
         foreach ($orders as $order) {
-            $product = Product::count();
-            for ($i = 1; $i < rand(2, 5); $i++) {
-                DB::table('order_details')->insert([
-                    [
-                        'order_id' => $order->id,
-                        'product_id' => $faker->unique()->numberBetween(1, $product),
-                        'quantity' => 1,
-                    ]
-                ]);
-            }
+            $product = Product::pluck('id')->toArray();
+            DB::table('order_details')->insert([
+                [
+                    'order_id' => $order->id,
+                    'product_id' => $product[array_rand($product)],
+                    'quantity' => 1,
+                ]
+            ]);
             $total_pay = 0;
             foreach ($order->products as $pro) {
                 $total_pay += $pro->price * $pro->pivot->quantity;

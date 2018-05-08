@@ -13,13 +13,29 @@ class ImageDetailsTableSeeder extends Seeder
     public function run()
     {
 
-        $faker = \Faker\Factory::create();
-        $product = Product::pluck('id')->toArray();
-        for($i = 0; $i < 90; $i++){
-            ImageDetail::create([
-                'image_detail' => $faker->imageUrl(300,300,null,true),
-                'product_id' =>$product[array_rand($product)],
-            ]);
+        $data = [
+            [
+                'image_detail' => 'product4.jpg',
+                'product_id' => 1,
+            ], [
+                'image_detail' => 'product5.jpg',
+                'product_id' => 1,
+            ], [
+                'image_detail' => 'product6.jpg',
+                'product_id' => 1,
+            ],[
+                'image_detail' => 'product1.png',
+                'product_id' => 2,
+            ],[
+                'image_detail' => 'product2.jpg',
+                'product_id' => 2,
+            ],[
+                'image_detail' => 'product3.jpg',
+                'product_id' => 2,
+            ],
+        ];
+        foreach($data as $image){
+            ImageDetail::create($image);
         }
     }
 }
