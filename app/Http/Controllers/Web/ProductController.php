@@ -19,6 +19,11 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::findOrFail($id);
-        return view('pages.single_product',['product' => $product]);
+        $related = Product::where('category_id',$product->category_id)->take(5)->get();
+        $topsales = Product::where('category_id',$product->category_id)
+                            ->orderByDesc('sales')
+                            ->take(5)
+                            ->get();
+        return view('pages.single_product',compact(['product', 'related', 'topsales']));
     }
 }

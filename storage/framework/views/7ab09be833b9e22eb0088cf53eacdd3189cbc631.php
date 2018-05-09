@@ -4,13 +4,11 @@
             <div class="col-md-8">
                 <div class="user-menu">
                     <ul>
+                        <li><a href="<?php echo e(asset("page/cart.blade.php")); ?>"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
                         <?php if(Auth::check() && Auth::user()->is_admin === 0 ): ?>
                             <li><a href="<?php echo e(url('/info',Auth::user()->id)); ?>"><i class="fa fa-user"></i> My Account</a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                            <li><a href="<?php echo e(asset("page/cart.blade.php")); ?>"><i class="fa fa-user"></i> My Cart</a></li>
                             <li> <a>Xin chào <?php echo e(ucfirst(Auth::user()->name)); ?></a> </li>
                             <?php endif; ?>
-
                     </ul>
                 </div>
             </div>
@@ -42,13 +40,11 @@
                     <h1><a href="<?php echo e(url('/')); ?>"><img src="<?php echo e(asset("img/logo.png")); ?>"></a></h1>
                 </div>
             </div>
-            <?php if(Auth::check() && Auth::user()->is_admin === 0 ): ?>
             <div class="col-sm-6">
-                <div class="shopping-item">
+                <div class="shopping-item" id="shopping-item">
                     <a href="">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                 </div>
             </div>
-                <?php endif; ?>
         </div>
     </div>
 </div> <!-- End site branding area -->

@@ -26,7 +26,7 @@ class ProductsTableSeeder extends Seeder
                 'rating' => 4.5,
                 'sales' => 45,
                 'category_id' => 4,
-                'manufacture_id' => 4,
+                'manufacture_id' => 3,
                 'configuration' => [
                     'Màn hình' => '	OLED, 5.8", Super Retina',
                     'Hệ điều hành' => 'iOS 11',
@@ -48,7 +48,7 @@ class ProductsTableSeeder extends Seeder
                 'rating' => 4.5,
                 'sales' => 320,
                 'category_id' => 4,
-                'manufacture_id' => 4,
+                'manufacture_id' => 3,
                 'configuration' => [
                     'Màn hình' => 'LED-backlit IPS LCD, 5.5", Retina HD',
                     'Hệ điều hành' => 'iOS 11',
@@ -58,6 +58,30 @@ class ProductsTableSeeder extends Seeder
                     'RAM' => '3 GB',
                     'Thẻ SIM' => '1 Nano SIM, Hỗ trợ 4G',
                     'Dung lượng pin' => '	2691 mAh, có sạc nhanh',
+                    ]
+                ],[
+                'name' => 'Laptop Asus S510UA i5 8250U/4GB/1TB/Win10/(BQ414T)',
+                'slug' => str_slug('Laptop Asus S510UA i5 8250U/4GB/1TB/Win10/(BQ414T)'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                    <h2><strong>Laptop Asus S510UA i5 bản nâng cấp hết sức giá trị với chip xử lý thế hệ thứ 8 mới nhất của Intel cho hiệu năng vượt trội,&nbsp;đáp ứng tốt cho bạn trong các nhu cầu làm việc, học tập, giải trí hằng ngày.</strong></h2><p style="text-align: center;"><strong></strong></p><div class="video" frameborder="0" longdesc="Đánh giá Laptop Asus Vivobook S510UA" scrolling="no" src="https://www.youtube.com/embed/GNk0S_4saoE"><iframe src="https://www.youtube.com/embed/GNk0S_4saoE?rel=0" frameborder="0" allowfullscreen=""></iframe></div><p></p><h3><strong>Khác biệt đến từ cấu hình</strong></h3><p>Máy sử dụng chip <a href="https://www.thegioididong.com/hoi-dap/cpu-intel-kabylake-refresh-la-gi-1017640" target="_blank" title="Intel Core i5 Kabylake Refresh">Intel Core i5 Kabylake Refresh</a>,&nbsp;<a href="https://www.thegioididong.com/hoi-dap/ram-ddr4-la-gi-882173" target="_blank" title="RAM DDR4">RAM DDR4</a> <strong>4 GB</strong>&nbsp;giúp hoạt động chơi game cũng như các ứng dụng đồ họa được đẹp mắt. Dung lượng ổ cứng <a href="https://www.thegioididong.com/hoi-dap/hdd-la-gi-922791" target="_blank" title="HDD">HDD</a> <strong>1 TB</strong> thoải mái lưu trữ dữ liệu.</p><p><a class="preventdefault" href="https://www.thegioididong.com/images/44/135668/laptop-asus-s510ua-i5-8250u-diem-manh-cau-hinh.jpg" onclick="return false;"><img alt="laptop-asus-s510ua-i5-8250u-diem-manh-cau-hinh" data-original="https://cdn.tgdd.vn/Products/Images/44/135668/laptop-asus-s510ua-i5-8250u-diem-manh-cau-hinh.jpg" class="lazy" title="laptop-asus-s510ua-i5-8250u-diem-manh-cau-hinh" src="https://cdn.tgdd.vn/Products/Images/44/135668/laptop-asus-s510ua-i5-8250u-diem-manh-cau-hinh.jpg" style="display: block;"></a></p><h3><strong>Màn hình sắc nét</strong></h3><p>Màn hình lớn <strong>15.6 inch</strong> độ phân giải cao&nbsp;<a href="https://www.thegioididong.com/hoi-dap/man-hinh-fhd-la-gi-956294" target="_blank" title="Full HD (1920 x 1080)">Full HD (1920 x 1080)</a>. Ngoài ra với sự bổ sung card đồ họa tích hợp <a href="https://www.thegioididong.com/hoi-dap/intel-hd-graphics-620-co-manh-khong-953533#uhd-620" target="_blank" title="Intel UHD Graphics 620">Intel UHD Graphics 620</a> có hỗ trợ thêm xem các video độ phân giải <strong>4K</strong>.</p><p><a class="preventdefault" href="https://www.thegioididong.com/images/44/135668/laptop-asus-s510ua-i5-8250u-do-phan-giai-man-hinh.jpg" onclick="return false;"><img alt="laptop-asus-s510ua-i5-8250u-do-phan-giai-man-hinh" data-original="https://cdn2.tgdd.vn/Products/Images/44/135668/laptop-asus-s510ua-i5-8250u-do-phan-giai-man-hinh.jpg" class="lazy" title="laptop-asus-s510ua-i5-8250u-do-phan-giai-man-hinh" src="https://cdn2.tgdd.vn/Products/Images/44/135668/laptop-asus-s510ua-i5-8250u-do-phan-giai-man-hinh.jpg" style="display: block;"></a></p><h3><strong>Bàn phím đèn tiện dụng</strong></h3><p>Được thiết kế có độ nảy nhất định khá tốt, kèm theo đèn bàn phím cho phép bạn trải nghiệm một cách thoải mái nhất.</p><p><a class="preventdefault" href="https://www.thegioididong.com/images/44/135668/laptop-asus-s510ua-i5-8250u-den-ban-phim.jpg" onclick="return false;"><img alt="laptop-asus-s510ua-i5-8250u-den-ban-phim" data-original="https://cdn4.tgdd.vn/Products/Images/44/135668/laptop-asus-s510ua-i5-8250u-den-ban-phim.jpg" class="lazy" title="laptop-asus-s510ua-i5-8250u-den-ban-phim" src="https://cdn4.tgdd.vn/Products/Images/44/135668/laptop-asus-s510ua-i5-8250u-den-ban-phim.jpg" style="display: block;"></a></p><h3><strong>Bảo mật với cảm biến vân tay</strong></h3><p>Máy được trang bị cảm biến vân tay tích hợp trên nền tảng <a href="https://www.thegioididong.com/hoi-dap/windows-10-co-tot-khong-953411" target="_blank" title="Windows 10">Windows 10</a> bản quyền, giúp bạn mở khóa máy nhanh chóng mà không cần nhập mật khẩu như cách truyền thống.</p><p><a href="https://www.thegioididong.com/hoi-dap/windows-hello-la-gi-cach-cai-dat-windows-hello-1013813" target="_blank" title=">>> Cài đặt cảm biến với Windows Hello">&gt;&gt;&gt; Cài đặt cảm biến với&nbsp;Windows Hello</a></p><p><a class="preventdefault" href="https://www.thegioididong.com/images/44/135668/asus-s510ua-i5-8250u-bq414t-10-1.png" onclick="return false;"><img alt="Bảo mật với cảm biến vân tay" data-original="https://cdn1.tgdd.vn/Products/Images/44/135668/asus-s510ua-i5-8250u-bq414t-10-1.png" class="lazy" title="Bảo mật với cảm biến vân tay" src="https://cdn1.tgdd.vn/Products/Images/44/135668/asus-s510ua-i5-8250u-bq414t-10-1.png" style="display: block;"></a></p><h3><strong>Đa dạng về cổng kết nối</strong></h3><p>Máy hỗ trợ đầy đủ các cổng kết nối phổ biến hiện tại: <a href="https://www.thegioididong.com/tin-tuc/hdmi-la-gi--590061" target="_blank" title="HDMI">HDMI</a>,&nbsp;<a href="https://www.thegioididong.com/tin-tuc/cong-giao-tiep-usb-la-gi--590168" target="_blank" title="USB 2.0">2 x USB 2.0</a>, <a href="https://www.thegioididong.com/hoi-dap/usb-30-la-gi-926737" target="_blank" title="USB 3.0">USB 3.0</a>, <a href="https://www.thegioididong.com/hoi-dap/usb-typec-chuan-muc-cong-ket-noi-moi-723760" target="_blank" title="USB Type-C">USB Type-C</a>, khe đọc thẻ nhớ <a href="https://www.thegioididong.com/hoi-dap/cac-loai-the-sd-thong-dung-hien-nay-744285#sd" target="_blank" title="SD">SD</a>,&nbsp;<a href="https://www.thegioididong.com/hoi-dap/cac-loai-the-sd-thong-dung-hien-nay-744285#sdxc" target="_blank" title="SDXC">SDXC</a>,&nbsp;<a href="https://www.thegioididong.com/hoi-dap/cac-loai-the-sd-thong-dung-hien-nay-744285#sdhc" target="_blank" title="SDHC">SDHC</a>,&nbsp;phù hợp với mọi nhu cầu.</p><p><a class="preventdefault" href="https://www.thegioididong.com/images/44/135668/asus-s510ua-i5-8250u-bq414t-11.jpg" onclick="return false;"><img alt="Đa dạng về cổng kết nối" data-original="https://cdn3.tgdd.vn/Products/Images/44/135668/asus-s510ua-i5-8250u-bq414t-11.jpg" class="lazy" title="Đa dạng về cổng kết nối" src="https://cdn3.tgdd.vn/Products/Images/44/135668/asus-s510ua-i5-8250u-bq414t-11.jpg" style="display: block;"></a></p><h3><strong>Kết luận</strong></h3><p>Với tất cả các ưu điểm như trên chắc chắn laptop <strong>Asus S510UA i5 8250U</strong> hướng đến đối tượng người dùng chủ yếu hỗ trợ cho công việc, học tập, giải trí... và máy không thuộc phân khúc <a href="https://www.thegioididong.com/laptop?g=choi-game-khung" target="_blank" title="Laptop chơi game khủng">laptop chơi game khủng</a> hoàn hảo.</p>
+                                    </div>
+                                   </article>',
+                'quantity_store' => 30,
+                'price'=>16290000,
+                'rating' => 4.5,
+                'sales' => 53,
+                'category_id' => 8,
+                'manufacture_id' => 3,
+                'configuration' => [
+                    'CPU' => 'Intel Core i5 Kabylake Refresh, 8250U, 1.60 GHz',
+                    'RAM' => '4 GB, DDR4 (2 khe), 2133 MHz',
+                    'Ổ cứng' => 'HDD: 1 TB, Hỗ trợ khe cắm SSD M.2',
+                    'Màn hình' => '	15.6 inch, Full HD (1920 x 1080)',
+                    'Card màn hình' => '	Card đồ họa tích hợp, Intel® UHD Graphics 620',
+                    'Cổng kết nối' => '2 x USB 2.0, HDMI, USB 3.0, USB Type-C',
+                    'Hệ điều hành' => 'Windows 10 Home SL',
+                    'Thiết kế' => 'Vỏ nhựa - nắp lưng bằng kim loại, PIN liền',
+                    'Kích thước' => 'Dày 17.9 mm, 1.5 kg',
                 ],
             ]
         ];
