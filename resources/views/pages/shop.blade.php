@@ -73,7 +73,7 @@
                     <div class="single-shop-product">
                         <div class="product-upper">
                             <img class='image' src="{{asset("img/product-2.jpg")}}" alt="">
-                            <h4 class="pt-5 text-center"><a href="">{{$product->name}}</a></h4>
+                            <h4 class="pt-5 text-center"><a href="product/{{$product->id}}">{{$product->name}}</a></h4>
                             <div class="product-carousel-price">
                                 <ins style="color: #e10c00">{{ number_format($product->price) }}đ</ins>
                             </div>

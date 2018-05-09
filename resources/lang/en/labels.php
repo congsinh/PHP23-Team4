@@ -16,6 +16,10 @@ return [
         2 => 'Chờ duyệt',
         3 => 'Đang chuyển hàng',
         4 => 'Đã thanh toán',
+    ],
+    'status-product' => [
+        1 => '<div class="alert alert-success p-5"><strong>Còn hàng</strong></div>',
+        2 => '<div class="alert alert-danger p-5"><strong>Hết hàng</strong></div>',
     ]
 
 ];
