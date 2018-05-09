@@ -17,6 +17,7 @@ Auth::routes();
 Route::get('/login','Auth\LoginController@getLogin')->name('get-login-user');
 Route::post('/login','Auth\LoginController@userLogin')->name('login-user');
 
+Route::get('buy-product','Admin\CartController@getBuyProduct');
 
 Route::group(['middleware'=>'check_user'],function(){
     Route::get('/logout','Auth\LoginController@userLogout')->name('logout');
