@@ -18,6 +18,10 @@ Route::get('/login','Auth\LoginController@getLogin')->name('get-login-user');
 Route::post('/login','Auth\LoginController@userLogin')->name('login-user');
 
 Route::get('buy-product','Admin\CartController@getBuyProduct');
+Route::get('my-cart','Admin\CartController@myCart');
+Route::get('cart-tang','Admin\CartController@cartTang');
+Route::get('cart-giam','Admin\CartController@cartGiam');
+Route::delete('remove-cart','Admin\CartController@removeCart');
 
 Route::group(['middleware'=>'check_user'],function(){
     Route::get('/logout','Auth\LoginController@userLogout')->name('logout');
