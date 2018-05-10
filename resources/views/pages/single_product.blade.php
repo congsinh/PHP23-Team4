@@ -75,6 +75,17 @@
                             <div class='row' role="tabpanel">
                                 <p>{!! $product->description  !!}</p>
                             </div>
+                            <div id="fb-root"></div>
+                            <div id='fb-comments' class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="800" data-numposts="5"></div>
+                            <script>
+                                (function(d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id)) return;
+                                    js = d.createElement(s); js.id = id;
+                                    js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.0';
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));
+                            </script>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -108,4 +119,11 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+<script>
+    $(document).ready(function(){
+        document.getElementById("fb-comments").setAttribute("data-href",window.location.href );
+    });
+</script>
 @endsection

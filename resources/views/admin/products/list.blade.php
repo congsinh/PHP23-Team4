@@ -69,7 +69,7 @@
                                         @if(Request::get('max_price'))
                                     {{Request::get('max_price')}}
                                 @else
-                                    25000000
+                                    50000000
                                 @endif
                                     </span>
                         </div>
@@ -139,7 +139,7 @@
             // range price
             var slider = document.getElementById('range-price');
             noUiSlider.create(slider, {
-                start: [0, 25000000],
+                start: [0, 50000000],
                 connect: true,
                 range: {
                     min: 0,

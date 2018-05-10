@@ -32,6 +32,15 @@ class ImageDetailsTableSeeder extends Seeder
             ],[
                 'image_detail' => 'product3.jpg',
                 'product_id' => 2,
+            ],[
+                'image_detail' => 'product7.jpeg',
+                'product_id' => 3,
+            ],[
+                'image_detail' => 'product8.jpeg',
+                'product_id' => 3,
+            ],[
+                'image_detail' => 'product9.jpeg',
+                'product_id' => 3,
             ],
         ];
         foreach($data as $image){
