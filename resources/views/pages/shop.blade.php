@@ -126,12 +126,12 @@
                         dataType:'json',
                         success:function(data){
                             var edit = '<div class="shopping-item" id="shopping-item">\n' +
-                                '                    <a href="">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count"> '+data[2]+' </span></a>\n' +
+                                '                    <a href="">Cart - <span class="cart-amunt">'+data[3]+' VND</span> <i class="fa fa-shopping-cart"></i> <span class="product-count"> '+data[2]+' </span></a>\n' +
                                 '                </div>';
 
 
                             $("#shopping-item").replaceWith(edit);
-                            console.log(data);
+                            // console.log(data);
                         },error: function (data) {
                             console.log('Error:', data);
                         }
