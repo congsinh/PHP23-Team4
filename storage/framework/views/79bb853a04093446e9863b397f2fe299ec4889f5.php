@@ -89,7 +89,7 @@
                             <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="<?php echo e(asset('img/product-1.jpg')); ?>" alt="">
+                                    <img class='img-product' src="<?php if(!empty($product->imageDetail->first())): ?> <?php echo e(asset('uploads/images/products/'.$product->imageDetail->first()->image_detail)); ?> <?php endif; ?>" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                         <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
@@ -104,9 +104,31 @@
                             </div>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
-
                     </div>
 
+                    <div class="latest-product">
+                        <h2 class="section-title">Điện Thoại</h2>
+                        <div class="product-carousel">
+                            <?php $__currentLoopData = $phones; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $phone): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="<?php echo e(asset("img/product-thumb-4.jpg")); ?>" alt="">
+                                        <div class="product-hover">
+                                            <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="single_product.blade.php"><?php echo e($phone->name); ?></a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins><?php echo e($phone->price); ?></ins> <del>$100.00</del>
+                                    </div>
+                                </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -143,37 +165,25 @@
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Top Sellers</h2>
                         <a href="" class="wid-view-more">View All</a>
-                        <div class="single-wid-product">
-                            <a href="single_product.blade.php"><img src="<?php echo e(asset("img/product-thumb-1.jpg")); ?>" alt="" class="product-thumb"></a>
-
-                            <h2><a href="single_product.blade.php">Apple new mac book 2015</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+                        <?php
+                            $new_products = \App\Models\Product::all()->sortByDesc('sales')->take(3);
+                        ?>
+                        <?php $__currentLoopData = $new_products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $new): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="single-wid-product">
+                                <a href="single_product.blade.php"><img src="<?php if(!empty($new->imageDetail->first())): ?> <?php echo e(asset('uploads/images/products/'.$new->imageDetail->first())); ?> <?php endif; ?>" alt="" class="product-thumb"></a>
+                                <h2><a href="single_product.blade.php"><?php echo e($new->name); ?></a></h2>
+                                <div class="product-wid-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product-wid-price">
+                                    <ins>$400.00</ins> <del>$425.00</del>
+                                </div>
                             </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single_product.blade.php"><img src="<?php echo e(asset("img/product-thumb-2.jpg")); ?>" alt="" class="product-thumb"></a>
-
-                            <h2><a href="single_product.blade.php">Apple new mac book 2015</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>
-                        </div>
-
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -228,13 +238,11 @@
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Top New</h2>
                         <a href="#" class="wid-view-more">View All</a>
-                        <?php
-                            $items = \App\Models\Product::all()->sortByDesc('create_at')->take(3);
-                        ?>
-                        <?php $__currentLoopData = $items; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                        <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $new): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="single-wid-product">
-                            <a href="single_product.blade.php"><img src="<?php echo e(asset("img/product-thumb-3.jpg")); ?>" alt="" class="product-thumb"></a>
-                            <h2><a href="single_product.blade.php"><?php echo e($item->name); ?></a></h2>
+                            <a href="single_product.blade.php"><img src="<?php if(!empty($new->imageDetail->first())): ?> <?php echo e(asset('uploads/images/products/'.$new->imageDetail->first())); ?> <?php endif; ?>" alt="" class="product-thumb"></a>
+                            <h2><a href="single_product.blade.php"><?php echo e($new->name); ?></a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>

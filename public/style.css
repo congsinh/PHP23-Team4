@@ -701,7 +701,7 @@ width: 10px;
 .single-product-area .zigzag-bottom {background-color: #f4f4f4}
 
 .single-product-area {
-  padding: 80px 0 130px;
+  padding-top: 20px;
 }
 
 
@@ -779,7 +779,6 @@ input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
     content: "/";
     position: absolute;
     right: -20px;
-    top: 2px;
 }
 .product-breadcroumb > a:last-child::before {
     display: none;
@@ -793,9 +792,13 @@ input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
     overflow: hidden;
 }
 .product-gallery img {
-    height: auto;
+    height: 70px;
     margin-left: 15px;
-    width: 76px;
+    width: auto;
+    object-fit: fill;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    padding: 5px;
 }
 .product-name {
     font-size: 25px;
@@ -1191,6 +1194,45 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     padding-right: 10px;
 }
 
+.parameter{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    padding-top: 10px;
+    -webkit-padding-start: 0px;
+
+}
+.parameter li {
+    display: table;
+    background: #fff;
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding: 2px 0;
+}
+.parameter li span {
+    display: table-cell;
+    width: 30%;
+    vertical-align: top;
+    padding: 2px 0;
+    font-size: 14px;
+    color: #666;
+}
+.parameter li div {
+    display: table-cell;
+    width: auto;
+    vertical-align: top;
+    padding: 2px 5px;
+    font-size: 14px;
+    color: #333;
+}
+.parameter li div a{
+    display: inline-block;
+}
+img.img-product{
+    object-fit: contain;
+    padding:10px;
+}
 @media screen and (max-width: 1200px){
     .filter li {
         margin-left: 0;

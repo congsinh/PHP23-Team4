@@ -62,13 +62,14 @@
                 </tr>
                 @if($user->orders->count() > 0)
                 @foreach($user->orders as $orders)
-                    @foreach($orders->products->toArray() as $Key => $product)
+                    @foreach($orders->products as $Key => $product)
                             <tr>
                                 <td> {{$index++}} </td>
-                                <td> {{ Carbon\Carbon::createFromTimestamp(strtotime($product['created_at']))->diffForHumans() }} </td>
-                                <td>{{ $product['name'] }}</td>
-                                <td>{{ number_format($product['price'],0,',','.')}} VND</td>
+                                <td> {{ Carbon\Carbon::createFromTimestamp(strtotime($product->created_at))->diffForHumans() }} </td>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ number_format($product->price,0,',','.')}} VND</td>
                             </tr>
+
                         @endforeach
                     @endforeach
                 @else

@@ -4,7 +4,7 @@
         <tr style="background-color: #3c8dbc;color:white;">
             <th style="width: 20px">STT</th>
             <th style="width: 50px">Tên sản phẩm</th>
-            <th style="width: 200px">Hình ảnh</th>
+            <th style="width: 50px">Hình ảnh</th>
             <th style="width: 50px">Số lượng</th>
             <th style="width: 50px">Danh mục</th>
             <th style="width: 50px">Hãng</th>

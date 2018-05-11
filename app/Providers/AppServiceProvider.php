@@ -18,10 +18,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         \Schema::defaultStringLength(191);
-        $categories = Category::with('subcate')->where('parent_id', null)->get();
-        view()->share('categories', $categories);
-        $manufacturers = Manufacturer::all();
-        view()->share(['categories' => $categories,'manufacturers' => $manufacturers]);
+        if (\Schema::hasTable('categories') && \Schema::hasTable('manufacturers')) {
+            $categories = Category::with('subcate')->where('parent_id', null)->get();
+            $manufacturers = Manufacturer::all();
+            view()->share(['categories' => $categories,'manufacturers' => $manufacturers]);
+        }
+
     }
 
     /**

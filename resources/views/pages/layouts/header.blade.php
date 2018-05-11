@@ -4,13 +4,11 @@
             <div class="col-md-8">
                 <div class="user-menu">
                     <ul>
+                        <li><a href="{{asset("page/cart.blade.php")}}"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
                         @if(Auth::check() && Auth::user()->is_admin === 0 )
                             <li><a href="{{ url('/info',Auth::user()->id) }}"><i class="fa fa-user"></i> My Account</a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                            <li><a href="{{asset("page/cart.blade.php")}}"><i class="fa fa-user"></i> My Cart</a></li>
                             <li> <a>Xin chào {{ ucfirst(Auth::user()->name) }}</a> </li>
                             @endif
-
                     </ul>
                 </div>
             </div>
@@ -42,13 +40,11 @@
                     <h1><a href="{{url('/')}}"><img src="{{asset("img/logo.png")}}"></a></h1>
                 </div>
             </div>
-            @if(Auth::check() && Auth::user()->is_admin === 0 )
             <div class="col-sm-6">
-                <div class="shopping-item">
+                <div class="shopping-item" id="shopping-item">
                     <a href="">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                 </div>
             </div>
-                @endif
         </div>
     </div>
 </div> <!-- End site branding area -->
