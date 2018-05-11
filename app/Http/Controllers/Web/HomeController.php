@@ -12,7 +12,16 @@ class HomeController extends Controller
 
     public function index()
     {
-        $products = Product::all()->sortByDesc('created_at')->take(10);
+        $smartphones = Category::with(['productsByParent' => function($q){
+            $q->orderBy('sales','desc')->take(10);
+        }])->findOrFail(1);
+  //      $laptops = Product::where('category_id',2)->orderBy('sales','desc')->take(10)->get();
+  //      $accessories = Product::where('category_id',3)->orderBy('sales','desc')->take(10)->get();
+        $products = [
+            $smartphones->productsByParent,
+           // $laptops,
+           // $accessories
+        ];
         $news = Product::with('imageDetail')->limit(3)->get();
         $phones = Product::all()->where('category_id', 2)->take(1);
 

@@ -83,52 +83,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-
                     <div class="latest-product">
-                        <h2 class="section-title">Latest Products</h2>
+                        <h2 class="section-title">ĐIỆN THOẠI HOT</h2>
                         <div class="product-carousel">
-                            @foreach($products as $product)
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img class='img-product' src="@if(!empty($product->imageDetail->first())) {{ asset('uploads/images/products/'.$product->imageDetail->first()->image_detail)  }} @endif" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-
-                                <h2><a href="single_product.blade.php">{{$product->name}}</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>{{$product->price}}</ins> <del>$100.00</del>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <div class="latest-product">
-                        <h2 class="section-title">Điện Thoại</h2>
-                        <div class="product-carousel">
-                            @foreach($phones as $phone)
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="{{asset("img/product-thumb-4.jpg")}}" alt="">
-                                        <div class="product-hover">
-                                            <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                            @foreach($products as $items)
+                                @foreach($items as $item)
+                                    <div class="single-product">
+                                        <div class="product-f-image mb-5">
+                                            <img class='img-product' src="@if(!empty($item->imageDetail->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
+                                            <div class="product-hover">
+                                                <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                                <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                            </div>
+                                        </div>
+                                        <h5><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}">{{$item->name}}</a></h5>
+                                        <div class="product-carousel-price">
+                                            <ins class="price">{{ number_format($item->price) }}đ</ins>
+                                            <div class="pull-right">
+                                                @if($item->quantity_store == 0)
+                                                    {!! trans('labels.status-product.2' ) !!}
+                                                @else
+                                                    {!! trans('labels.status-product.1' ) !!}
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <h2><a href="single_product.blade.php">{{$phone->name}}</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>{{$phone->price}}</ins> <del>$100.00</del>
-                                    </div>
-                                </div>
+                                @endforeach
                             @endforeach
                         </div>
-
                     </div>
                 </div>
             </div>

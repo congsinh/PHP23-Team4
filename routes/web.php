@@ -47,7 +47,7 @@ Route::group(['namespace' => 'Admin'],function(){
 });
 Route::group(['namespace' => 'Web'],function() {
     Route::get('/', 'HomeController@index');
-    Route::get('/{category}', 'ProductController@index');
-    Route::get('product/{id}', 'ProductController@show');
+    Route::get('/{category}', 'ProductController@index')->name('category-products');
+    Route::get('product/{id}', 'ProductController@show')->name('product-detail');
 
 });
