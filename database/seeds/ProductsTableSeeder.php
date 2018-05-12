@@ -60,6 +60,72 @@ class ProductsTableSeeder extends Seeder
                     'Dung lượng pin' => '2691 mAh, có sạc nhanh',
                     ]
                 ],[
+                'name' => 'iPhone 7 Plus 128GB',
+                'slug' => str_slug('iPhone 7 Plus 128GB'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                   <h2>"<a href="https://www.thegioididong.com/dtdd/iphone-x-64gb" target="_blank" title="Điện thoại iPhone X 64GB" type="Điện thoại iPhone X 64GB">iPhone X giá</a>" là cụm từ được&nbsp;rất nhiều người mong chờ muốn biết và tìm kiếm trên Google bởi đây là chiếc điện thoại mà Apple kỉ niệm 10 năm iPhone đầu tiên được bán ra.</h2>
+                                 </article>',
+                'quantity_store' => 20,
+                'price'=>21300000,
+                'rating' => 4.5,
+                'sales' => 320,
+                'category_id' => 4,
+                'manufacture_id' => 3,
+                'configuration' => [
+                    'Màn hình' => 'LED-backlit IPS LCD, 5.5", Retina HD',
+                    'Hệ điều hành' => 'iOS 11',
+                    'Camera sau' => '2 camera 12 MP',
+                    'Camera trước' => '7 MP',
+                    'CPU' => 'Apple A11 Bionic 6 nhân',
+                    'RAM' => '3 GB',
+                    'Thẻ SIM' => '1 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	2691 mAh, có sạc nhanh',
+                ]
+            ],[
+                'name' => 'iPhone 8 Plus 64GB',
+                'slug' => str_slug('iPhone 8 Plus 64GB'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                             <h2>Thừa hưởng thiết kế đã đạt đến độ chuẩn mực, thế hệ&nbsp;<a href="https://www.thegioididong.com/dtdd/iphone-8-plus" target="_blank" title="iPhone 8 256 GB" type="iPhone 8 256 GB">iPhone 8 Plus</a>&nbsp;thay đổi phong cách bóng bẩy hơn và bổ sung hàng loạt tính năng cao cấp cho trải nghiệm sử dụng vô cùng tuyệt vời.</h2>
+                                </article>',
+                'quantity_store' => 1121,
+                'price'=>23980000,
+                'rating' => 5,
+                'sales' => 1112,
+                'category_id' => 4,
+                'manufacture_id' => 3,
+                'configuration' => [
+                    'Màn hình' => '	LED-backlit IPS LCD, 5.5", Retina HD',
+                    'Hệ điều hành' => '	iOS 11',
+                    'Camera sau' => '2 camera 12 MPP',
+                    'Camera trước' => '	7 MP',
+                    'CPU' => 'Apple A11 Bionic 6 nhân',
+                    'RAM' => '	3 GB',
+                    'Thẻ SIM' => '	1 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	2691 mAh, có sạc nhanh',
+                ]
+            ],[
+                'name' => 'iPhone 8 Plus Red 64GB (Đỏ)',
+                'slug' => str_slug('iPhone 8 Plus Red 64GB (Đỏ)'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                             <h2><a href="https://www.thegioididong.com/dtdd-apple-iphone" target="_blank" title="Điện thoại iPhone">iPhone</a><a href="https://www.thegioididong.com/dtdd/iphone-8-plus-do" target="_blank" title="iPhone 8 Plus Đỏ" type="iPhone 8 Plus Đỏ">&nbsp;8 Plus đỏ</a> là bản nâng cấp nhẹ của chiếc&nbsp;<a href="https://www.thegioididong.com/dtdd/iphone-7-plus-256gb" target="_blank" title="Điện thoại iPhone 7 Plus">iPhone 7 Plus đỏ</a>&nbsp;đã ra mắt trước đó với cấu hình mạnh mẽ cùng camera có nhiều cải tiến cũng như màu sắc nổi bật, cá tính.</h2>
+                                </article>',
+                'quantity_store' => 121,
+                'price'=>25980000,
+                'rating' => 5,
+                'sales' => 12,
+                'category_id' => 4,
+                'manufacture_id' => 3,
+                'configuration' => [
+                    'Màn hình' => '	LED-backlit IPS LCD, 5.5", Retina HD',
+                    'Hệ điều hành' => '	iOS 11',
+                    'Camera sau' => '2 camera 12 MP',
+                    'Camera trước' => '	7 MP',
+                    'CPU' => 'Apple A11 Bionic 6 nhân',
+                    'RAM' => '	3 GB',
+                    'Thẻ SIM' => '	1 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	2691 mAh, có sạc nhanh',
+                ]
+            ],[
                 'name' => 'Laptop Asus S510UA i5 8250U/4GB/1TB/Win10/(BQ414T)',
                 'slug' => str_slug('Laptop Asus S510UA i5 8250U/4GB/1TB/Win10/(BQ414T)'),
                 'description' => '<article class="area_article area_articleFull" style="">
@@ -84,7 +150,7 @@ class ProductsTableSeeder extends Seeder
                     ]
                 ],[
                 'name' => 'IPhone X 256GB',
-                'slug' => str_slug('Điện thoại iPhone X 256GB'),
+                'slug' => str_slug('iPhone X 256GB'),
                 'description' => '<article class="area_article area_articleFull" style="">
                                      <h2><strong>iPhone X được&nbsp;Apple&nbsp;ra mắt ngày 12/9 vừa rồi đánh dấu chặng đường 10 năm lần đầu tiên iPhone ra đời. Sau một thời gian, <a href="https://www.thegioididong.com/dtdd/iphone-x-64gb" target="_blank" title="điện thoại iPhone X 64GB" type="điện thoại iPhone X 64GB">giá iPhone X</a> cũng được công bố. iPhone X mang trên mình thiết kế hoàn toàn mới với màn hình Super Retina viền cực mỏng và trang bị nhiều công nghệ hiện đại như nhận diện khuôn mặt Face ID, sạc pin nhanh và sạc không dây cùng khả năng chống nước bụi cao cấp.</strong></h2><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11675_800x450.jpg" onclick="return false;"><img alt="1" data-original="https://cdn4.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11675_800x450.jpg" class="lazy" title="1" src="https://cdn4.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11675_800x450.jpg" style="display: block;"></a></p><p>Màn hình iPhone X được phủ kín gần như toàn bộ ở mặt trước và vẫn chừa lại một phần màn hình cho loa, camera và các cảm biến ở phía trên.</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11690_800x450.jpg" onclick="return false;"><img alt="2" data-original="https://cdn1.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11690_800x450.jpg" class="lazy" title="2" src="https://cdn1.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11690_800x450.jpg" style="display: block;"></a></p><p>Còn mặt sau vẫn là chất liệu kính nhé, tiện thể thì iPhone X cũng trang bị chuẩn chống nước IP67.</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/ava_800x450.jpg" onclick="return false;"><img alt="3" data-original="https://cdn3.tgdd.vn/Files/2017/09/13/1021094/ava_800x450.jpg" class="lazy" title="3" src="https://cdn3.tgdd.vn/Files/2017/09/13/1021094/ava_800x450.jpg" style="display: block;"></a></p><p>Thay vì sử dụng công nghệ TrueTone HD thì màn hình OLED 5.8 inch của iPhone X được trang bị công nghệ Super Retina cho mật độ điểm ảnh lên tới 458 dpi.&nbsp;</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11620_800x450.jpg" onclick="return false;"><img alt="4" data-original="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11620_800x450.jpg" class="lazy" title="4" src="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11620_800x450.jpg" style="display: block;"></a></p><p>Với màn hình tràn viền như này mà không có nút Home thì người dùng sẽ phải vuốt từ dưới lên để mở trình quản lý đa nhiệm.</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11680_800x451.jpg" onclick="return false;"><img alt="6" data-original="https://cdn2.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11680_800x451.jpg" class="lazy" title="6" src="https://cdn2.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11680_800x451.jpg" style="display: block;"></a></p><p>Tương tự như Galaxy Note 8, giờ đây iPhone X cũng có riêng một phím để gọi Siri ra hỗ trợ.</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11670_800x450.jpg" onclick="return false;"><img alt="5" data-original="https://cdn4.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11670_800x450.jpg" class="lazy" title="5" src="https://cdn4.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11670_800x450.jpg" style="display: block;"></a></p><p>Đi kèm với màn hình chất lượng đó thì chúng ta sẽ có Chip A11 Bionic. Một cái tên gì đó nghe có vẻ rất là "Chất". Và chip này có 6 lõi, cho hiệu suất hoạt động tốt hơn 25% so với A10.</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11979-_2040x1360-800-resize.jpg" onclick="return false;"><img alt="1" data-original="https://cdn1.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11979-_2040x1360-800-resize.jpg" class="lazy" title="1" src="https://cdn1.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11979-_2040x1360-800-resize.jpg" style="display: block;"></a></p><p>Vẫn là vấn đề cũ, không có Touch ID thì mở khóa bằng... mặt. Giờ đây chúng ta đã có Face ID để làm điều đó. Với công nghệ vô cùng đặc biệt này, bạn có thể mở khóa bằng khuôn mặt của mình dù là ngoài trời nắng hay trong bóng đêm, kể cả chưa cạo râu hay mới cắt tóc,... Face ID chấp hết.</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11729-_2040x1360-800-resize.jpg" onclick="return false;"><img alt="1" data-original="https://cdn3.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11729-_2040x1360-800-resize.jpg" class="lazy" title="1" src="https://cdn3.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11729-_2040x1360-800-resize.jpg" style="display: block;"></a></p><p>Theo Apple, Face ID có độ bảo mật còn cao hơn cả Touch ID, đạt tỷ lệ nhận diện sai chỉ là 1 trên 1.000.000 (1 triệu), trong khi Touch ID là 1 trên 50.000.</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11773-_2040x1360-800-resize.jpg" onclick="return false;"><img alt="8" data-original="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11773-_2040x1360-800-resize.jpg" class="lazy" title="8" src="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11773-_2040x1360-800-resize.jpg" style="display: block;"></a></p><p>Một tính năng mới đi kèm với Face ID là Animoji vô cùng mới mẻ khi bạn có thể tạo được những emotion chuyển động theo khuôn mặt của bạn một cách rất ngộ nghĩnh và đáng yêu.</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11716_800x450.jpg" onclick="return false;"><img alt="9" data-original="https://cdn2.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11716_800x450.jpg" class="lazy" title="9" src="https://cdn2.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11716_800x450.jpg" style="display: block;"></a></p><p>Không chỉ camera trước, mà camera sau của iPhone X cũng nhận được những nâng cấp mạnh mẽ với hệ thống camera kép 12MP kèm theo ống kính góc thường và ống kính tele. Đặc biệt, cả hai camera của iPhone X đều được trang bị công nghệ chống rung quang học, đi cùng với đó là hệ thống đèn Flash LED mới.</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11638_800x450.jpg" onclick="return false;"><img alt="10" data-original="https://cdn4.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11638_800x450.jpg" class="lazy" title="10" src="https://cdn4.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11638_800x450.jpg" style="display: block;"></a></p><p>Tương tự như bộ đôi iPhone 8 và iPhone 8 Plus thì iPhone X cũng được trang bị tính năng sạc không dây. Chúng ta sẽ được thấy một chiếc sạc không dây tới từ Apple có tên là AirPower.</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11649_800x450.jpg" onclick="return false;"><img alt="11" data-original="https://cdn1.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11649_800x450.jpg" class="lazy" title="11" src="https://cdn1.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11649_800x450.jpg" style="display: block;"></a></p><p>Và thời lượng pin của iPhone X sẽ nhiều hơn 2 giờ so với iPhone 7.</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11983-_2040x1360-800-resize.jpg" onclick="return false;"><img alt="1" data-original="https://cdn3.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11983-_2040x1360-800-resize.jpg" class="lazy" title="1" src="https://cdn3.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-11983-_2040x1360-800-resize.jpg" style="display: block;"></a></p><p>iPhone X sẽ có 2 tùy chọn bộ nhớ trong là 64 GB và 256 GB tương tự như iPhone 8/8 Plus.</p><p><a class="preventdefault" href="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-12115-_2040x1360-800-resize.jpg" onclick="return false;"><img alt="1" data-original="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-12115-_2040x1360-800-resize.jpg" class="lazy" title="1" src="https://cdn.tgdd.vn/Files/2017/09/13/1021094/apple-iphone-2017-20170912-12115-_2040x1360-800-resize.jpg" style="display: block;"></a></p><p>Với thiết kế cực sang trọng cùng những tính năng hiện đại, iPhone X - phiên bản iPhone kỷ niệm 10 năm ngày ra mắt iPhone nhắm đến phân khúc người dùng cực kỳ cao cấp, việc được sỡ hữu siêu phẩm iPhone X sẽ là niềm tự hào với cộng đồng iFan.</p>
                                   </article>',
@@ -106,7 +172,7 @@ class ProductsTableSeeder extends Seeder
                     ]
                 ],[
                 'name' => 'IPhone 7 Plus 32GB',
-                'slug' => str_slug('Điện thoại iPhone 7 Plus 32GB'),
+                'slug' => str_slug('iPhone 7 Plus 32GB'),
                 'description' => '<article class="area_article area_articleFull" style="">
                                     <h2 style="text-align: justify;"><strong>Với thiết kế không quá nhiều thay đổi, vẫn bảo tồn vẻ đẹp truyền thống từ thời&nbsp;<a href="https://www.thegioididong.com/dtdd/iphone-6-plus-64gb" target="_blank" title="iPhone 6 Plus" type="iPhone 6 Plus">iPhone 6 Plus</a>, &nbsp;iPhone 7 Plus 32GB được trang bị nhiều nâng cấp đáng giá như camera kép, đạt chuẩn chống nước chống bụi cùng cấu hình cực mạnh.</strong></h2><p><a class="preventdefault" href="https://www.thegioididong.com/images/42/87840/iphone-7-plus-256gb1-1.jpg" onclick="return false;"><img alt="Diện mạo mới của iPhone 7 Plus" data-original="https://cdn3.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb1-1.jpg" class="lazy" title="Diện mạo mới của iPhone 7 Plus" src="https://cdn3.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb1-1.jpg" style="display: block;"></a><br>Thay đổi dãy nhựa an-ten bắt sóng được đưa vòng lên trên thay vì cắt ngang ở mặt lưng như trước.</p><p><a class="preventdefault" href="https://www.thegioididong.com/images/42/87840/iphone-7-plus-256gb2-1.jpg" onclick="return false;"><img alt="Bút home cảm ứng" data-original="https://cdn.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb2-1.jpg" class="lazy" title="Bút home cảm ứng" src="https://cdn.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb2-1.jpg" style="display: block;"></a><br>Nút Home quen thuộc không còn là phím vật lý nữa mà được thay thế bằng cảm ứng, nó sẽ rung lên khi bạn ấn. Vì đã dùng iPhone một thời gian rất dài, nên tôi công nhận rằng hơi khó để làm quen với nó, nhưng có lẽ chỉ mất vài ngày thôi.</p><p><a class="preventdefault" href="https://www.thegioididong.com/images/42/87840/iphone-7-plus-256gb3-1.jpg" onclick="return false;"><img alt="Trang bị chuẩn chống nước cao cấp" data-original="https://cdn2.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb3-1.jpg" class="lazy" title="Trang bị chuẩn chống nước cao cấp" src="https://cdn2.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb3-1.jpg" style="display: block;"></a><br>Cuối cùng chúng ta cũng có được chiếc iPhone vẫn sống khi rơi vào nước hay đi mưa không cần phải loay hoay tìm chỗ cất vì Apple đã mang chuẩn chống nước IP67 cho iphone 7 plus .(Lưu ý: không nên cố tình ngâm nước vì nếu có thiệt hại do vào nước sẽ không được Apple bảo hành).</p><p><a class="preventdefault" href="https://www.thegioididong.com/images/42/87840/iphone-7-plus-256gb4-1.jpg" onclick="return false;"><img alt="Màn hình Retina sáng và sắc nét" data-original="https://cdn4.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb4-1.jpg" class="lazy" style="display: block;" title="Màn hình Retina sáng và sắc nét" src="https://cdn4.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb4-1.jpg"></a><br>Màn hình Retina trên 7 Plus hỗ trợ DCI-P3 gam màu rộng, nghĩa là chúng có khả năng tái tạo màu sắc trong phạm vi của sRGB. Nói đơn giản, chúng có thể hiển thị sống động hơn, sắc thái hình ảnh tốt hơn trước đó. Độ phân giải, mật độ điểm ảnh và kích thước màn hình vẫn giữ nguyên so với iPhone 6s Plus.</p><p><a class="preventdefault" href="https://www.thegioididong.com/images/42/87840/iphone-7-plus-256gb5-1.jpg" onclick="return false;"><img alt="Dàn loa stereo" data-original="https://cdn1.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb5-1.jpg" class="lazy" style="display: block;" title="Dàn loa stereo" src="https://cdn1.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb5-1.jpg"></a><br>Lần đầu tiên iPhone xuất hiện tính năng âm thanh Stereo. Phim ảnh, podcast và các cuộc gọi loa ngoài bây giờ âm thanh rõ ràng hơn rất nhiều. Đó là do Apple đã dùng công nghệ thiết lập loa chứ không phải thiết kế 2 loa ngay trên mặt.</p><p><a class="preventdefault" href="https://www.thegioididong.com/images/42/87840/iphone-7-plus-256gb6-.jpg" onclick="return false;"><img alt="Camera kép" data-original="https://cdn3.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb6-.jpg" class="lazy" title="Camera kép" src="https://cdn3.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb6-.jpg" style="display: block;"></a></p><p>iPhone 7 Plus là&nbsp;chiếc iPhone đầu tiên được trang bị camera kép, đem lại khả năng chụp ảnh ở hai tiêu cự khác nhau. Camera thông thường vẫn chụp hình góc rộng, còn camera thứ hai có tiêu cự phù hợp để chụp chân dung, có tính năng chụp chân dung xóa phông (làm mờ hậu cảnh).&nbsp;</p><p>Với 1 chạm nhanh chóng bạn có thể chuyển đổi giữa chế độ 1x và zoom 2x, hoặc bạn có thể kéo thanh trượt hay dùng 2 ngón tay đến zoom. Apple đã thêm tính năng zoom kỹ thuật số lên đến 10x.</p><p><a class="preventdefault" href="https://www.thegioididong.com/images/42/87840/iphone-7-plus-256gb8-1.jpg" onclick="return false;"><img alt="Mặt lưng bóng bẩy" data-original="https://cdn.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb8-1.jpg" class="lazy" title="Mặt lưng bóng bẩy" src="https://cdn.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb8-1.jpg" style="display: block;"></a><br>Điểm nhấn ấn tượng nhất nằm ở mặt lưng của sản phẩm với hiệu ứng phản chiếu ánh sáng khi thay đổi góc nhìn rất đặc biệt. Hiệu ứng này cũng được áp dụng cho toàn bộ khung máy, từ cạnh trên, cạnh dưới cho đến các nút bấm nên cho cảm giác một thiết bị cực kỳ hoàn thiện, gần như không có bất kỳ một chi tiết thừa nào cả.&nbsp;</p><p><a class="preventdefault" href="https://www.thegioididong.com/images/42/87840/iphone-7-plus-256gb9.jpg" onclick="return false;"><img alt="Cấu hình cực mạnh" data-original="https://cdn2.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb9.jpg" class="lazy" style="display: block;" title="Cấu hình cực mạnh" src="https://cdn2.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb9.jpg"></a></p><p>Ngoài trái tim&nbsp;<a href="https://www.thegioididong.com/hoi-dap/tong-quan-ve-chip-a10-fusion-cua-apple-885052" target="_blank" title="Apple A10 Fusion 4 nhân 64-bit" type="Apple A10 Fusion 4 nhân 64-bit">Apple A10 Fusion 4 nhân</a>&nbsp;với hiệu năng cực kì mạnh mẽ và ấn tượng thì iPhone 7 Plus còn được trang bị hệ điều hành mới nhất IOS 10 với nhiều tính năng bất ngờ, và thú vị. Hiện tại, bạn có thể nâng cấp lên IOS 11 mới nhất như trên&nbsp;<a href="https://www.thegioididong.com/dtdd/iphone-x-64gb" target="_blank" title="iPhone X" type="iPhone X">iPhone X</a>.</p><p>“Táo khuyết” cũng không quên nhấn mạnh iPhone 7 Plus sẽ nhanh hơn iPhone đời đầu tới… 140 lần. Những ai mê chơi game trên di động cũng sẽ “phải lòng” iPhone mới khi có chip xử lý đồ họa được nâng tầm đúng chất “máy chơi game”.</p><p>Camera trước nâng cấp độ phân giải 7MP với khẩu độ mở lớn f/2.2 hỗ trợ chụp trong điều kiện thiếu sáng tuyệt vời với công nghệ Retina Flash, Auto HDR.</p><p><a class="preventdefault" href="https://www.thegioididong.com/images/42/87840/iphone-7-plus-256gb10.jpg" onclick="return false;"><img alt="Camera trước" data-original="https://cdn4.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb10.jpg" class="lazy" style="display: block;" title="Camera trước" src="https://cdn4.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb10.jpg"></a></p><p><a class="preventdefault" href="https://www.thegioididong.com/images/42/87840/iphone-7-plus-256gb11.jpg" onclick="return false;"><img alt="Chụp thiếu sáng với Retina Flash" data-original="https://cdn1.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb11.jpg" class="lazy" style="display: block;" title="Chụp thiếu sáng với Retina Flash" src="https://cdn1.tgdd.vn/Products/Images/42/87840/iphone-7-plus-256gb11.jpg"></a></p><p>IPhone 7 Plus theo bản thân đánh giá là một sự&nbsp; lựa chọn hợp lý trong tầm giá:</p><ul><li><strong>Ưu điểm:</strong><ul><li>Hiệu năng rất cao</li><li>Camera trước sau rất tuyệt vời</li><li>Chống nước</li><li>Thời lượng pin tốt</li></ul></li><li><strong>Nhược điểm:</strong><ul><li>Loại bỏ jack 3.5mm</li><li>Không thay đổi thiết kế quá nhiều mặc dù đã 3 năm</li><li>Phím Home cần thời gian để làm quen</li></ul></li></ul>
                                   </article>',
@@ -128,7 +194,7 @@ class ProductsTableSeeder extends Seeder
                     ],
                 ],[
                 'name' => 'IPhone 6s Plus 32GB',
-                'slug' => str_slug('Điện thoại iPhone 6s Plus 32GB'),
+                'slug' => str_slug('iPhone 6s Plus 32GB'),
                 'description' => '<article class="area_article area_articleFull" style="">
                                     <h2>iPhone 6s Plus 32 GB là&nbsp;phiên bản&nbsp;nâng cấp hoàn hảo từ iPhone 6 Plus với nhiều tính năng mới hấp dẫn.</h2><h3 style="line-height: 20.8px; text-align: justify;"><strong>Camera được cải tiến</strong></h3><p style="line-height: 20.8px; text-align: justify;">iPhone 6s Plus 32 GB được nâng cấp độ phân giải camera sau lên 12 MP (thay vì 8 MP như trên&nbsp;<a href="https://www.thegioididong.com/dtdd/iphone-6-plus-16gb" target="_blank" title="Thông tin điện thoại iPhone 6 Plus 16 GB">iPhone 6 Plus</a>), camera cho tốc độ lấy nét và chụp nhanh, thao tác chạm để chụp nhẹ nhàng. Chất lượng ảnh trong các điều kiện chụp khác nhau tốt.</p><p style="line-height: 20.8px; text-align: center;"></p><div class="twentytwenty-wrapper twentytwenty-horizontal"><div id="imgCpr_1" class="imgCprW twentytwenty-container" data-src1="https://cdn.tgdd.vn/Products/Images/42/71770/iphone-6s-plus2-1.jpg" data-src2="https://cdn.tgdd.vn/Products/Images/42/71770/iphone-6s-plus1-1.jpg" style="height: 442px;"><img src="https://cdn.tgdd.vn/Products/Images/42/71770/iphone-6s-plus2-1.jpg" class="twentytwenty-before" style="clip: rect(0px, 295px, 442px, 0px);"> <img src="https://cdn.tgdd.vn/Products/Images/42/71770/iphone-6s-plus1-1.jpg" class="twentytwenty-after"> <div class="twentytwenty-overlay"><div class="twentytwenty-before-label"></div><div class="twentytwenty-after-label"></div></div><div class="twentytwenty-handle" style="left: 295px;"><span class="twentytwenty-left-arrow"></span><span class="twentytwenty-right-arrow"></span></div></div></div><p></p><p style="line-height: 20.8px; text-align: center;"><i style="line-height: 20.8px;">Màu sáng hơn hẳn so với iPhone 6 Plus</i></p><p style="line-height: 20.8px; text-align: justify;">Camera trước với độ phân giải 5 MP cho hình ảnh với độ chi tiết rõ nét, đặc biệt máy còn có tính năng Retina Flash, sẽ giúp màn hình sáng lên như đèn Flash để bức ảnh khi bạn chụp trong trời tối được tốt hơn.</p><p style="line-height: 20.8px; text-align: center;"><a class="preventdefault" href="https://www.thegioididong.com/images/42/71770/iphone-6s-plus213.gif" onclick="return false;"><img alt="Để bật tính năng Retina Flash, tại camera trước bạn bật đèn Flash lên" data-original="https://cdn3.tgdd.vn/Products/Images/42/71770/iphone-6s-plus213.gif" class="lazy" title="Để bật tính năng Retina Flash, tại camera trước bạn bật đèn Flash lên" src="https://cdn3.tgdd.vn/Products/Images/42/71770/iphone-6s-plus213.gif" style="display: block;"></a></p><p style="line-height: 20.8px; text-align: center;"><i>Để bật tính năng Retina Flash, tại camera trước bạn bật đèn Flash lên</i></p><p style="line-height: 20.8px; text-align: center;"></p><div class="twentytwenty-wrapper twentytwenty-horizontal"><div id="imgCpr_2" class="imgCprW twentytwenty-container" data-src1="https://cdn.tgdd.vn/Products/Images/42/71770/iphone-6s-plus1-2.jpg" data-src2="https://cdn.tgdd.vn/Products/Images/42/71770/iphone-6s-plus2-2.jpg" style="height: 533px;"><img src="https://cdn.tgdd.vn/Products/Images/42/71770/iphone-6s-plus1-2.jpg" class="twentytwenty-before" style="clip: rect(0px, 228px, 533px, 0px);"> <img src="https://cdn.tgdd.vn/Products/Images/42/71770/iphone-6s-plus2-2.jpg" class="twentytwenty-after"> <div class="twentytwenty-overlay"><div class="twentytwenty-before-label"></div><div class="twentytwenty-after-label"></div></div><div class="twentytwenty-handle" style="left: 228px;"><span class="twentytwenty-left-arrow"></span><span class="twentytwenty-right-arrow"></span></div></div></div><p></p><p style="line-height: 20.8px; text-align: center;"><i style="line-height: 20.8px;">Đèn Flash giúp ảnh được sáng hơn</i></p><h3 style="line-height: 20.8px; text-align: justify;"><strong>Thích thú hơn với màn hình rộng</strong></h3><p style="line-height: 20.8px; text-align: justify;">Màn hình lớn cùng&nbsp;<span style="line-height: 20.8px;">màu sắc tươi tắn, độ nét cao&nbsp;sẽ mang đến nhiều</span>&nbsp;thích thú khi lướt web, xem phim hay làm việc.</p><p style="line-height: 20.8px; text-align: center;"><a class="preventdefault" href="https://www.thegioididong.com/images/42/71770/iphone-6s-plus4-1.jpg" onclick="return false;"><img alt="Màn hình lớn 5.5 inch thoải mái để làm việc và giải trí" data-original="https://cdn.tgdd.vn/Products/Images/42/71770/iphone-6s-plus4-1.jpg" class="lazy" title="Màn hình lớn 5.5 inch thoải mái để làm việc và giải trí" src="https://cdn.tgdd.vn/Products/Images/42/71770/iphone-6s-plus4-1.jpg" style="display: block;"></a></p><p style="line-height: 20.8px; text-align: center;"><i>Màn hình lớn 5.5 inch thoải mái để làm việc và giải trí</i></p><h3 style="line-height: 20.8px; text-align: justify;"><strong>Cảm ứng 3D Touch độc đáo</strong></h3><p style="line-height: 20.8px; text-align: justify;">3D Touch là tính năng hoàn toàn mới trên iPhone 6s Plus 32 GB, cho phép người dùng xem trước được các tùy chọn nhanh dựa vào lực nhấn mạnh hay nhẹ mà không cần phải nhấp vào ứng dụng.</p><p style="line-height: 20.8px; text-align: justify;">Để sử dụng, bạn chỉ cần nhấn vào màn hình hoặc ứng dụng 1 lực mạnh đến khi máy rung nhẹ là có thể xem được.</p><p style="line-height: 20.8px; text-align: center;"><a class="preventdefault" href="https://www.thegioididong.com/images/42/71770/iphone-6s-plus342.gif" onclick="return false;"><img alt="Chọn nhanh các lựa chọn trên camera của máy" data-original="https://cdn2.tgdd.vn/Products/Images/42/71770/iphone-6s-plus342.gif" class="lazy" title="Chọn nhanh các lựa chọn trên camera của máy" src="https://cdn2.tgdd.vn/Products/Images/42/71770/iphone-6s-plus342.gif" style="display: block;"></a></p><p style="line-height: 20.8px; text-align: center;"><i>Chọn nhanh các lựa chọn trên camera của máy</i></p><p style="line-height: 20.8px; text-align: justify;">Đáng tiếc tính năng 3D Touch này chỉ mới được áp dụng trên các&nbsp;<a href="https://www.thegioididong.com/game-ung-dung?key=c%E1%BB%A7a+apple" target="_blank" title="Các game và ứng dụng cho hệ điều hành Apple">ứng dụng của Apple</a>&nbsp;như: danh bạ, camera, mail, máy ảnh ...&nbsp;</p><p style="line-height: 20.8px; text-align: justify;">Bạn có thể tìm hiểu thêm tính năng 3D Touch tại&nbsp;<strong><a href="https://www.thegioididong.com/tin-tuc/tong-hop-tat-ca-nhung-tien-ich-3d-touch-dem-den-cho-nguoi-dung-714800" target="_blank" title="Tìm hiểu thêm các chức năng 3D Touch">đây</a></strong>.</p><h3 style="line-height: 20.8px; text-align: justify;"><strong>Sức mạnh của bộ vi xử lý A9 mới nhất</strong></h3><p style="line-height: 20.8px; text-align: justify;">iPhone 6s Plus 32 GB sử dụng&nbsp;<a href="https://www.thegioididong.com/hoi-dap/chip-xu-ly-apple-a9-tren-iphone-6s-va-6s-plus-733695" target="_blank" title="Tìm hiểu rõ hơn về chip xử lý A9">vi xử lý A9</a>&nbsp;tốc độ 1.8 GHz (iPhone 6 Plus chỉ với 1.4 GHz), giúp máy chạy cùng lúc nhiều ứng dụng mượt mà.&nbsp;Hiện tại, bạn có thể nâng cấp lên IOS 11 mới nhất như trên&nbsp;<a href="https://www.thegioididong.com/dtdd/iphone-x-64gb" target="_blank" title="iPhone X" type="iPhone X">iPhone X</a>.</p><p style="line-height: 20.8px; text-align: center;"></p><div class="video" allowfullscreen="" frameborder="0" height="395" scrolling="no" src="https://www.youtube.com/embed/ZowcYYl-UM0" width="640"><iframe src="https://www.youtube.com/embed/ZowcYYl-UM0?rel=0" frameborder="0" allowfullscreen=""></iframe></div><p></p><p style="line-height: 20.8px; text-align: center;"><i><span style="line-height: 20.8px; text-align: justify;">Bạn sẽ thực sự cảm nhận được sức mạnh của iPhone 6s Plus 32 GB khi chiến các game có đồ họa nặng như&nbsp;</span><a href="https://www.thegioididong.com/tin-tuc/modern-combat-5-blackout-game-bom-tan-do-bo-len-ca-556327" style="line-height: 20.8px; text-align: justify;" target="_blank" title="Thông tin thêm về game Modern Combat">Modern Combat 5</a><span style="line-height: 20.8px; text-align: justify;">&nbsp;hay&nbsp;Warhammer 40.000</span></i></p><p style="line-height: 20.8px; text-align: center;"></p><div class="video" allowfullscreen="" frameborder="0" height="395" src="https://www.youtube.com/embed/338nP7G8TfI" width="640"><iframe src="https://www.youtube.com/embed/338nP7G8TfI?rel=0" frameborder="0" allowfullscreen=""></iframe></div><p></p><p style="line-height: 20.8px; text-align: center;"><i style="line-height: 20.8px;">Người trợ lý ảo rất hữu dụng trên các dòng máy iPhone (Nguồn: Youtube)</i></p><p style="line-height: 20.8px; text-align: justify;"><span style="line-height: 20.8px;">Viên pin chỉ có dung lượng 2750 mAh khá thấp, tuy nhiên bạn vẫn có thể an tâm sử dụng máy trong một ngày.</span></p><p style="line-height: 20.8px; text-align: justify;">Một chiếc điện thoại vừa thể hiện đẳng cấp của bạn vừa mang lại những nâng cấp tốt hơn như camera, hiệu năng hoạt động mạnh mẽ hơn, tính năng 3D Touch độc đáo, tất cả sẽ là trải nghiệm mới mẻ cho bạn khi chọn mua iPhone 6s Plus 32 GB.</p>
                                   </article>',
@@ -149,7 +215,230 @@ class ProductsTableSeeder extends Seeder
                     'Thẻ SIM' => '1 Nano SIM, Hỗ trợ 4G',
                     'Dung lượng pin' => '2750 mAh',
                     ],
+                ],[
+                'name' => 'Samsung Galaxy S9+ 64GB (Xanh san hô)
+',
+                'slug' => str_slug('Samsung Galaxy S9+ 64GB (Xanh san hô)
+'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                   <h2 style="text-align: justify;"><a href="https://www.thegioididong.com/dtdd/samsung-galaxy-s9-plus-64gb-xanh-san-ho" target="_blank" title="Samsung Galaxy S9 Plus Xanh san hô" type="Samsung Galaxy S9 Plus Xanh san hô">Samsung Galaxy S9 Plus&nbsp;xanh san hô</a> nổi bật với sắc xanh mới lạ, camera kép chuyên nghiệp tuyệt đỉnh và màn hình tràn viền đẳng cấp.</h2>
+                                     </article>',
+                'quantity_store' => 40,
+                'price'=>23300000,
+                'rating' => 4.0,
+                'sales' => 120,
+                'category_id' => 5,
+                'manufacture_id' => 4,
+                'configuration' => [
+                    'Màn hình' => '	Super AMOLED, 6.2", Quad HD+ (2K+)',
+                    'Hệ điều hành' => 'Android 8.0 (Oreo)',
+                    'Camera sau' => '2 camera 12 MP',
+                    'Camera trước' => '8 MP',
+                    'CPU' => 'Exynos 9810 8 nhân 64 bit',
+                    'RAM' => '6 GB',
+                    'Thẻ SIM' => '	2 SIM Nano (SIM 2 chung khe thẻ nhớ), Hỗ trợ 4G',
+                    'Dung lượng pin' => '3500 mAh, có sạc nhanh',
                 ]
+            ],[
+                'name' => 'Samsung Galaxy Note 8',
+                'slug' => str_slug('Samsung Galaxy Note 8'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                   <h2><strong>Galaxy Note 8 là niềm hy vọng vực lại dòng Note danh tiếng của Samsung với diện mạo nam tính, sang trọng. Trang bị camera kép xóa phông thời thượng, màn hình vô cực như trên <a href="https://www.thegioididong.com/dtdd/samsung-galaxy-s8-plus" target="_blank" title="S8 Plus">S8 Plus</a>, bút Spen với nhiều tính năng mới và nhiều công nghệ được Samsung ưu ái đem lên Note 8.</strong></h2>
+                                        </article>',
+                'quantity_store' => 50,
+                'price'=>22900000,
+                'rating' => 4.0,
+                'sales' => 10,
+                'category_id' => 5,
+                'manufacture_id' => 4,
+                'configuration' => [
+                    'Màn hình' => '	Super AMOLED, 6.2", Quad HD+ (2K+)',
+                    'Hệ điều hành' => 'Android 8.0 (Oreo)',
+                    'Camera sau' => '2 camera 12 MP',
+                    'Camera trước' => '8 MP',
+                    'CPU' => 'Exynos 9810 8 nhân 64 bit',
+                    'RAM' => '6 GB',
+                    'Thẻ SIM' => '	2 SIM Nano (SIM 2 chung khe thẻ nhớ), Hỗ trợ 4G',
+                    'Dung lượng pin' => '3500 mAh, có sạc nhanh',
+                ]
+            ],[
+                'name' => 'Samsung Galaxy C9 Pro',
+                'slug' => str_slug('Samsung Galaxy C9 Pro'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                   <h2><strong>Galaxy Note 8 là niềm hy vọng vực lại dòng Note danh tiếng của Samsung với diện mạo nam tính, sang trọng. Trang bị camera kép xóa phông thời thượng, màn hình vô cực như trên <a href="https://www.thegioididong.com/dtdd/samsung-galaxy-s8-plus" target="_blank" title="S8 Plus">S8 Plus</a>, bút Spen với nhiều tính năng mới và nhiều công nghệ được Samsung ưu ái đem lên Note 8.</strong></h2>
+                                        </article>',
+                'quantity_store' => 50,
+                'price'=>22900000,
+                'rating' => 4.0,
+                'sales' => 10,
+                'category_id' => 5,
+                'manufacture_id' => 4,
+                'configuration' => [
+                    'Màn hình' => '	Super AMOLED, 6.2", Quad HD+ (2K+)',
+                    'Hệ điều hành' => 'Android 8.0 (Oreo)',
+                    'Camera sau' => '2 camera 12 MP',
+                    'Camera trước' => '8 MP',
+                    'CPU' => 'Exynos 9810 8 nhân 64 bit',
+                    'RAM' => '6 GB',
+                    'Thẻ SIM' => '	2 SIM Nano (SIM 2 chung khe thẻ nhớ), Hỗ trợ 4G',
+                    'Dung lượng pin' => '3500 mAh, có sạc nhanh',
+                ]
+            ],[
+                'name' => 'OPPO F5 6GB',
+                'slug' => str_slug('OPPO F5 6GB'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                   <h2 dir="ltr"><a href="https://www.thegioididong.com/dtdd/oppo-f5-6gb" target="_blank" title="OPPO F5 6GB" type="OPPO F5 6GB">OPPO F5 6GB</a> là phiên bản nâng cấp cấu hình của chiếc OPPO F5, chuyên gia selfie làm đẹp thông minh và màn hình tràn viền tuyệt đẹp.</h2>  
+                                    </article>',
+                'quantity_store' => 30,
+                'price'=>8900000,
+                'rating' => 4.0,
+                'sales' => 34,
+                'category_id' => 6,
+                'manufacture_id' => 4,
+                'configuration' => [
+                    'Màn hình' => 'IPS LCD, 6.0", Full HD+',
+                    'Hệ điều hành' => 'ColorOS 3.2 (Android 7.1)',
+                    'Camera sau' => '	16 MP',
+                    'Camera trước' => '	20 MP',
+                    'CPU' => '	Mediatek Helio P23',
+                    'RAM' => '	6 GB',
+                    'Thẻ SIM' => '2 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	3200 mAh',
+                ]
+            ],[
+                'name' => 'Nokia 7 plus',
+                'slug' => str_slug('Nokia 7 plus'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                   <h2><a href="https://www.thegioididong.com/dtdd-nokia" target="_blank" title="Điện thoại Nokia">Nokia</a> 7 Plus là chiếc <a href="https://www.thegioididong.com/dtdd" target="_blank" title="Điện thoại di động">smartphone</a> đầu tiên đánh dấu bước đi đầu tiên của HMD vào thế giới màn hình tỉ lệ 18:9.</h2>
+                                    </article>',
+                'quantity_store' => 130,
+                'price'=>11000000,
+                'rating' => 4.0,
+                'sales' => 34,
+                'category_id' => 7,
+                'manufacture_id' => 1,
+                'configuration' => [
+                    'Màn hình' => '	IPS LCD, 6", Full HD+',
+                    'Hệ điều hành' => '	Android 8.0 (Oreo)',
+                    'Camera sau' => '	12 MP và 13 MP (2 camera)',
+                    'Camera trước' => '		16 MP',
+                    'CPU' => '	Qualcomm Snapdragon 660 8 nhân',
+                    'RAM' => '		4 GB',
+                    'Thẻ SIM' => '
+2 SIM Nano (SIM 2 chung khe thẻ nhớ), Hỗ trợ 4G',
+                    'Dung lượng pin' => '	3200 mAh',
+                ]
+            ],[
+                'name' => 'OPPO F7 128GB',
+                'slug' => str_slug('OPPO F7 128GB'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                 <h2>Tiếp nối sự thành công của&nbsp;<a href="https://www.thegioididong.com/dtdd/oppo-f5" target="_blank" title="Oppo F5">OPPO F5</a>&nbsp;thì&nbsp;<a href="https://www.thegioididong.com/dtdd-oppo" target="_blank" title="OPPO">OPPO</a>&nbsp;tiếp tục giới thiệu&nbsp;<a href="https://www.thegioididong.com/dtdd/oppo-f7" target="_blank" title="OPPO F7 ">OPPO F7 128GB</a>&nbsp;với mức giá tương đương nhưng mang trong mình thiết kế hoàn toàn mới cũng nhiều cải tiến đáng giá.</h2>
+                                   </article>',
+                'quantity_store' => 130,
+                'price'=>9930000,
+                'rating' => 4.0,
+                'sales' => 131,
+                'category_id' => 7,
+                'manufacture_id' => 1,
+                'configuration' => [
+                    'Màn hình' => '	LTPS LCD, 6.23", Full HD+',
+                    'Hệ điều hành' => '	ColorOS 5.0 (Android 8.1)',
+                    'Camera sau' => '	16 MP',
+                    'Camera trước' => '		25 MP',
+                    'CPU' => '	MediaTek Helio P60',
+                    'RAM' => '	6 GB',
+                    'Thẻ SIM' => '2 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	3400 mAh',
+                ]
+            ],[
+                'name' => 'Nokia 6 new',
+                'slug' => str_slug('Nokia 6 new'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                  <h2>Sau nhiều rò rỉ thì cuối cùng chiếc&nbsp;<a href="https://www.thegioididong.com/dtdd/nokia-6-2018" target="_blank" title="Điện thoại Nokia 6" type="Điện thoại Nokia 6">Nokia 6</a>&nbsp;phiên bản 2018 cũng đã chính thức ra mắt với một thiết kế sang trọng nhưng vẫn có gì đó đáng tiếc cho một chiếc&nbsp;<a href="https://www.thegioididong.com/dtdd" target="_blank" title="Điện thoại">smartphone</a>&nbsp;ra mắt vào năm 2018.</h2>
+                                   </article>',
+                'quantity_store' => 30,
+                'price'=>6000000,
+                'rating' => 4.0,
+                'sales' => 31,
+                'category_id' => 7,
+                'manufacture_id' => 1,
+                'configuration' => [
+                    'Màn hình' => '	IPS LCD, 6", Full HD+',
+                    'Hệ điều hành' => '	Android 8.0 (Oreo)',
+                    'Camera sau' => '	12 MP và 13 MP (2 camera)',
+                    'Camera trước' => '		16 MP',
+                    'CPU' => '	Qualcomm Snapdragon 660 8 nhân',
+                    'RAM' => '		4 GB',
+                    'Thẻ SIM' => '2 SIM Nano (SIM 2 chung khe thẻ nhớ), Hỗ trợ 4G',
+                    'Dung lượng pin' => '	3200 mAh',
+                ]
+            ],[
+                'name' => 'Nokia 5',
+                'slug' => str_slug('Nokia 5'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                 <h2 dir="ltr">Nokia 5 là một <a href="https://www.thegioididong.com/dtdd" target="_blank" title="tốt">điện thoại</a> mới được trình làng đánh dấu sự trở lại ở sự kiện MWC 2017. Máy mang trong mình nhiều thay đổi cùng mức giá bán hấp dẫn.</h2>
+                                 </article>',
+                'quantity_store' => 25,
+                'price'=>3680000,
+                'rating' => 4.0,
+                'sales' => 31,
+                'category_id' => 7,
+                'manufacture_id' => 1,
+                'configuration' => [
+                    'Màn hình' => '		IPS LCD, 5.2", HD',
+                    'Hệ điều hành' => '		Android 7.1 (Nougat)',
+                    'Camera sau' => '13 MP',
+                    'Camera trước' => '		8 MP',
+                    'CPU' => '	Qualcomm Snapdragon 430 8 nhân 64 bit',
+                    'RAM' => '	2 GB',
+                    'Thẻ SIM' => '2 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	3200 mAh',
+                ]
+            ],[
+                'name' => 'Samsung Galaxy J3 Pro',
+                'slug' => str_slug('Samsung Galaxy J3 Pro'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                               <h2><strong>Samsung Galaxy J3 Pro là bản nâng cấp mạnh mẽ về cả ngoại hình và cấu hình so với chiếc&nbsp;<a href="https://www.thegioididong.com/dtdd/samsung-galaxy-j3-lte" target="_blank" title="Điện thoại Samsung Galaxy J3">Samsung Galaxy J3</a> tiền nhiệm, hứa hẹn sẽ đem đến cho người dùng một Smartphone xứng đáng với giá tiền bỏ ra.</strong></h2>
+                                  </article>',
+                'quantity_store' => 123,
+                'price'=>3980000,
+                'rating' => 4.5,
+                'sales' => 311,
+                'category_id' => 5,
+                'manufacture_id' => 4,
+                'configuration' => [
+                    'Màn hình' => 'PLS TFT LCD, 5", HD',
+                    'Hệ điều hành' => '		Android 7.1 (Nougat)',
+                    'Camera sau' => '13 MP',
+                    'Camera trước' => '	5 MP',
+                    'CPU' => '		Exynos 7570 4 nhân 64-bit',
+                    'RAM' => '	2 GB',
+                    'Thẻ SIM' => '	2 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	3200 mAh',
+                ]
+            ],[
+                'name' => 'Samsung Galaxy A8+ (2018)',
+                'slug' => str_slug('Samsung Galaxy A8+ (2018)'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                             <h2 style="text-align: justify;"><a href="https://www.thegioididong.com/dtdd-samsung" target="_blank" title="Điện thoại Samsung">Samsung</a> Galaxy A8+ (2018) là phiên bản lớn hơn của chiếc&nbsp;Samsung Galaxy A8 (2018) phù hợp với những bạn yêu thích một thiết bị có màn hình lớn và thời lượng pin bền bỉ.</h2>
+                                 </article>',
+                'quantity_store' => 321,
+                'price'=>9980000,
+                'rating' => 4.5,
+                'sales' => 112,
+                'category_id' => 5,
+                'manufacture_id' => 4,
+                'configuration' => [
+                    'Màn hình' => '	Super AMOLED, 6", Full HD+',
+                    'Hệ điều hành' => '	Android 7.1 (Nougat)',
+                    'Camera sau' => '	16 MP',
+                    'Camera trước' => '	16 MP và 8 MP',
+                    'CPU' => '	Exynos 7885 8 nhân 64-bit',
+                    'RAM' => '	6 GB',
+                    'Thẻ SIM' => '2 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '3500 mAh, có sạc nhanh',
+                ]
+            ]
             ];
         foreach($data as $product){
             Product::create($product);

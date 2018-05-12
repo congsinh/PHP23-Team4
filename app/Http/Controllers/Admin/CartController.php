@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Auth;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
@@ -40,6 +41,48 @@ class CartController extends Controller
 
     public function removeCart(Request $request){
         $cart = Cart::remove($request->id);
-        return response()->json($cart,200);
+        $cartSub = Cart::subtotal(0);
+        $cartCount = Cart::count();
+        return response()->json([$cart,$cartSub,$cartCount],200);
+    }
+
+
+    public function cartCheckOut(Request $request){
+        $this->validate($request,[
+            'name' => 'required',
+            'phone' => 'required',
+            'address' => 'required'
+        ],[
+            'name.required' => 'Vui lòng khách hàng nhập tên',
+            'phone.required' => 'Vui lòng khách hàng nhập số điện thoại',
+            'address.required' => 'Vui lòng khách hàng nhập địa chỉ'
+        ]);
+        $order = new Order;
+        if(Auth::check()){
+            $order->discount =0;
+            $order->status = 1;
+            $order->name = $request->name;
+            $order->phone = $request->phone;
+            $order->address = $request->address;
+            $order->total_pay = 0;
+            $order->note = $request->note;
+            $order->user_id = Auth::user()->id;
+        }else{
+            $order->discount = 0;
+            $order->status = 1;
+            $order->name = $request->name;
+            $order->phone = $request->phone;
+            $order->address = $request->address;
+            $order->total_pay = 0;
+            $order->note = $request->note;
+        }
+        $order->save();
+        $carts = Cart::content();
+        foreach ($carts as $cart){
+            $order->products()->attach($cart->id, ['quantity' => $cart->qty]);
+        }
+
+        Cart::destroy();
+        return redirect()->back()->with(['flash_message' => 'Bạn Đã CheckOut thành công ']);;
     }
 }

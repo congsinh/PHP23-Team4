@@ -21,13 +21,15 @@ Route::get('buy-product','Admin\CartController@getBuyProduct');
 Route::get('my-cart','Admin\CartController@myCart');
 Route::get('cart-tang','Admin\CartController@cartTang');
 Route::get('cart-giam','Admin\CartController@cartGiam');
-Route::delete('remove-cart','Admin\CartController@removeCart');
+Route::get('remove-cart','Admin\CartController@removeCart');
+Route::post('check-out','Admin\CartController@cartCheckOut');
 
 Route::group(['middleware'=>'check_user'],function(){
     Route::get('/logout','Auth\LoginController@userLogout')->name('logout');
     Route::resource('/info','Auth\DetailUserController');
     Route::get('/edit-password','Auth\DetailUserController@editPassword');
     Route::put('/edit-password/{id}','Auth\DetailUserController@putPassword');
+    Route::get('/delete-product-cart/{id_order}/{id_product}','Auth\DetailUserController@deleteProductCart')->name('delete-product-cart');
 });
 
 

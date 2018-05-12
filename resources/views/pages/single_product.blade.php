@@ -23,7 +23,7 @@
                                 <div class="col-sm-6">
                                     <div class="product-images">
                                         <div class="product-main-img">
-                                            <img src="{{asset("uploads/images/products/" . $product->imageDetail->first()->image_detail)}}" alt="">
+                                            <img src="@if($product->imageDetail->first()){{asset("uploads/images/products/" . $product->imageDetail->first()->image_detail)}} @endif" alt="">
                                         </div>
 
                                         <div class="product-gallery text-center">
@@ -76,7 +76,7 @@
                                 <p>{!! $product->description  !!}</p>
                             </div>
                             <div id="fb-root"></div>
-                            <div id='fb-comments' class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="800" data-numposts="5"></div>
+                            <div id='fb-comments' class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
                             <script>
                                 (function(d, s, id) {
                                     var js, fjs = d.getElementsByTagName(s)[0];
@@ -93,7 +93,7 @@
                             <h2 class="sidebar-title">Sản phẩm khác</h2>
                             @foreach($related as $product)
                                 <div class="thubmnail-recent">
-                                    <img src="{{asset("uploads/images/products/" . $product->imageDetail->first()->image_detail )}}" class="recent-thumb" alt="">
+                                    <img src="@if($product->imageDetail->first()) {{asset("uploads/images/products/" . $product->imageDetail->first()->image_detail )}} @endif" class="recent-thumb" alt="">
                                     <h2><a href="">{{ $product->name }}</a></h2>
                                     <div class="product-sidebar-price">
                                         <ins>{{ number_format( $product->price ) }}đ</ins>
@@ -105,7 +105,7 @@
                             <h2 class="sidebar-title">Top mua nhiều nhất</h2>
                             @foreach($topsales as $product)
                                 <div class="thubmnail-recent">
-                                    <img src="{{asset("uploads/images/products/" . $product->imageDetail->first()->image_detail )}}" class="recent-thumb" alt="">
+                                    <img src="@if($product->imageDetail->first()) {{asset("uploads/images/products/" . $product->imageDetail->first()->image_detail )}} @endif" class="recent-thumb" alt="">
                                     <h2><a href="">{{ $product->name }}</a></h2>
                                     <div class="product-sidebar-price">
                                         <ins>{{ number_format( $product->price ) }}đ</ins>

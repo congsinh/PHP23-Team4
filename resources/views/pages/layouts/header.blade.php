@@ -4,7 +4,7 @@
             <div class="col-md-8">
                 <div class="user-menu">
                     <ul>
-                        <li><a href="{{asset("page/cart.blade.php")}}"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+                        <li><a href="{{ url('/my-cart') }}"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
                         @if(Auth::check() && Auth::user()->is_admin === 0 )
                             <li><a href="{{ url('/info',Auth::user()->id) }}"><i class="fa fa-user"></i> My Account</a></li>
                             <li> <a>Xin chào {{ ucfirst(Auth::user()->name) }}</a> </li>
