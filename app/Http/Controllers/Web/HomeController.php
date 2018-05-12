@@ -28,4 +28,17 @@ class HomeController extends Controller
         return view('pages.home',compact(['products','news', 'phones']));
     }
 
+    public function search(Request $request){
+        $key = $request->key;
+        $offset = $request->offset;
+        $offset = !empty($offset) ? $offset + 1  : 0 ;
+        $total = Product::where('name', 'like', '%' . $key . '%')->count();
+        $result = Product::where('name', 'like', '%' . $key . '%')
+                           ->orderBy('created_at','desc')
+                           ->offset($offset)
+                           ->take(5)
+                           ->get();
+        $view = view('pages.layouts.search',compact('result'))->render();
+        return response()->json(['view' => $view,'total' => $total], 200);
+    }
 }

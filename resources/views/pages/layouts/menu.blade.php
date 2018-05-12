@@ -30,7 +30,24 @@
                     @endforeach
 
                 </ul>
+                <div class="box pull-right">
+                    <div class="container-2">
+                        <span class="icon"><i class="fa fa-search"></i></span>
+                        <input type="search" id="search" placeholder="Tìm kiếm..." />
+                        <div class=" wp-search p-5 pull-right ">
+                            <div class="search ">
+                                <div id="search-result">
+                                </div>
+                                <i><span class="count-result pull-left"></span>&nbsp; kết quả tìm thấy !</i>
+                                <span class="pull-right" id="more-product">Xem thêm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
+
     </div>
 </div> <!-- End mainmenu area -->
+
