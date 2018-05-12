@@ -9,7 +9,6 @@ use App\Models\Product;
 
 class HomeController extends Controller
 {
-
     public function index()
     {
         $smartphones = Category::with(['productsByParent' => function($q){
@@ -24,10 +23,9 @@ class HomeController extends Controller
         ];
         $news = Product::with('imageDetail')->limit(3)->get();
         $phones = Product::all()->where('category_id', 2)->take(1);
-
         return view('pages.home',compact(['products','news', 'phones']));
     }
-
+  
     public function search(Request $request){
         $key = $request->key;
         $offset = $request->offset;
@@ -41,4 +39,5 @@ class HomeController extends Controller
         $view = view('pages.layouts.search',compact('result'))->render();
         return response()->json(['view' => $view,'total' => $total], 200);
     }
+
 }

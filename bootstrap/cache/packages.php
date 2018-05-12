@@ -6,34 +6,11 @@
       0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     ),
   ),
-  'gloudemans/shoppingcart' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Cart' => 'Gloudemans\\Shoppingcart\\Facades\\Cart',
-    ),
-  ),
   'laravel/tinker' => 
   array (
     'providers' => 
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    ),
-  ),
-  'laravelcollective/html' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Collective\\Html\\HtmlServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Form' => 'Collective\\Html\\FormFacade',
-      'Html' => 'Collective\\Html\\HtmlFacade',
     ),
   ),
   'barryvdh/laravel-debugbar' => 
@@ -52,6 +29,29 @@
     'providers' => 
     array (
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    ),
+  ),
+  'laravelcollective/html' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Collective\\Html\\HtmlServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Form' => 'Collective\\Html\\FormFacade',
+      'Html' => 'Collective\\Html\\HtmlFacade',
+    ),
+  ),
+  'gloudemans/shoppingcart' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Cart' => 'Gloudemans\\Shoppingcart\\Facades\\Cart',
     ),
   ),
 );
