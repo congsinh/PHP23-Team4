@@ -92,7 +92,7 @@
                                         <div class="product-f-image mb-5">
                                             <img class='img-product' src="@if(!empty($item->imageDetail->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
                                             <div class="product-hover">
-                                                <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                                <button type="button" value="{{ $item->id }}" class="tryMe"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
                                                 <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                             </div>
                                         </div>
