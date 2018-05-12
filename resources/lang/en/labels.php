@@ -18,8 +18,8 @@ return [
         4 => 'Đã thanh toán',
     ],
     'status-product' => [
-        1 => '<div class="alert alert-success p-5"><strong>Còn hàng</strong></div>',
-        2 => '<div class="alert alert-danger p-5"><strong>Hết hàng</strong></div>',
+        1 => '<div class="alert alert-success status-product"><strong>Còn hàng</strong></div>',
+        2 => '<div class="alert alert-danger status-product"><strong>Hết hàng</strong></div>',
     ]
 
 ];
