@@ -19,7 +19,7 @@
     {{--<link rel="stylesheet" href="../../../public/css/font-awesome.min.css">--}}
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset("css/font-awesome.min.css")}}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{asset("css/owl.carousel.css")}}">
     <link rel="stylesheet" href="{{asset("style.css")}}">

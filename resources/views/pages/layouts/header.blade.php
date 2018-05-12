@@ -40,9 +40,11 @@
                     <h1><a href="{{url('/')}}"><img src="{{asset("img/logo.png")}}"></a></h1>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="shopping-item" id="shopping-item">
-                    <a href="">Cart - <span class="cart-amunt">{{ Cart::subtotal(0) }} VND</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">{{ Cart::count() }}</span></a>
+            <div class="col-sm-6 ">
+                <div class="pull-right">
+                    <div class="shopping-item " id="shopping-item">
+                        <a href="">Cart - <span class="cart-amunt">{{ Cart::subtotal(0) }} VND</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">{{ Cart::count() }}</span></a>
+                    </div>
                 </div>
             </div>
         </div>

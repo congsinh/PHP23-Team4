@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index($name)
     {
         $cate = Category::where('slug',$name)->with(['subcate','productsByParent'])->first();
-        $products = $cate->productsByParent()->paginate(15);
+        $products = $cate->productsByParent()->paginate(16);
         return view('pages.shop',compact(['cate','products']));
     }
     public function show($id)
@@ -25,5 +25,11 @@ class ProductController extends Controller
                             ->take(5)
                             ->get();
         return view('pages.single_product',compact(['product', 'related', 'topsales']));
+    }
+    public function getProductsBySub($slug){
+        $cate = Category::where('slug',$slug)->first();
+        $products = $cate->products()->paginate(16);
+        $view = view('pages.layouts.products',compact(['products']))->render();
+        return response()->json(['view' => $view ], 200);
     }
 }

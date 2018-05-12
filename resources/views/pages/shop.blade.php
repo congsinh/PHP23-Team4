@@ -43,55 +43,31 @@
             <ul class="filter">
                 <li class="fmanu pull-left">
                     @foreach($cate->subcate as $subcates )
-                        <a href="" class="prevent">{{ $subcates->name }}</a>
+                        <a href="" class="prevent subcate @if($loop->first) active @endif" data-slug="{{ $subcates->slug }}">{{ $subcates->name }}</a>
                     @endforeach
-
                 </li>
                 <li class="frange pull-right">
-                    <a href="" class="prevent" data-id="7">
-                        Dưới 1 triệu
+                    <a href="" class="prevent search-price" data-id="3">
+                        Dưới 3 triệu
                     </a>
-                    <a href="" class="prevent" data-id="9">
-                        Từ 1 - 3 triệu
-                    </a>
-                    <a href="" class="prevent" data-id="289">
+                    <a href="" class="prevent search-price" data-id="5">
                         Từ 3 - 5 triệu
                     </a>
-                    <a href="" class="prevent" data-id="562">
-                        Từ 5 - 10 triệu
+                    <a href="" class="prevent search-price" data-id="8">
+                        Từ 5 - 8 triệu
                     </a>
-                    <a href="" class="prevent" data-id="253">
-                        Trên 10 triệu
+                    <a href="" class="prevent search-price" data-id="15">
+                        Từ 8 - 15 triệu
+                    </a>
+                    <a href="" class="prevent search-price" data-id="more">
+                        Trên 15 triệu
                     </a>
                 </li>
                 <!--#endregion-->
             </ul>
         </div>
-        <div class="pt-10">
-            @foreach($products as $product)
-                <div class="wp_product">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img class='image' src="@if($product->imageDetail()->first()) {{ asset('uploads/images/products/'.$product->imageDetail()->first()->image_detail) }} @endif" alt="">
-                            <h4 class="pt-5 text-center"><a href="product/{{$product->id}}">{{$product->name}}</a></h4>
-                            <div class="product-carousel-price pt-5">
-                                <ins class="price">{{ number_format($product->price) }}đ</ins>
-                            </div>
-                            <div class="product-option-shop pt-5">
-                                <button type="button" class="add_to_cart_button pull-left tryMe" value="{{$product->id}}">
-                                    <i class="fa fa-shopping-cart"></i>&nbsp;Add cart
-                                </button>
-                                <span class="pull-right"
-                                      style="padding:15px 5px 0px 0px">Sales: {{ $product->sales }}</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            @endforeach
-        </div>
-        <div class="row text-center">
-            {{ $products->links() }}
+        <div id="wp-product" >
+            @include('pages.layouts.products')
         </div>
     </div>
 @endsection
@@ -163,6 +139,22 @@
                     delayToasts();
                 }
             })
+
+            $('a.subcate').on('click', function(e){
+                e.preventDefault();
+                $('a.subcate').removeClass('active');
+                var slug = $(this).attr('data-slug');
+                $.ajax({
+                    url : 'subcate/' + slug,
+                    type : 'GET',
+                    success : function(data){
+                       console.log(data);
+                       $('#wp-product').html(data.view);
+                    }
+                });
+                $(this).addClass('active');
+            });
+
         });
     </script>
 @endsection

@@ -115,13 +115,12 @@ z-index: 999;}
 }
 .shopping-item {
     border: 1px solid #ddd;
-    float: right;
     font-size: 18px;
     margin-top: 40px;
     padding: 10px;
     position: fixed;
-    right: 7%;
     z-index: 9999;
+    right:10%;
     background-color: white;
 }
 .shopping-item a {
@@ -671,7 +670,9 @@ a:hover, a:focus {color: #17a78b}
   color: #fff;
   padding-bottom: 40px;
 }
-
+a.active{
+    color:red !important;
+}
 
 .slide-bulletz {
     bottom: 30px;

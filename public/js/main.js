@@ -109,7 +109,6 @@ jQuery(document).ready(function($){
     $('#more-product').on('click', function() {
         var key = $('#search').val();
         var offset = $('#search-result div.single-product-widget').length;
-        alert(offset);
         $.ajax({
             url: 'search',
             type: 'GET',

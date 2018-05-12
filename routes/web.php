@@ -49,6 +49,7 @@ Route::group(['namespace' => 'Web'],function() {
     Route::get('/', 'HomeController@index');
     Route::get('/search', 'HomeController@search');
     Route::get('/{category}', 'ProductController@index')->name('category-products');
+    Route::get('/subcate/{slug}', 'ProductController@getProductsBySub')->name('subcate-products');
     Route::get('product/{id}', 'ProductController@show')->name('product-detail');
 
 });
