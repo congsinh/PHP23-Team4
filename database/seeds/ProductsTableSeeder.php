@@ -66,7 +66,7 @@ class ProductsTableSeeder extends Seeder
                                    <h2>"<a href="https://www.thegioididong.com/dtdd/iphone-x-64gb" target="_blank" title="Điện thoại iPhone X 64GB" type="Điện thoại iPhone X 64GB">iPhone X giá</a>" là cụm từ được&nbsp;rất nhiều người mong chờ muốn biết và tìm kiếm trên Google bởi đây là chiếc điện thoại mà Apple kỉ niệm 10 năm iPhone đầu tiên được bán ra.</h2>
                                  </article>',
                 'quantity_store' => 20,
-                'price'=>2130000,
+                'price'=>21300000,
                 'rating' => 4.5,
                 'sales' => 320,
                 'category_id' => 4,
@@ -90,11 +90,11 @@ class ProductsTableSeeder extends Seeder
                                    <h2 style="text-align: justify;"><a href="https://www.thegioididong.com/dtdd/samsung-galaxy-s9-plus-64gb-xanh-san-ho" target="_blank" title="Samsung Galaxy S9 Plus Xanh san hô" type="Samsung Galaxy S9 Plus Xanh san hô">Samsung Galaxy S9 Plus&nbsp;xanh san hô</a> nổi bật với sắc xanh mới lạ, camera kép chuyên nghiệp tuyệt đỉnh và màn hình tràn viền đẳng cấp.</h2>
                                      </article>',
                 'quantity_store' => 40,
-                'price'=>2330000,
+                'price'=>23300000,
                 'rating' => 4.0,
                 'sales' => 120,
-                'category_id' => 4,
-                'manufacture_id' => 3,
+                'category_id' => 5,
+                'manufacture_id' => 4,
                 'configuration' => [
                     'Màn hình' => '	Super AMOLED, 6.2", Quad HD+ (2K+)',
                     'Hệ điều hành' => 'Android 8.0 (Oreo)',
@@ -112,11 +112,11 @@ class ProductsTableSeeder extends Seeder
                                    <h2><strong>Galaxy Note 8 là niềm hy vọng vực lại dòng Note danh tiếng của Samsung với diện mạo nam tính, sang trọng. Trang bị camera kép xóa phông thời thượng, màn hình vô cực như trên <a href="https://www.thegioididong.com/dtdd/samsung-galaxy-s8-plus" target="_blank" title="S8 Plus">S8 Plus</a>, bút Spen với nhiều tính năng mới và nhiều công nghệ được Samsung ưu ái đem lên Note 8.</strong></h2>
                                         </article>',
                 'quantity_store' => 50,
-                'price'=>2290000,
+                'price'=>22900000,
                 'rating' => 4.0,
                 'sales' => 10,
-                'category_id' => 4,
-                'manufacture_id' => 3,
+                'category_id' => 5,
+                'manufacture_id' => 4,
                 'configuration' => [
                     'Màn hình' => '	Super AMOLED, 6.2", Quad HD+ (2K+)',
                     'Hệ điều hành' => 'Android 8.0 (Oreo)',
@@ -126,6 +126,249 @@ class ProductsTableSeeder extends Seeder
                     'RAM' => '6 GB',
                     'Thẻ SIM' => '	2 SIM Nano (SIM 2 chung khe thẻ nhớ), Hỗ trợ 4G',
                     'Dung lượng pin' => '3500 mAh, có sạc nhanh',
+                ]
+            ],[
+                'name' => 'Điện thoại Samsung Galaxy C9 Pro',
+                'slug' => str_slug('Điện thoại Samsung Galaxy C9 Pro'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                   <h2><strong>Galaxy Note 8 là niềm hy vọng vực lại dòng Note danh tiếng của Samsung với diện mạo nam tính, sang trọng. Trang bị camera kép xóa phông thời thượng, màn hình vô cực như trên <a href="https://www.thegioididong.com/dtdd/samsung-galaxy-s8-plus" target="_blank" title="S8 Plus">S8 Plus</a>, bút Spen với nhiều tính năng mới và nhiều công nghệ được Samsung ưu ái đem lên Note 8.</strong></h2>
+                                        </article>',
+                'quantity_store' => 50,
+                'price'=>22900000,
+                'rating' => 4.0,
+                'sales' => 10,
+                'category_id' => 5,
+                'manufacture_id' => 4,
+                'configuration' => [
+                    'Màn hình' => '	Super AMOLED, 6.2", Quad HD+ (2K+)',
+                    'Hệ điều hành' => 'Android 8.0 (Oreo)',
+                    'Camera sau' => '2 camera 12 MP',
+                    'Camera trước' => '8 MP',
+                    'CPU' => 'Exynos 9810 8 nhân 64 bit',
+                    'RAM' => '6 GB',
+                    'Thẻ SIM' => '	2 SIM Nano (SIM 2 chung khe thẻ nhớ), Hỗ trợ 4G',
+                    'Dung lượng pin' => '3500 mAh, có sạc nhanh',
+                ]
+            ],[
+                'name' => 'Điện thoại OPPO F7 128GB',
+                'slug' => str_slug('Điện thoại OPPO F7 128GB'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                   <h2>Tiếp nối sự thành công của&nbsp;<a href="https://www.thegioididong.com/dtdd/oppo-f5" target="_blank" title="Oppo F5">OPPO F5</a>&nbsp;thì&nbsp;<a href="https://www.thegioididong.com/dtdd-oppo" target="_blank" title="OPPO">OPPO</a>&nbsp;tiếp tục giới thiệu&nbsp;<a href="https://www.thegioididong.com/dtdd/oppo-f7" target="_blank" title="OPPO F7 ">OPPO F7 128GB</a>&nbsp;với mức giá tương đương nhưng mang trong mình thiết kế hoàn toàn mới cũng nhiều cải tiến đáng giá.</h2>
+                                       </article>',
+                'quantity_store' => 30,
+                'price'=>9900000,
+                'rating' => 3.0,
+                'sales' => 14,
+                'category_id' => 6,
+                'manufacture_id' => 4,
+                'configuration' => [
+                    'Màn hình' => '	Super AMOLED, 6.2", Quad HD+ (2K+)',
+                    'Hệ điều hành' => 'Android 8.0 (Oreo)',
+                    'Camera sau' => '2 camera 12 MP',
+                    'Camera trước' => '8 MP',
+                    'CPU' => 'Exynos 9810 8 nhân 64 bit',
+                    'RAM' => '6 GB',
+                    'Thẻ SIM' => '	2 SIM Nano (SIM 2 chung khe thẻ nhớ), Hỗ trợ 4G',
+                    'Dung lượng pin' => '3500 mAh, có sạc nhanh',
+                ]
+            ],[
+                'name' => 'Điện thoại OPPO F5 6GB',
+                'slug' => str_slug('Điện thoại OPPO F5 6GB'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                   <h2 dir="ltr"><a href="https://www.thegioididong.com/dtdd/oppo-f5-6gb" target="_blank" title="OPPO F5 6GB" type="OPPO F5 6GB">OPPO F5 6GB</a> là phiên bản nâng cấp cấu hình của chiếc OPPO F5, chuyên gia selfie làm đẹp thông minh và màn hình tràn viền tuyệt đẹp.</h2>  
+                                    </article>',
+                'quantity_store' => 30,
+                'price'=>8900000,
+                'rating' => 4.0,
+                'sales' => 34,
+                'category_id' => 6,
+                'manufacture_id' => 4,
+                'configuration' => [
+                    'Màn hình' => 'IPS LCD, 6.0", Full HD+',
+                    'Hệ điều hành' => 'ColorOS 3.2 (Android 7.1)',
+                    'Camera sau' => '	16 MP',
+                    'Camera trước' => '	20 MP',
+                    'CPU' => '	Mediatek Helio P23',
+                    'RAM' => '	6 GB',
+                    'Thẻ SIM' => '2 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	3200 mAh',
+                ]
+            ],[
+                'name' => 'Điện thoại Nokia 7 plus',
+                'slug' => str_slug('Điện thoại Nokia 7 plus'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                   <h2><a href="https://www.thegioididong.com/dtdd-nokia" target="_blank" title="Điện thoại Nokia">Nokia</a> 7 Plus là chiếc <a href="https://www.thegioididong.com/dtdd" target="_blank" title="Điện thoại di động">smartphone</a> đầu tiên đánh dấu bước đi đầu tiên của HMD vào thế giới màn hình tỉ lệ 18:9.</h2>
+                                    </article>',
+                'quantity_store' => 130,
+                'price'=>11000000,
+                'rating' => 4.0,
+                'sales' => 34,
+                'category_id' => 7,
+                'manufacture_id' => 1,
+                'configuration' => [
+                    'Màn hình' => '	IPS LCD, 6", Full HD+',
+                    'Hệ điều hành' => '	Android 8.0 (Oreo)',
+                    'Camera sau' => '	12 MP và 13 MP (2 camera)',
+                    'Camera trước' => '		16 MP',
+                    'CPU' => '	Qualcomm Snapdragon 660 8 nhân',
+                    'RAM' => '		4 GB',
+                    'Thẻ SIM' => '
+2 SIM Nano (SIM 2 chung khe thẻ nhớ), Hỗ trợ 4G',
+                    'Dung lượng pin' => '	3200 mAh',
+                ]
+            ],[
+                'name' => 'Điện thoại OPPO F7 128GB',
+                'slug' => str_slug('Điện thoại OPPO F7 128GB'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                 <h2>Tiếp nối sự thành công của&nbsp;<a href="https://www.thegioididong.com/dtdd/oppo-f5" target="_blank" title="Oppo F5">OPPO F5</a>&nbsp;thì&nbsp;<a href="https://www.thegioididong.com/dtdd-oppo" target="_blank" title="OPPO">OPPO</a>&nbsp;tiếp tục giới thiệu&nbsp;<a href="https://www.thegioididong.com/dtdd/oppo-f7" target="_blank" title="OPPO F7 ">OPPO F7 128GB</a>&nbsp;với mức giá tương đương nhưng mang trong mình thiết kế hoàn toàn mới cũng nhiều cải tiến đáng giá.</h2>
+                                   </article>',
+                'quantity_store' => 130,
+                'price'=>9930000,
+                'rating' => 4.0,
+                'sales' => 131,
+                'category_id' => 7,
+                'manufacture_id' => 1,
+                'configuration' => [
+                    'Màn hình' => '	LTPS LCD, 6.23", Full HD+',
+                    'Hệ điều hành' => '	ColorOS 5.0 (Android 8.1)',
+                    'Camera sau' => '	16 MP',
+                    'Camera trước' => '		25 MP',
+                    'CPU' => '	MediaTek Helio P60',
+                    'RAM' => '	6 GB',
+                    'Thẻ SIM' => '2 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	3400 mAh',
+                ]
+            ],[
+                'name' => 'Điện thoại Nokia 6 new',
+                'slug' => str_slug('Điện thoại Nokia 6 new'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                  <h2>Sau nhiều rò rỉ thì cuối cùng chiếc&nbsp;<a href="https://www.thegioididong.com/dtdd/nokia-6-2018" target="_blank" title="Điện thoại Nokia 6" type="Điện thoại Nokia 6">Nokia 6</a>&nbsp;phiên bản 2018 cũng đã chính thức ra mắt với một thiết kế sang trọng nhưng vẫn có gì đó đáng tiếc cho một chiếc&nbsp;<a href="https://www.thegioididong.com/dtdd" target="_blank" title="Điện thoại">smartphone</a>&nbsp;ra mắt vào năm 2018.</h2>
+                                   </article>',
+                'quantity_store' => 30,
+                'price'=>6000000,
+                'rating' => 4.0,
+                'sales' => 31,
+                'category_id' => 7,
+                'manufacture_id' => 1,
+                'configuration' => [
+                    'Màn hình' => '	IPS LCD, 6", Full HD+',
+                    'Hệ điều hành' => '	Android 8.0 (Oreo)',
+                    'Camera sau' => '	12 MP và 13 MP (2 camera)',
+                    'Camera trước' => '		16 MP',
+                    'CPU' => '	Qualcomm Snapdragon 660 8 nhân',
+                    'RAM' => '		4 GB',
+                    'Thẻ SIM' => '2 SIM Nano (SIM 2 chung khe thẻ nhớ), Hỗ trợ 4G',
+                    'Dung lượng pin' => '	3200 mAh',
+                ]
+            ],[
+                'name' => 'Điện thoại Nokia 5',
+                'slug' => str_slug('Điện thoại Nokia 5'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                                 <h2 dir="ltr">Nokia 5 là một <a href="https://www.thegioididong.com/dtdd" target="_blank" title="Điện thoại tốt">điện thoại</a> mới được trình làng đánh dấu sự trở lại ở sự kiện MWC 2017. Máy mang trong mình nhiều thay đổi cùng mức giá bán hấp dẫn.</h2>
+                                 </article>',
+                'quantity_store' => 25,
+                'price'=>3680000,
+                'rating' => 4.0,
+                'sales' => 31,
+                'category_id' => 7,
+                'manufacture_id' => 1,
+                'configuration' => [
+                    'Màn hình' => '		IPS LCD, 5.2", HD',
+                    'Hệ điều hành' => '		Android 7.1 (Nougat)',
+                    'Camera sau' => '13 MP',
+                    'Camera trước' => '		8 MP',
+                    'CPU' => '	Qualcomm Snapdragon 430 8 nhân 64 bit',
+                    'RAM' => '	2 GB',
+                    'Thẻ SIM' => '2 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	3200 mAh',
+                ]
+            ],[
+                'name' => 'Điện thoại Samsung Galaxy J3 Pro',
+                'slug' => str_slug('Điện thoại Samsung Galaxy J3 Pro'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                               <h2><strong>Samsung Galaxy J3 Pro là bản nâng cấp mạnh mẽ về cả ngoại hình và cấu hình so với chiếc&nbsp;<a href="https://www.thegioididong.com/dtdd/samsung-galaxy-j3-lte" target="_blank" title="Điện thoại Samsung Galaxy J3">Samsung Galaxy J3</a> tiền nhiệm, hứa hẹn sẽ đem đến cho người dùng một Smartphone xứng đáng với giá tiền bỏ ra.</strong></h2>
+                                  </article>',
+                'quantity_store' => 123,
+                'price'=>3980000,
+                'rating' => 4.5,
+                'sales' => 311,
+                'category_id' => 5,
+                'manufacture_id' => 4,
+                'configuration' => [
+                    'Màn hình' => 'PLS TFT LCD, 5", HD',
+                    'Hệ điều hành' => '		Android 7.1 (Nougat)',
+                    'Camera sau' => '13 MP',
+                    'Camera trước' => '	5 MP',
+                    'CPU' => '		Exynos 7570 4 nhân 64-bit',
+                    'RAM' => '	2 GB',
+                    'Thẻ SIM' => '	2 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	3200 mAh',
+                ]
+            ],[
+                'name' => 'Điện thoại Samsung Galaxy A8+ (2018)',
+                'slug' => str_slug('Điện thoại Samsung Galaxy A8+ (2018)'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                             <h2 style="text-align: justify;"><a href="https://www.thegioididong.com/dtdd-samsung" target="_blank" title="Điện thoại Samsung">Samsung</a> Galaxy A8+ (2018) là phiên bản lớn hơn của chiếc&nbsp;Samsung Galaxy A8 (2018) phù hợp với những bạn yêu thích một thiết bị có màn hình lớn và thời lượng pin bền bỉ.</h2>
+                                 </article>',
+                'quantity_store' => 321,
+                'price'=>9980000,
+                'rating' => 4.5,
+                'sales' => 112,
+                'category_id' => 5,
+                'manufacture_id' => 4,
+                'configuration' => [
+                    'Màn hình' => '	Super AMOLED, 6", Full HD+',
+                    'Hệ điều hành' => '	Android 7.1 (Nougat)',
+                    'Camera sau' => '	16 MP',
+                    'Camera trước' => '	16 MP và 8 MP',
+                    'CPU' => '	Exynos 7885 8 nhân 64-bit',
+                    'RAM' => '	6 GB',
+                    'Thẻ SIM' => '2 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '3500 mAh, có sạc nhanh',
+                ]
+            ],[
+                'name' => 'Điện thoại iPhone 8 Plus 64GB',
+                'slug' => str_slug('Điện thoại iPhone 8 Plus 64GB'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                             <h2>Thừa hưởng thiết kế đã đạt đến độ chuẩn mực, thế hệ&nbsp;<a href="https://www.thegioididong.com/dtdd/iphone-8-plus" target="_blank" title="iPhone 8 256 GB" type="iPhone 8 256 GB">iPhone 8 Plus</a>&nbsp;thay đổi phong cách bóng bẩy hơn và bổ sung hàng loạt tính năng cao cấp cho trải nghiệm sử dụng vô cùng tuyệt vời.</h2>
+                                </article>',
+                'quantity_store' => 1121,
+                'price'=>23980000,
+                'rating' => 5,
+                'sales' => 1112,
+                'category_id' => 4,
+                'manufacture_id' => 3,
+                'configuration' => [
+                    'Màn hình' => '	LED-backlit IPS LCD, 5.5", Retina HD',
+                    'Hệ điều hành' => '	iOS 11',
+                    'Camera sau' => '2 camera 12 MPP',
+                    'Camera trước' => '	7 MP',
+                    'CPU' => 'Apple A11 Bionic 6 nhân',
+                    'RAM' => '	3 GB',
+                    'Thẻ SIM' => '	1 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	2691 mAh, có sạc nhanh',
+                ]
+            ],[
+                'name' => 'Điện thoại iPhone 8 Plus Red 64GB (Đỏ)',
+                'slug' => str_slug('Điện thoại iPhone 8 Plus Red 64GB (Đỏ)'),
+                'description' => '<article class="area_article area_articleFull" style="">
+                             <h2><a href="https://www.thegioididong.com/dtdd-apple-iphone" target="_blank" title="Điện thoại iPhone">iPhone</a><a href="https://www.thegioididong.com/dtdd/iphone-8-plus-do" target="_blank" title="iPhone 8 Plus Đỏ" type="iPhone 8 Plus Đỏ">&nbsp;8 Plus đỏ</a> là bản nâng cấp nhẹ của chiếc&nbsp;<a href="https://www.thegioididong.com/dtdd/iphone-7-plus-256gb" target="_blank" title="Điện thoại iPhone 7 Plus">iPhone 7 Plus đỏ</a>&nbsp;đã ra mắt trước đó với cấu hình mạnh mẽ cùng camera có nhiều cải tiến cũng như màu sắc nổi bật, cá tính.</h2>
+                                </article>',
+                'quantity_store' => 121,
+                'price'=>25980000,
+                'rating' => 5,
+                'sales' => 12,
+                'category_id' => 4,
+                'manufacture_id' => 3,
+                'configuration' => [
+                    'Màn hình' => '	LED-backlit IPS LCD, 5.5", Retina HD',
+                    'Hệ điều hành' => '	iOS 11',
+                    'Camera sau' => '2 camera 12 MP',
+                    'Camera trước' => '	7 MP',
+                    'CPU' => 'Apple A11 Bionic 6 nhân',
+                    'RAM' => '	3 GB',
+                    'Thẻ SIM' => '	1 Nano SIM, Hỗ trợ 4G',
+                    'Dung lượng pin' => '	2691 mAh, có sạc nhanh',
                 ]
             ],[
                 'name' => 'Laptop Asus S510UA i5 8250U/4GB/1TB/Win10/(BQ414T)',
