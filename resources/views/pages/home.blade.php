@@ -1,4 +1,13 @@
 @extends('pages.layouts.master')
+@section('style')
+    <style>
+        .button-hidden{
+            background: transparent;
+            border: none !important;
+            font-size:0;
+        }
+    </style>
+    @stop
 @section('content')
     <div class="slider-area">
         <!-- Slider -->
@@ -92,7 +101,7 @@
                                         <div class="product-f-image mb-5">
                                             <img class='img-product' src="@if(!empty($item->imageDetail->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
                                             <div class="product-hover">
-                                                <button type="button" value="{{ $item->id }}" class="tryMe"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
+                                                <button type="button" value="{{ $item->id }}" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
                                                 <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                             </div>
                                         </div>
