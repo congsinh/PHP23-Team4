@@ -6,8 +6,11 @@
             border:0;
             outline:none;
         }
+        .invalid-feedback{color:red}
+        .shopping-item{
+            position: relative;
+        }
     </style>
-    <style href="{{asset('css/bootstrap-confirm-delete.css')}}"></style>
     @stop
 @section('content')
     <div class="product-big-title-area">
@@ -15,7 +18,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="product-bit-title text-center">
+                        @if(Session::has('flash_message'))
+                            <h2>{{ Session::get('flash_message') }}</h2>
+                        @else
                         <h2>Shopping Cart</h2>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -46,9 +53,9 @@
                                     <tbody>
                                     @if(Cart::count() > 0)
                                         @foreach($carts as $cart)
-                                            <tr class="cart_item">
+                                            <tr class="cart_item" id="delete-{{$cart->rowId}}">
                                                 <td class="product-remove">
-                                                    <button title="Remove this item" class="demo button-delete" value="{{$cart->rowId}}">×</button>
+                                                    <button class="demo button-delete" value="{{$cart->rowId}}" >×</button>
                                                 </td>
 
                                                 <td class="product-thumbnail">
@@ -56,7 +63,7 @@
                                                 </td>
 
                                                 <td class="product-name">
-                                                    <a href="single_product.blade.php">{{$cart->name}}</a>
+                                                    <a>{{$cart->name}}</a>
                                                 </td>
 
                                                 <td class="product-price">
@@ -87,23 +94,38 @@
 
                             <div class="cart-collaterals">
 
-
                                 <div class="cross-sells woocommerce">
                                     <h2>Check Out</h2>
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <form action="">
+                                            <form action="{{url('/check-out')}}" method="post">
+                                                @csrf
                                                 <div class="form-group">
                                                     <label for="name"> Họ tên Khách hàng</label>
                                                     <input type="text" class="form-control" name="name">
+                                                    @if ($errors->has('name'))
+                                                        <span>
+                                                            <strong class="invalid-feedback">{{ $errors->first('name') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name"> Số điện thoại </label>
                                                     <input type="text" class="form-control" name="phone">
+                                                    @if ($errors->has('phone'))
+                                                        <span>
+                                                            <strong class="invalid-feedback">{{ $errors->first('phone') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name"> Địa chỉ </label>
                                                     <input type="text" class="form-control" name="address">
+                                                    @if ($errors->has('address'))
+                                                        <span>
+                                                            <strong class="invalid-feedback">{{ $errors->first('address') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name"> Lời nhắn khách hàng </label>
@@ -113,7 +135,7 @@
                                             </form>
                                         </div>
                                     </div>
-
+                                    <br>
                                 </div>
 
 
@@ -149,16 +171,31 @@
         </div>
     </div>
 
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Bạn có muốn xóa sản phẩm này không ?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng </button>
+                    <button type="button" class="btn btn-danger" id="saveDelete" data-id="">Xóa sản phẩm</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
 @endsection
 
 
 @section('script')
     <script src="{{asset('js/number.js')}}"></script>
-    <script src="{{asset('js/bootstrap-confirm-delete.js')}}"></script>
     <script>
         $(document).ready(function(){
             $("body").on('click','.cart-tang',function(e){
-                // e.preventDefault();
+                e.preventDefault();
                 var id = $(this).val();
                 $.ajax({
                     type: 'GET',
@@ -251,30 +288,51 @@
                 })
             })
 
-
-
-            $('.demo').bootstrap_confirm_delete({
-                heading: 'Delete',
-                message: 'Are you sure you want to delete this item?'
-
-            }).on('click','.demo',function () {
-                console.log('dsadas')
+            $('.button-delete').on('click',function(e){
+                e.preventDefault();
+                $('#myModal').modal('show');
+                var id = $(this).val();
+                $('#saveDelete').attr('data-id',id);
             })
-            {{--$('body').on('click','.demo',function () {--}}
-                {{--var id = $(this).val();--}}
-                {{--$.ajax({--}}
-                    {{--type: 'DELETE',--}}
-                    {{--url:'{{url('remove-cart')}}',--}}
-                    {{--data: {id:id},--}}
-                    {{--dataType:'json',--}}
-                    {{--success:function(data){--}}
-                        {{--console.log(data);--}}
 
-                    {{--},error: function (data) {--}}
-                        {{--console.log('Error:', data);--}}
-                    {{--}--}}
-                {{--})--}}
-            {{--})--}}
+            $('#saveDelete').on('click',function () {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    }
+                });
+                var id = $(this).attr('data-id');
+                $.ajax({
+                    url: '{{url('/remove-cart')}}',
+                    type:'GET',
+                    data:{id:id},
+                    dataType:'json',
+                    success:function (data) {
+                        var cart_count = '<tr class="cart-subtotal" id="cart-count">\n' +
+                            '     <th>Tổng số hàng </th>\n' +
+                            '  <td><span class="amount"> '+data[2]+' sản phẩm</span></td>\n' +
+                            '    /tr>';
+
+
+                        var id_total = '<tr class="order-total" id="order-total">\n' +
+                            '  <th>Tổng tiền</th>\n' +
+                            ' <td><strong><span class="amount">'+data[1]+' VND</span></strong> </td>\n' +
+                            '    </tr>';
+
+                        var cart = '<div class="shopping-item" id="shopping-item">\n' +
+                            '                    <a href="">Cart - <span class="cart-amunt">'+data[1]+' VND</span> <i class="fa fa-shopping-cart"></i> <span class="product-count"> '+data[2]+' </span></a>\n' +
+                            '                </div>';
+
+                        $("#shopping-item").replaceWith(cart);
+                        $("#order-total").replaceWith(id_total);
+                        $("#cart-count").replaceWith(cart_count);
+                        $('#delete-'+id+'').remove();
+                        $('#myModal').modal('hide');
+                    }
+                })
+            })
+
+
         })
     </script>
     @stop

@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    
     protected $fillable = ['discount', 'status', 'name', 'phone', 'address', 'total_pay', 'note', 'user_id'];
 
     const IS_DRAFT = 1;
     const IS_PENDING = 2;
     const IS_SHIPPING = 3;
     const IS_PAID = 4;
-    public function user(){
+    public function user(){dc
         return $this->belongsTo('App\User');
     }
 

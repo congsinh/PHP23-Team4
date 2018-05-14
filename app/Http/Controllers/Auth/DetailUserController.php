@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+use App\Models\Order;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -49,9 +50,6 @@ class DetailUserController extends Controller
     {
         $user = User::findorFail($id);
         $index = 1;
-//        foreach ($user->orders as $orders){
-//            dd($orders->products->toArray());
-//        }
         return view('auth.profile_customer.index',compact('user','index'));
     }
 
@@ -105,6 +103,12 @@ class DetailUserController extends Controller
         }else{
             return redirect()->back();
         }
+    }
+
+    public function deleteProductCart($id_order,$id_product){
+        $order = Order::findorFail($id_order);
+        $order->products()->detach($id_product);
+        return redirect()->back();
     }
 
     /**
