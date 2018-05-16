@@ -13,6 +13,12 @@
 .pt-10{
     padding-top: 10px;
 }
+.mt-20{
+    margin-top:20px;
+}
+.full-width{
+    width: 100% !important;
+}
 input.none-style, textarea.none-style, input.none-style:read-only{
     background-color: transparent;
     border:none;

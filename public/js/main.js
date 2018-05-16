@@ -85,44 +85,7 @@ jQuery(document).ready(function($){
         offset: 95
     })
 
-    $('#search').on('keyup', function(e){
-        if(e.keyCode == 13)
-        {
-            var key = $('#search').val();
-            if(key !== ''){
-                $.ajax({
-                    url: 'search',
-                    type: 'GET',
-                    data: {
-                        key: key,
-                    },
-                    success: function (data) {
-                        console.log(data);
-                        $('#search-result').html(data.view);
-                        $('.count-result').text(data.total);
-                    }
-                });
-                $('.wp-search').show();
-            }
-        }
-    });
-    $('#more-product').on('click', function() {
-        var key = $('#search').val();
-        var offset = $('#search-result div.single-product-widget').length;
-        $.ajax({
-            url: 'search',
-            type: 'GET',
-            data: {
-                key: key,
-                offset: offset
-            },
-            success: function (data) {
-                console.log(data);
-                $('#search-result').append(data.view);
-                $('.count-result').text(data.total);
-            }
-        });
-    });
+
     $(document).on('click', function (e) {
         if ($(e.target).closest(".wp-search").length === 0) {
             $(".wp-search").hide();

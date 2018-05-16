@@ -43,15 +43,19 @@ Route::group(['namespace' => 'Admin'],function(){
         Route::resource('category', 'CategoryController');
         Route::resource('manufacturer', 'ManufacturerController');
         Route::resource('orders', 'OrderController');
+        Route::post('orders/export', 'OrderController@exportExc')->name('export-excel');
+        Route::get('users', 'UserController@index')->name('users-index');
+        Route::get('users/{id}/show', 'UserController@show')->name('users-show');
+        Route::post('users/reset-pw', 'UserController@resetPassWord')->name('users-password');
     });
     Route::get('configuration','AjaxController@getConfiguration')->name('configuration');
     Route::get('filter-products','AjaxController@getfilterProducts')->name('filter-product');
 });
 Route::group(['namespace' => 'Web'],function() {
     Route::get('/', 'HomeController@index');
-    Route::get('/search', 'HomeController@search');
-    Route::get('/{category}', 'ProductController@index')->name('category-products');
-    Route::get('/subcate/{slug}', 'ProductController@getProductsBySub')->name('subcate-products');
+    Route::get('search', 'HomeController@search')->name('search');
+    Route::get('{category}', 'ProductController@index')->name('category-products');
+    Route::get('subcate/{slug}', 'ProductController@getProductsBySub')->name('subcate-products');
     Route::get('product/{id}', 'ProductController@show')->name('product-detail');
 
 });

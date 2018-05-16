@@ -53,25 +53,25 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo promo1">
                         <i class="fa fa-refresh"></i>
-                        <p>30 Days return</p>
+                        <p>30 ngày đổi trả</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo promo2">
                         <i class="fa fa-truck"></i>
-                        <p>Free shipping</p>
+                        <p>Miễn phí giao hàng</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo promo3">
                         <i class="fa fa-lock"></i>
-                        <p>Secure payments</p>
+                        <p>Thanh toán bảo mật</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo promo4">
                         <i class="fa fa-gift"></i>
-                        <p>New products</p>
+                        <p>Khuyến mãi hấp dẫn</p>
                     </div>
                 </div>
             </div>
@@ -90,10 +90,10 @@
                                 @foreach($items as $item)
                                     <div class="single-product">
                                         <div class="product-f-image mb-5">
-                                            <img class='img-product' src="@if(!empty($item->imageDetail->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
+                                            <img class='img-product' src="@if(!empty($item->imageDetail()->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
                                             <div class="product-hover">
-                                                <button type="button" value="{{ $item->id }}" class="tryMe"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
-                                                <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                                <button type="button" value="{{ $item->id }}" class="tryMe"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm giỏ hàng</a></button>
+                                                <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i>Xem chi tiết</a>
                                             </div>
                                         </div>
                                         <h5><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}">{{$item->name}}</a></h5>

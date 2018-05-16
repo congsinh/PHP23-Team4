@@ -59,7 +59,7 @@
                 </td>
             </tr>
         @empty
-            <p>Notthing to show!</p>
+            <p>Không có sản phẩm nào!</p>
         @endforelse
         </tbody>
     </table>

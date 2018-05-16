@@ -26,10 +26,14 @@ class ProductController extends Controller
                             ->get();
         return view('pages.single_product',compact(['product', 'related', 'topsales']));
     }
-    public function getProductsBySub($slug){
-        $cate = Category::where('slug',$slug)->first();
-        $products = $cate->products()->paginate(16);
-        $view = view('pages.layouts.products',compact(['products']))->render();
-        return response()->json(['view' => $view ], 200);
+    public function getProductsBySub(Request $request,$slug){
+        $category = Category::with('category')->where('slug',$slug)->first();
+        $cate = $category->category;
+        $products = $category->products()->paginate(16);
+        if($request->ajax()){
+            $view = view('pages.layouts.products',compact(['products']))->render();
+            return response()->json(['view' => $view ], 200);
+        }
+        return view('pages.shop',compact(['products','cate']));
     }
 }

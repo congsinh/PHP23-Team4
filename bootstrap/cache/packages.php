@@ -1,18 +1,4 @@
 <?php return array (
-  'fideloper/proxy' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
-    ),
-  ),
-  'laravel/tinker' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    ),
-  ),
   'barryvdh/laravel-debugbar' => 
   array (
     'providers' => 
@@ -24,11 +10,29 @@
       'Debugbar' => 'Barryvdh\\Debugbar\\Facade',
     ),
   ),
-  'nunomaduro/collision' => 
+  'fideloper/proxy' => 
   array (
     'providers' => 
     array (
-      0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+      0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
+    ),
+  ),
+  'gloudemans/shoppingcart' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Cart' => 'Gloudemans\\Shoppingcart\\Facades\\Cart',
+    ),
+  ),
+  'laravel/tinker' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Tinker\\TinkerServiceProvider',
     ),
   ),
   'laravelcollective/html' => 
@@ -43,15 +47,22 @@
       'Html' => 'Collective\\Html\\HtmlFacade',
     ),
   ),
-  'gloudemans/shoppingcart' => 
+  'maatwebsite/excel' => 
   array (
     'providers' => 
     array (
-      0 => 'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider',
+      0 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
     ),
     'aliases' => 
     array (
-      'Cart' => 'Gloudemans\\Shoppingcart\\Facades\\Cart',
+      'Excel' => 'Maatwebsite\\Excel\\Facades\\Excel',
+    ),
+  ),
+  'nunomaduro/collision' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
 );

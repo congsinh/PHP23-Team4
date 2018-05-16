@@ -45,7 +45,10 @@
                 <a href="<?php echo e(route('orders.index')); ?>"><i class="fa fa-shopping-cart"></i> <span>Đơn hàng</span></a>
             </li>
             <li  class="" >
-                <a href="<?php echo e(route('manufacturer.index')); ?>"><i class="fa fa-link"></i> <span>Đối tác</span></a>
+                <a href="<?php echo e(route('manufacturer.index')); ?>"><i class="fa fa-link"></i> <span>Nhà cung cấp</span></a>
+            </li>
+            <li  class="" >
+                <a href="<?php echo e(route('users-index')); ?>"><i class="fa fa-user"></i> <span>Thành viên</span></a>
             </li>
 
             

@@ -145,7 +145,7 @@
                 $('a.subcate').removeClass('active');
                 var slug = $(this).attr('data-slug');
                 $.ajax({
-                    url : 'subcate/' + slug,
+                    url : '/subcate/' + slug,
                     type : 'GET',
                     success : function(data){
                        console.log(data);

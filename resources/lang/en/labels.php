@@ -20,6 +20,11 @@ return [
     'status-product' => [
         1 => '<div class="alert alert-success status-product"><strong>Còn hàng</strong></div>',
         2 => '<div class="alert alert-danger status-product"><strong>Hết hàng</strong></div>',
-    ]
-
+    ],
+    'status-order' => [
+        1 => '<span class="label label-default label-draft">Đã hủy</span>',
+        2 => '<span class="label label-danger label-draft">Chờ duyệt</span>',
+        3 => '<span class="label label-primary label-draft">Đang chuyển hàng</span>',
+        4 => '<span class="label label-success label-draft">Đã thanh toán</span>',
+    ],
 ];

@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
-
+use Maatwebsite\Excel\Facades\Excel;
 class OrderController extends Controller
 {
     public function __construct()
@@ -48,11 +48,7 @@ class OrderController extends Controller
             return response()->json(['view' => $view],200);
         }
         $orders = $query->orderByDesc('created_at')->paginate(10)->appends(request()->query());
-        return view('admin.orders.list',compact([
-            'orders',
-            'listStatus',
-            'listStatusWithLabels',
-        ]));
+        return view('admin.orders.list',compact(['orders']));
     }
 
     /**
@@ -159,5 +155,52 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
         $order->delete();
         return redirect()->route('orders.index')->with(['success' => 'Đã xóa thành công !']);
+    }
+
+    public function exportExc(Request $request){
+        $sheetName = $request->excel_name ? $request->excel_name : 'eShop' ;
+        $extension = $request->extension;
+        $start = $request->excel_start;
+        $end = $request->excel_end;
+        $orders = Order::whereBetween('created_at',[$start, $end])
+                        ->orderBy('created_at')
+                        ->get();
+        $listStatus = Order::getListStatuses();
+        Excel::create($sheetName, function($excel) use ($sheetName, $orders, $listStatus) {
+            $excel->sheet('Orders', function($sheet) use ($orders, $listStatus ) {
+                $sheet->loadView('admin.orders.excel', ['orders' => $orders]);
+
+                foreach($listStatus as $key  => $status){
+                    $sheet->SetCellValue("H".($key+1), $status);
+                }
+                $sheet->_parent->addNamedRange(
+                    new \PHPExcel_NamedRange(
+                        'status', $sheet, 'H2:H'.(count($listStatus) + 1)
+                    )
+                );
+//                foreach($orders->toArray() as $key => $order){
+//                    $objValidation = $sheet->getCell('F2')->getDataValidation();
+//                    $objValidation->setType(\PHPExcel_Cell_DataValidation::TYPE_LIST);
+//                    $objValidation->setErrorStyle(\PHPExcel_Cell_DataValidation::STYLE_INFORMATION);
+//                    $objValidation->setAllowBlank(false);
+//                    $objValidation->setShowInputMessage(true);
+//                    $objValidation->setShowErrorMessage(true);
+//                    $objValidation->setShowDropDown(true);
+//                    $objValidation->setErrorTitle('Input error');
+//                    $objValidation->setError('Value is not in list.');
+//                    $objValidation->setPromptTitle('Pick from list');
+//                    $objValidation->setPrompt('Please pick a value from the drop-down list.');
+//                    $objValidation->setFormula1('status'); //note this!
+//                }
+
+                $sheet->setStyle(array(
+                    'font' => array(
+                        'name'      =>  'Calibri',
+                        'size'      =>  16,
+                    ),
+                ));
+
+            });
+        })->download($extension);
     }
 }

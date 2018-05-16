@@ -85,9 +85,7 @@
                                     <tr product-id="{{$product->id}}">
                                         <td>{{$product->id}}</td>
                                         <td>
-                                            <input type="text"
-                                                   class='product_name none-style form-control'
-                                                   value="{{$product->name}}"  readonly/>
+                                            <a href=" {{ route('products.show', ['id' => $product->id ]) }}">{{ $product->name }}</a>
                                         </td>
                                         <td>
                                             <input type="number" name="product[{{$product->id}}][quantity]" class='quantity '
