@@ -52,25 +52,25 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo promo1">
                         <i class="fa fa-refresh"></i>
-                        <p>30 Days return</p>
+                        <p>30 ngày đổi trả</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo promo2">
                         <i class="fa fa-truck"></i>
-                        <p>Free shipping</p>
+                        <p>Miễn phí giao hàng</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo promo3">
                         <i class="fa fa-lock"></i>
-                        <p>Secure payments</p>
+                        <p>Thanh toán bảo mật</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo promo4">
                         <i class="fa fa-gift"></i>
-                        <p>New products</p>
+                        <p>Khuyến mãi hấp dẫn</p>
                     </div>
                 </div>
             </div>
@@ -82,52 +82,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-
                     <div class="latest-product">
-                        <h2 class="section-title">Latest Products</h2>
+                        <h2 class="section-title">ĐIỆN THOẠI HOT</h2>
                         <div class="product-carousel">
-                            <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img class='img-product' src="<?php if(!empty($product->imageDetail->first())): ?> <?php echo e(asset('uploads/images/products/'.$product->imageDetail->first()->image_detail)); ?> <?php endif; ?>" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
+                            <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $items): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php $__currentLoopData = $items; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="single-product">
+                                        <div class="product-f-image mb-5">
+                                            <img class='img-product' src="<?php if(!empty($item->imageDetail()->first())): ?> <?php echo e(asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)); ?> <?php endif; ?>" alt="">
+                                            <div class="product-hover">
+                                                <button type="button" value="<?php echo e($item->id); ?>" class="tryMe"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm giỏ hàng</a></button>
+                                                <a href="<?php echo e(route('product-detail',[ 'id' => $item->id ])); ?>" class="view-details-link"><i class="fa fa-link"></i>Xem chi tiết</a>
+                                            </div>
+                                        </div>
+                                        <h5><a href="<?php echo e(route('product-detail',[ 'id' => $item->id ])); ?>"><?php echo e($item->name); ?></a></h5>
+                                        <div class="product-carousel-price">
+                                            <ins class="price"><?php echo e(number_format($item->price)); ?>đ</ins>
+                                            <div class="pull-right">
+                                                <?php if($item->quantity_store == 0): ?>
+                                                    <?php echo trans('labels.status-product.2' ); ?>
 
-                                <h2><a href="single_product.blade.php"><?php echo e($product->name); ?></a></h2>
+                                                <?php else: ?>
+                                                    <?php echo trans('labels.status-product.1' ); ?>
 
-                                <div class="product-carousel-price">
-                                    <ins><?php echo e($product->price); ?></ins> <del>$100.00</del>
-                                </div>
-                            </div>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </div>
-                    </div>
-
-                    <div class="latest-product">
-                        <h2 class="section-title">Điện Thoại</h2>
-                        <div class="product-carousel">
-                            <?php $__currentLoopData = $phones; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $phone): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="<?php echo e(asset("img/product-thumb-4.jpg")); ?>" alt="">
-                                        <div class="product-hover">
-                                            <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="single_product.blade.php" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                                <?php endif; ?>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <h2><a href="single_product.blade.php"><?php echo e($phone->name); ?></a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins><?php echo e($phone->price); ?></ins> <del>$100.00</del>
-                                    </div>
-                                </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
-
                     </div>
                 </div>
             </div>

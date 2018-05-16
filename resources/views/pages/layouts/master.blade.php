@@ -141,6 +141,45 @@
                     i++;
                     delayToasts();
                 }
+
+                $('#search').on('keyup', function(e){
+                    if(e.keyCode == 13)
+                    {
+                        var key = $('#search').val();
+                        if(key !== ''){
+                            $.ajax({
+                                url : '{{ route('search') }}',
+                                type : 'GET',
+                                data : {
+                                    key: key,
+                                },
+                                success: function (data) {
+                                    console.log(data);
+                                    $('#search-result').html(data.view);
+                                    $('.count-result').text(data.total);
+                                }
+                            });
+                            $('.wp-search').show();
+                        }
+                    }
+                });
+                $('#more-product').on('click', function() {
+                    var key = $('#search').val();
+                    var offset = $('#search-result div.single-product-widget').length;
+                    $.ajax({
+                        url: '{{ route('search') }}',
+                        type: 'GET',
+                        data: {
+                            key: key,
+                            offset: offset
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            $('#search-result').append(data.view);
+                            $('.count-result').text(data.total);
+                        }
+                    });
+                });
             })
         });
     </script>

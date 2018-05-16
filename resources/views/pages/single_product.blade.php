@@ -53,7 +53,7 @@
                                         </div>
 
                                         <form action="" class="cart">
-                                            <button class="add_to_cart_button" type="submit">Add to cart</button>
+                                            <button class="add_to_cart_button" type="submit">Thêm giỏ hàng</button>
                                         </form>
                                         <div class="config">
                                             <h3 class="">Thông số kỹ thuật</h3>

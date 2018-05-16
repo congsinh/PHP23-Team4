@@ -4,13 +4,13 @@
             <div class="single-shop-product">
                 <div class="product-upper">
                     <img class='image' src="@if($product->imageDetail()->first()) {{ asset('uploads/images/products/'.$product->imageDetail()->first()->image_detail) }} @endif" alt="">
-                    <h4 class="pt-5 text-center"><a href="product/{{$product->id}}">{{$product->name}}</a></h4>
+                    <h4 class="pt-5 text-center"><a href="{{ asset('product/' . $product->id )}}">{{$product->name}}</a></h4>
                     <div class="product-carousel-price pt-5">
                         <ins class="price">{{ number_format($product->price) }}đ</ins>
                     </div>
                     <div class="product-option-shop pt-5">
                         <button type="button" class="add_to_cart_button pull-left tryMe" value="{{$product->id}}">
-                            <i class="fa fa-shopping-cart"></i>&nbsp;Add cart
+                            <i class="fa fa-shopping-cart"></i>&nbsp;Giỏ hàng
                         </button>
                         <span class="pull-right"
                               style="padding:15px 5px 0px 0px">Sales: {{ $product->sales }}</span>

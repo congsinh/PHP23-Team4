@@ -430,7 +430,7 @@ z-index: 999;}
     border-radius: 5px;
     color: #fff;
     display: block;
-    font-size: 16px;
+    font-size: 14px;
     left: 10%;
     margin: 0;
     padding: 10px;
@@ -602,7 +602,7 @@ padding: 35px 0 180px;}
   color: #5a88ca;
 }
 .footer-wid-title {
-  font-family: raleway;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   font-weight: 100;color: #fff
 }

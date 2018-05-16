@@ -202,10 +202,12 @@ class ProductController extends Controller
             DB::beginTransaction();
             $product = Product::findOrFail($id);
             $image = $product->imageDetail;
-            foreach($image as $img){
-                $path = 'uploads/images/products/'.$img->image_detail;
-                if(file_exists($path)){
-                unlink($path);
+            if(empty($image->toArray())){
+                foreach($image as $img){
+                    $path = 'uploads/images/products/'.$img->image_detail;
+                    if(file_exists($path)){
+                        unlink($path);
+                    }
                 }
             }
             $product->delete();
@@ -213,7 +215,7 @@ class ProductController extends Controller
             return redirect()->route('products.index')->with(['success'=>'Đã xóa thành công !']);
         }catch( \Exception $e){
             DB::rollBack();
-            return redirect()->route('products.index')->with(['error'=>'Đã xảy ra lỗi. Không thể xóa !']);
+            return redirect()->route('products.index')->with(['error'=>'Đã xảy ra lỗi. Không thể xóa !' ]);
         }
 
     }

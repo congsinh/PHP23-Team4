@@ -34,6 +34,9 @@
                         <label for="">Search:</label>
                         <input type="text" class="form-control" id="search" placeholder="Nhập từ khóa" value="@if(Request::get('search')) {{ Request::get('search') }} @endif"/>
                     </div>
+                    <button class="btn btn-success btn-md pull-right mt-20" data-toggle="modal" data-target="#exportExc">
+                        <i class="fa fa-download"><strong>&nbsp;Xuất excel</strong></i>
+                    </button>
                 </div>
             </fieldset>
         </div>
@@ -41,6 +44,55 @@
             @if($orders)
                 {!! view('admin.ajax.components.orders',compact(['orders','listStatusWithLabels']))->render()  !!}
             @endif
+        </div>
+        <div id="exportExc" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-md">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <form action="{{ route('export-excel') }}" method="POST">
+                        @csrf
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Xuất excel</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group full-width">
+                                <div class="input-group full-width">
+                                    <label for="">Tên file:</label>
+                                    <div class="input-group full-width">
+                                        <input type="text" class="form-control "  name="excel_name" value="">
+                                    </div>
+                                </div>
+                                <div class=" input-group full-width">
+                                    <label for="">Thời gian:</label>
+                                    <div class="input-group ">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-clock-o"></i>
+                                        </div>
+                                        <input type="text" class="form-control" id="date-excel" >
+                                        <input type="hidden"  id="excel_start" name="excel_start" >
+                                        <input type="hidden"  id="excel_end" name="excel_end" >
+                                    </div>
+                                </div>
+                                <div class=" input-group full-width">
+                                    <label for="">Định dạng:</label>
+                                    <div class="input-group full-width">
+                                        <select name="extension" id="extension" class="form-control">
+                                            <option value="xls">*.xls</option>
+                                            <option value="xlsx">*.xlsx</option>
+                                            <option value="csv">.csv</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success" id="export">Xuất</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
 @include('admin.layouts.modal-del')
 @endsection
@@ -78,7 +130,7 @@
                 },500);
             });
             //datetime range picker
-            $('#daterange').daterangepicker({
+            var search_date = $('#daterange').daterangepicker({
                 timePicker: true,
                 startDate: moment().startOf('hour'),
                 endDate: moment().startOf('hour').add(0, 'hour'),
@@ -87,17 +139,38 @@
                 }
             });
 
-            $('#daterange').on('apply.daterangepicker', function(ev, picker) {
+            search_date.on('apply.daterangepicker', function(ev, picker) {
                 $('input[name=daterangepicker_start]').val(picker.startDate.format('YYYY-MM-DD hh:mm:ss'));
                 $('input[name=daterangepicker_end]').val(picker.endDate.format('YYYY-MM-DD hh:mm:ss'));
                 callAjax();
             });
 
-            $('#daterange').on('cancel.daterangepicker', function(ev, picker) {
+            search_date.on('cancel.daterangepicker', function(ev, picker) {
                 $('input[name=daterangepicker_start]').val('');
                 $('input[name=daterangepicker_end]').val('');
                 callAjax();
             });
+
+
+        });
+        // datetime range picker export excel
+        var export_date = $('#date-excel').daterangepicker({
+            timePicker: true,
+            startDate: moment().startOf('hour'),
+            endDate: moment().startOf('hour').add(0, 'hour'),
+            locale: {
+                format: 'YYYY/MM/DD hh:mm A'
+            }
+        });
+        export_date.on('apply.daterangepicker', function(ev, picker) {
+            var start = picker.startDate.format('YYYY-MM-DD hh:mm:ss');
+            var end = picker.endDate.format('YYYY-MM-DD hh:mm:ss');
+            $('#excel_start').val(start);
+            $('#excel_end').val(end);
+
+        }).on('cancel.daterangepicker', function(ev, picker){
+            $('#excel_start').val('');
+            $('#excel_end').val('');
         });
     </script>
 @endsection
