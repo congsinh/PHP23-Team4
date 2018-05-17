@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Hash;
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name'=>'admin',
                 'email' => 'admin@gmail.com',
-                'password' => bcrypt('admin123'),
+                'password' => Hash::make('admin123'),
                 'address'=>'admin',
                 'phone'=>'',
                 'status'=>true,
@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name'=>'customer',
                 'email' => 'customer@gmail.com',
-                'password' => bcrypt('customer123'),
+                'password' => Hash::make('customer123'),
                 'address'=>'',
                 'phone'=>'',
                 'status'=>true,

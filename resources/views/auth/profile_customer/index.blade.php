@@ -75,19 +75,15 @@
                             <tr>
                                 <td> {{$index++}} </td>
                                 <td>
-                                    <img width="70px" src="{{ asset('uploads/images/products/'.$product->imageDetail()->first()->image_detail) }}" alt="">
+                                    <img width="70px" src="@if($product->imageDetail()->first()) {{ asset('uploads/images/products/'.$product->imageDetail()->first()->image_detail) }}" @endif alt="">
                                 </td>
-                                <td>{{ $product->name }}</td>
+                                <td>
+                                    <a href="{{ route('product-detail', [ 'id' => $product->id ]) }}">{{ $product->name }}</a>
+                                </td>
                                 <td> {{ Carbon\Carbon::createFromTimestamp(strtotime($product->created_at))->diffForHumans() }} </td>
                                 <td>{{ number_format($product->price,0,',','.')}} VND</td>
                                 <td>
-                                    @if($orders->status === 1)
-                                         <strong class="alert alert-info status-product">Chờ duyệt</strong>
-                                        @elseif($orders->status === 2)
-                                          <strong class="alert alert-warning status-product">Đang Ship</strong>
-                                        @else
-                                         <strong class="alert alert-success status-product">Chờ duyệt</strong>
-                                        @endif
+                                    {!! trans('labels.status-order.' . $orders->status)  !!}
                                 </td>
                                 <td class="text-center">
                                     <a class="alert alert-danger status-product button-huy" href="{{ URL::route('delete-product-cart',[$orders->id,$product->id]) }}"> Hủy </a>
