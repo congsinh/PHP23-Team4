@@ -1,3 +1,12 @@
+<?php $__env->startSection('style'); ?>
+    <style>
+        .button-hidden{
+            background: transparent;
+            border: none !important;
+            font-size:0;
+        }
+    </style>
+    <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
     <div class="slider-area">
         <!-- Slider -->
@@ -91,8 +100,8 @@
                                         <div class="product-f-image mb-5">
                                             <img class='img-product' src="<?php if(!empty($item->imageDetail()->first())): ?> <?php echo e(asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)); ?> <?php endif; ?>" alt="">
                                             <div class="product-hover">
-                                                <button type="button" value="<?php echo e($item->id); ?>" class="tryMe"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm giỏ hàng</a></button>
-                                                <a href="<?php echo e(route('product-detail',[ 'id' => $item->id ])); ?>" class="view-details-link"><i class="fa fa-link"></i>Xem chi tiết</a>
+                                                <button type="button" value="<?php echo e($item->id); ?>" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
+                                                <a href="<?php echo e(route('product-detail',[ 'id' => $item->id ])); ?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                             </div>
                                         </div>
                                         <h5><a href="<?php echo e(route('product-detail',[ 'id' => $item->id ])); ?>"><?php echo e($item->name); ?></a></h5>
