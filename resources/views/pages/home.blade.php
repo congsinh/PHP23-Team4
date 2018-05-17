@@ -103,7 +103,7 @@
                                             <div class="product-hover">
                                                 <button type="button" value="{{ $item->id }}" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
                                                 <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-git                                             </div>
+                                            </div>
                                         </div>
                                         <h5><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}">{{$item->name}}</a></h5>
                                         <div class="product-carousel-price">
