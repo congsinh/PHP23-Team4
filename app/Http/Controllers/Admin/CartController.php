@@ -18,6 +18,7 @@ class CartController extends Controller
     }
 
     public function myCart(){
+        dd(number(Cart::subtotal()));
         $carts = Cart::content();
         return view('pages.cart',compact('carts'));
     }
