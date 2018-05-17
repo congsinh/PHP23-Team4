@@ -80,13 +80,15 @@
                                 <td>
                                     <a href="{{ route('product-detail', [ 'id' => $product->id ]) }}">{{ $product->name }}</a>
                                 </td>
-                                <td> {{ Carbon\Carbon::createFromTimestamp(strtotime($product->created_at))->diffForHumans() }} </td>
+                                <td> {{ Carbon\Carbon::createFromTimestamp(strtotime($orders->created_at))->diffForHumans() }} </td>
                                 <td>{{ number_format($product->price,0,',','.')}} VND</td>
                                 <td>
                                     {!! trans('labels.status-order.' . $orders->status)  !!}
                                 </td>
                                 <td class="text-center">
-                                    <a class="alert alert-danger status-product button-huy" href="{{ URL::route('delete-product-cart',[$orders->id,$product->id]) }}"> Hủy </a>
+                                    @if($orders->status !== 1)
+                                        <a class="alert alert-danger status-product button-huy" href="{{ URL::route('delete-product-cart',[$orders->id,$product->id]) }}"> Hủy </a>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach

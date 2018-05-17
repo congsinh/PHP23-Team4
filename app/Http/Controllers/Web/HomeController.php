@@ -14,12 +14,12 @@ class HomeController extends Controller
         $smartphones = Category::with(['productsByParent' => function($q){
             $q->orderBy('sales','desc')->take(10);
         }])->findOrFail(1);
-  //      $laptops = Product::where('category_id',2)->orderBy('sales','desc')->take(10)->get();
-  //      $accessories = Product::where('category_id',3)->orderBy('sales','desc')->take(10)->get();
+        $laptops = Product::where('category_id',2)->orderBy('sales','desc')->take(10)->get();
+        $accessories = Product::where('category_id',3)->orderBy('sales','desc')->take(10)->get();
         $products = [
             $smartphones->productsByParent,
-           // $laptops,
-           // $accessories
+            $laptops,
+            $accessories
         ];
         $news = Product::with('imageDetail')->limit(3)->get();
         $phones = Product::all()->where('category_id', 2)->take(1);

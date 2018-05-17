@@ -59,7 +59,12 @@
                                                 </td>
 
                                                 <td class="product-thumbnail">
-                                                    <a href="single_product.blade.php"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="{{asset('uploads/images/products/'.$cart->options['image']->image_detail)}}"></a>
+                                                    <a href="single_product.blade.php">
+                                                        <img width="145" height="145"
+                                                             alt="poster_1_up"
+                                                             class="shop_thumbnail"
+                                                             src="@if(!empty($cart->options['image'])){{asset('uploads/images/products/'.$cart->options['image']->image_detail)}} @endif">
+                                                    </a>
                                                 </td>
 
                                                 <td class="product-name">

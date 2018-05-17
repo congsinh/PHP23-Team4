@@ -60,7 +60,7 @@
                                 <div class="input-group full-width">
                                     <label for="">Tên file:</label>
                                     <div class="input-group full-width">
-                                        <input type="text" class="form-control "  name="excel_name" value="">
+                                        <input type="text" class="form-control "  name="excel_name" value="" placeholder="Ví dụ: Tháng 1">
                                     </div>
                                 </div>
                                 <div class=" input-group full-width">
@@ -72,6 +72,16 @@
                                         <input type="text" class="form-control" id="date-excel" >
                                         <input type="hidden"  id="excel_start" name="excel_start" >
                                         <input type="hidden"  id="excel_end" name="excel_end" >
+                                    </div>
+                                </div>
+                                <div class=" input-group full-width">
+                                    <label for="">Tình trạng:</label>
+                                    <div class="input-group ">
+                                        <input type="checkbox" id='checkAll' name="status[]" class="cb-status ml-20"  value="">&nbsp;Tất cả
+                                        <input type="checkbox" name="status[]" class="cb-status ml-20"  value="1">&nbsp;Đã hủy
+                                        <input type="checkbox" name="status[]" class="cb-status ml-20"  value="2" checked>&nbsp;Chờ duyệt
+                                        <input type="checkbox" name="status[]" class="cb-status ml-20"  value="3" checked>&nbsp;Đang chuyển hàng
+                                        <input type="checkbox" name="status[]" class="cb-status ml-20"  value="4" >&nbsp;Đã thanh toán
                                     </div>
                                 </div>
                                 <div class=" input-group full-width">
@@ -171,6 +181,10 @@
         }).on('cancel.daterangepicker', function(ev, picker){
             $('#excel_start').val('');
             $('#excel_end').val('');
+        });
+
+        $('input#checkAll').on('click',function () {
+            $('input:checkbox').prop('checked', this.checked);
         });
     </script>
 @endsection

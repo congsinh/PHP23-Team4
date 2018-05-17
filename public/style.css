@@ -29,23 +29,26 @@ h6 {
 body { font-family:Arial, Helvetica, sans-serif; }
 
 .m-0{
-    margin:0px;
+    margin:0px !important;;
 }
 .pt-10{
-    padding-top: 10px;
+    padding-top: 10px !important;;
 }
 .pt-5{
-    padding-top: 10px;
+    padding-top: 10px !important;;
 }
 .mb-5{
-    margin-bottom: 5px;
+    margin-bottom: 5px !important;
+}
+.ml-5{
+    margin-left: 5px !important;;
 }
 .p-5{
-     padding:5px;
+     padding:5px !important;;
 }
 .px-5{
-     padding-left:5px;
-     padding-right:5px;
+     padding-left:5px !important;;
+     padding-right:5px !important;;
 }
 .py-2{
      padding-top:2px;
@@ -729,7 +732,7 @@ width: 10px;
 .product-big-title-area {background: url(img/crossword.png) repeat scroll 0 0 #5a88ca}
 
 .product-bit-title h2 {
-  font-family: raleway;
+  font-family: Arial;
   font-size: 50px;
   font-weight: 200;
   margin: 0;
@@ -741,7 +744,10 @@ width: 10px;
 .single-product-area {
   padding-top: 20px;
 }
+.area_articleFull img{
+    width: 100% !important;
 
+}
 
 
 

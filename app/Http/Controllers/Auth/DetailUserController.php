@@ -108,6 +108,9 @@ class DetailUserController extends Controller
     public function deleteProductCart($id_order,$id_product){
         $order = Order::findorFail($id_order);
         $order->products()->detach($id_product);
+        if($order->products->count() === 0){
+            $order->destroy($id_order);
+        }
         return redirect()->back();
     }
 

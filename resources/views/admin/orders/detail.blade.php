@@ -15,54 +15,61 @@
             <div class="row">
 
                 <div class="box box-info">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Thông tin đơn hàng: ( Mã: {{  $order->id }})</h3>
-                        <div class="pull-right">
-                            <label for="status" class="col-sm-4 pr-0 ">Tình trạng</label>
-                            <div class="col-sm-8">
-                                    <select name="status" id="status">
-                                        @foreach($listStatus as $key => $status)
-                                            <option value="{{ $key }}" {{ ($order->status == $key) ? 'selected' : ""}}>{{ $status }}</option>
-                                        @endforeach
-                                    </select>
+                    <div class="box-header with-border row">
+                        <h3 class="box-title col-sm-7">Thông tin đơn hàng: ( Mã: {{  $order->id }})</h3>
+                        <div class="row pull-right col-sm-5" >
+                            <div class="col-sm-4 text-right">
+                                <a href="" class=" pr-0">
+                                    <i class="fa fa-print"></i>&nbsp;In hóa đơn
+                                </a>
+                            </div>
+                            <div class="col-sm-8 row text-right">
+                                <label for="status" class="col-sm-4 pr-0 ">Tình trạng</label>
+                                <div class="col-sm-8">
+                                        <select name="status" id="status">
+                                            @foreach($listStatus as $key => $status)
+                                                <option value="{{ $key }}" {{ ($order->status == $key) ? 'selected' : ""}}>{{ $status }}</option>
+                                            @endforeach
+                                        </select>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="box-body">
                         <div class="col-sm-5">
-                            <div class=" form-group">
+                            <div class="">
                                 <label for="name" class="col-sm-3 pr-0 pt-5 ">Tên</label>
                                 <div class="col-sm-9">
-                                    <input name='name' type="text" class="form-control none-style pl-0" id="name"
+                                    <input name='name' type="text" class="form-control none-style pl-2" id="name"
                                            value="{{ old('name') ? old('name') : $order->name}}">
                                 </div>
                             </div>
-                            <div class=" form-group">
+                            <div class="">
                                 <label for="phone" class="col-sm-3 pr-0 pt-5">Số điện thoại</label>
                                 <div class="col-sm-9">
-                                    <input name='phone' type="text" class="form-control none-style pl-0" id="phone"
+                                    <input name='phone' type="text" class="form-control none-style pl-2" id="phone"
                                            value="{{ old('phone') ? old('phone') : $order->phone}}">
                                 </div>
                             </div>
-                            <div class=" form-group">
+                            <div class="">
                                 <label for="address" class="col-sm-3 pr-0 pt-5">Địa chỉ</label>
                                 <div class="col-sm-9">
-                                    <textarea class="form-control none-style pl-0 autosize" style="resize: none;"
+                                    <textarea class="form-control none-style pl-2 autosize" style="resize: none;"
                                               id="address" name="address">{!! old('address') ? old('address') : $order->address  !!}</textarea>
                                 </div>
                             </div>
-                            <div class=" form-group">
+                            <div class="">
                                 <label for="date" class="col-sm-3 pr-0 pt-5 ">Ngày đặt</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control none-style pl-0" id="date"
+                                    <input type="text" class="form-control none-style pl-2" id="date"
                                            value="{{$order->created_at}}" readonly>
                                 </div>
                             </div>
 
-                            <div class=" form-group">
+                            <div class="">
                                 <label for="note" class="col-sm-3 pr-0 ">Ghi chú</label>
                                 <div class="col-sm-9">
-                                    <textarea name='note' class="form-control none-style pl-0 autosize" style="resize: none;"
+                                    <textarea name='note' class="form-control none-style pl-2 autosize" style="resize: none;"
                                               id="note">{!! old('note') ? old('note') : $order->note  !!}</textarea>
                                 </div>
                             </div>
@@ -75,7 +82,9 @@
                                     <td>Sản phẩm</td>
                                     <td>Số lượng</td>
                                     <td>Giá</td>
+                                    @if($order->status === 2)
                                     <td>Hủy</td>
+                                    @endif
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -98,11 +107,13 @@
                                                    price='{{$product->price}}'
                                                    value="{{number_format($product->price * $product->pivot->quantity)}}" readonly/>&nbsp;VNĐ
                                         </td>
+                                        @if($order->status === 2)
                                         <td>
                                             <span class="glyphicon glyphicon-trash delete-product"
                                                   aria-hidden="true" data-del="{{$product->id}}"></span>
 
                                         </td>
+                                        @endif
                                     </tr>
                                 @empty
                                 @endforelse

@@ -19,7 +19,6 @@ class CartController extends Controller
 
     public function myCart(){
         $carts = Cart::content();
-
         return view('pages.cart',compact('carts'));
     }
 
@@ -58,23 +57,15 @@ class CartController extends Controller
             'address.required' => 'Vui lòng khách hàng nhập địa chỉ'
         ]);
         $order = new Order;
+        $order->discount =0;
+        $order->status = 2;
+        $order->name = $request->name;
+        $order->phone = $request->phone;
+        $order->address = $request->address;
+        $order->total_pay = (int) Cart::subtotal(0,'','');
+        $order->note = $request->note;
         if(Auth::check()){
-            $order->discount =0;
-            $order->status = 1;
-            $order->name = $request->name;
-            $order->phone = $request->phone;
-            $order->address = $request->address;
-            $order->total_pay = 0;
-            $order->note = $request->note;
             $order->user_id = Auth::user()->id;
-        }else{
-            $order->discount = 0;
-            $order->status = 1;
-            $order->name = $request->name;
-            $order->phone = $request->phone;
-            $order->address = $request->address;
-            $order->total_pay = 0;
-            $order->note = $request->note;
         }
         $order->save();
         $carts = Cart::content();

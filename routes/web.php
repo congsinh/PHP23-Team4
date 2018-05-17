@@ -17,12 +17,7 @@ Auth::routes();
 Route::get('/login','Auth\LoginController@getLogin')->name('get-login-user');
 Route::post('/login','Auth\LoginController@userLogin')->name('login-user');
 
-Route::get('buy-product','Admin\CartController@getBuyProduct');
-Route::get('my-cart','Admin\CartController@myCart');
-Route::get('cart-tang','Admin\CartController@cartTang');
-Route::get('cart-giam','Admin\CartController@cartGiam');
-Route::get('remove-cart','Admin\CartController@removeCart');
-Route::post('check-out','Admin\CartController@cartCheckOut');
+
 
 Route::group(['middleware'=>'check_user'],function(){
     Route::get('/logout','Auth\LoginController@userLogout')->name('logout');
@@ -50,6 +45,12 @@ Route::group(['namespace' => 'Admin'],function(){
     });
     Route::get('configuration','AjaxController@getConfiguration')->name('configuration');
     Route::get('filter-products','AjaxController@getfilterProducts')->name('filter-product');
+    Route::get('buy-product','CartController@getBuyProduct');
+    Route::get('my-cart','CartController@myCart');
+    Route::get('cart-tang','CartController@cartTang');
+    Route::get('cart-giam','CartController@cartGiam');
+    Route::get('remove-cart','CartController@removeCart');
+    Route::post('check-out','CartController@cartCheckOut');
 });
 Route::group(['namespace' => 'Web'],function() {
     Route::get('/', 'HomeController@index');
