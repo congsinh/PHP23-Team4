@@ -96,8 +96,7 @@
                     <div class="latest-product">
                         <h2 class="section-title">ĐIỆN THOẠI HOT</h2>
                         <div class="product-carousel">
-                            @foreach($products as $items)
-                                @foreach($items as $item)
+                            @foreach($products[0] as $item)
                                     <div class="single-product">
                                         <div class="product-f-image mb-5">
                                             <img class='img-product' src="@if(!empty($item->imageDetail()->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
@@ -118,7 +117,67 @@
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="latest-product">
+                        <h2 class="section-title">Laptop HOT</h2>
+                        <div class="product-carousel">
+                            @foreach($products[1] as $item)
+                                <div class="single-product">
+                                    <div class="product-f-image mb-5">
+                                        <img class='img-product' src="@if(!empty($item->imageDetail()->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
+                                        <div class="product-hover">
+                                            <button type="button" value="{{ $item->id }}" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
+                                            <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+                                    <h5><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}">{{$item->name}}</a></h5>
+                                    <div class="product-carousel-price">
+                                        <ins class="price">{{ number_format($item->price) }}đ</ins>
+                                        <div class="pull-right">
+                                            @if($item->quantity_store == 0)
+                                                {!! trans('labels.status-product.2' ) !!}
+                                            @else
+                                                {!! trans('labels.status-product.1' ) !!}
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="latest-product">
+                        <h2 class="section-title">Phụ Kiện HOT</h2>
+                        <div class="product-carousel">
+                            @foreach($products[2] as $item)
+                                <div class="single-product">
+                                    <div class="product-f-image mb-5">
+                                        <img class='img-product' src="@if(!empty($item->imageDetail()->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
+                                        <div class="product-hover">
+                                            <button type="button" value="{{ $item->id }}" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
+                                            <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+                                    <h5><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}">{{$item->name}}</a></h5>
+                                    <div class="product-carousel-price">
+                                        <ins class="price">{{ number_format($item->price) }}đ</ins>
+                                        <div class="pull-right">
+                                            @if($item->quantity_store == 0)
+                                                {!! trans('labels.status-product.2' ) !!}
+                                            @else
+                                                {!! trans('labels.status-product.1' ) !!}
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </div>
                     </div>
@@ -158,9 +217,6 @@
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Top Sellers</h2>
                         <a href="" class="wid-view-more">View All</a>
-                        <?php
-                            $new_products = \App\Models\Product::all()->sortByDesc('sales')->take(3);
-                        ?>
                         @foreach($new_products as $new)
                             <div class="single-wid-product">
                                 <a href="single_product.blade.php"><img src="@if(!empty($new->imageDetail->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first())  }} @endif" alt="" class="product-thumb"></a>
@@ -173,7 +229,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="product-wid-price">
-                                    <ins>$400.00</ins> <del>$425.00</del>
+                                    <ins>{{number_format($new->price,0)}} VND</ins> <del>{{number_format($new->sales,0)}} VND</del>
                                 </div>
                             </div>
                         @endforeach
@@ -244,7 +300,7 @@
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>{{number_format($new->price,0)}} VND</ins> <del>{{number_format($new->sales,0)}} VND</del>
                             </div>
                         </div>
                         @endforeach
