@@ -33,6 +33,6 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => str_random(10),
             ]
         ]);
-        $users = factory(\App\User::class,30)->create();
+        $users = factory(\App\User::class,100)->create();
     }
 }

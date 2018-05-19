@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{asset('admin/bower_components/Ionicons/css/ionicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/dist/css/AdminLTE.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/bower_components/fullcalendar/dist/fullcalendar.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/bower_components/fullcalendar/dist/fullcalendar.print.min.css')}}" media='print'>
     <link rel="stylesheet" href="{{asset('admin/dist/css/skins/skin-blue.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/nouislider.min.css')}}">{{--range price :https://refreshless.com/nouislider/events-callbacks/--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -61,12 +63,16 @@
 <script src="{{asset('admin/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('admin/bower_components/moment/moment.js')}}"></script>
 <script src="{{asset('admin/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+<script src="{{asset('admin/bower_components/chart.js/Chart.js')}}"></script>
+<script src="{{asset('admin/bower_components/fullcalendar/dist/fullcalendar.min.js')}}"></script>
 <!-- AdminLTE App -->
+<script src="{{asset('admin/dist/js/adminlte.min.js')}}"></script>
 <script src="{{asset('admin/dist/js/adminlte.min.js')}}"></script>
 <!-- CKEditor JavaScript -->
 <script src="//cdn.ckeditor.com/4.9.2/full/ckeditor.js"></script>
 <script src="{{asset('js/nouislider.min.js')}}"></script>
 <script src="{{asset('js/wNumb.js')}}"></script>
+<script src="{{asset('admin/dist/js/jquery.printPage.js')}}"></script>
 <!-- script -->
 <script src="{{asset('admin/dist/js/script.js')}}"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>

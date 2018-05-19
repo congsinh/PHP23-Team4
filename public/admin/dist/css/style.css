@@ -76,9 +76,7 @@ div#thumbnail img::before{
     top:5px;
     right:-5px;
 }
-canvas{
-    border:1px solid red;
-}
+
 div.box-image{
     display: inline-block !important;
     position: relative;
@@ -174,4 +172,12 @@ legend.scheduler-border {
 span.delete-product:hover{
     cursor: pointer;
     color:red;
+}
+.notice{
+    display:inline-block;
+    width:10px;
+    height: 10px;
+}
+.sidebar-menu li.active {
+    background-color: #3c8dbc !important;
 }

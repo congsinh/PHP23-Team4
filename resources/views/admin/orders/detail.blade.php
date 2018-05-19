@@ -19,8 +19,8 @@
                         <h3 class="box-title col-sm-7">Thông tin đơn hàng: ( Mã: {{  $order->id }})</h3>
                         <div class="row pull-right col-sm-5" >
                             <div class="col-sm-4 text-right">
-                                <a href="" class=" pr-0">
-                                    <i class="fa fa-print"></i>&nbsp;In hóa đơn
+                                <a href="{{ route('order-print',['id' => $order->id]) }}" class="pr-0" id="order-print" >
+                                    <i class="fa fa-print" style="font-size:16px"></i>&nbsp;In hóa đơn
                                 </a>
                             </div>
                             <div class="col-sm-8 row text-right">
@@ -212,6 +212,8 @@
             });
         });
 
+        //print order
+        $('#order-print').printPage();
     </script>
 
 @endsection

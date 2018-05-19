@@ -32,13 +32,16 @@ Route::group(['namespace' => 'Admin'],function(){
     Route::get('admin/login','AdminController@getLogin')->name('admin-login');
     Route::post('admin/login','AdminController@postLogin')->name('admin-post-login');
     Route::group(['prefix'=>'admin','middleware'=>'check_admin'],function(){
-        Route::get('dashboard','AdminController@index')->name('dashboard');
         Route::get('logout','AdminController@logout')->name('admin-logout');
+        Route::get('dashboard','DashboardController@index')->name('dashboard');
+
         Route::resource('products','ProductController');
         Route::resource('category', 'CategoryController');
         Route::resource('manufacturer', 'ManufacturerController');
         Route::resource('orders', 'OrderController');
+
         Route::post('orders/export', 'OrderController@exportExc')->name('export-excel');
+        Route::get('orders/print/{id}', 'OrderController@printOrder')->name('order-print');
         Route::get('users', 'UserController@index')->name('users-index');
         Route::get('users/{id}/show', 'UserController@show')->name('users-show');
         Route::post('users/reset-pw', 'UserController@resetPassWord')->name('users-password');

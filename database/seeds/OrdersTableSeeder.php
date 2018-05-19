@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\Order;
 use App\Models\Product;
-
+use Carbon\Carbon;
 class OrdersTableSeeder extends Seeder
 {
     /**
@@ -17,16 +17,19 @@ class OrdersTableSeeder extends Seeder
         $users = \App\User::all();
         $discount = [5, 10];
         foreach ($users as $user) {
-            for ($i = 1; $i < rand(2, 5); $i++) {
+            for ($i = 1; $i < rand(2, 20); $i++) {
                 Order::create([
                     'discount' => $discount[array_rand($discount)],
-                    'status' => rand(1, 3),
+                    'status' => rand(1, 4),
                     'name' => $user->name,
                     'phone' => $user->phone,
                     'address' => $user->address,
                     'note' => $faker->text(100),
                     'user_id' => $user->id,
-                    'created_at' => $faker->dateTimeBetween($startDate = '-30 days', $endDate = 'now', $timezone = null),
+                    'created_at' => $faker->dateTimeBetween(
+                        $startDate = Carbon::now()->startOfYear()->format('Y-m-d H:m-i'),
+                        $endDate = Carbon::now()->format('Y-m-d H:m-i'),
+                        $timezone = null),
                 ]);
             }
         }
@@ -39,6 +42,7 @@ class OrdersTableSeeder extends Seeder
                     'order_id' => $order->id,
                     'product_id' => $product[array_rand($product)],
                     'quantity' => 1,
+                    'created_at' => $order->created_at,
                 ]
             ]);
             $total_pay = 0;

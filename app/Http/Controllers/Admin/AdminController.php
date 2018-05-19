@@ -53,13 +53,5 @@ class AdminController extends Controller
         return redirect('admin/login')->with('success','Đăng xuất thành công!');
     }
     
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('admin.dashboard');
-    }
+
 }

@@ -183,4 +183,9 @@ class OrderController extends Controller
             });
         })->download($extension);
     }
+
+    public function printOrder($id){
+        $order = Order::with('products')->findOrFail($id);
+        return view('admin.orders.print',compact('order'));
+    }
 }

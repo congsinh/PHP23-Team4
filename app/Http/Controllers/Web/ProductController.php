@@ -29,7 +29,7 @@ class ProductController extends Controller
     public function getProductsBySub(Request $request,$slug){
         $category = Category::with('category')->where('slug',$slug)->first();
         $cate = $category->category;
-        $products = $category->products()->paginate(16);
+        $products = $category->products()->paginate(15)->appends(request()->query());
         if($request->ajax()){
             $view = view('pages.layouts.products',compact(['products']))->render();
             return response()->json(['view' => $view ], 200);
