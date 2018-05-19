@@ -14,16 +14,20 @@ class HomeController extends Controller
         $smartphones = Category::with(['productsByParent' => function($q){
             $q->orderBy('sales','desc')->take(10);
         }])->findOrFail(1);
-        $laptops = Product::where('category_id',2)->orderBy('sales','desc')->take(10)->get();
-        $accessories = Product::where('category_id',3)->orderBy('sales','desc')->take(10)->get();
+        $laptops = Category::with(['productsByParent' => function($q){
+            $q->orderBy('sales','desc')->take(10);
+        }])->findOrFail(2);
+        $accessories = Category::with(['productsByParent' => function($q){
+            $q->orderBy('sales','desc')->take(10);
+        }])->findOrFail(3);
         $products = [
             $smartphones->productsByParent,
-            $laptops,
-            $accessories
+            $laptops->productsByParent,
+            $accessories->productsByParent
         ];
         $news = Product::with('imageDetail')->limit(3)->get();
-        $phones = Product::all()->where('category_id', 2)->take(1);
-        return view('pages.home',compact(['products','news', 'phones']));
+        $new_products = Product::all()->sortByDesc('sales')->take(3);
+        return view('pages.home',compact(['products','news', 'new_products']));
     }
   
     public function search(Request $request){
