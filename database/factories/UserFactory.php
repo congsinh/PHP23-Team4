@@ -20,6 +20,7 @@ $factory->define(App\User::class, function (Faker $faker) {
         'password' => Hash::make('user123456'),
         'address'=>$faker->address,
         'phone'=>$faker->phoneNumber,
+        'created_at'=>$faker->dateTimeBetween('-30 days'),
         'status'=>true,// secret
         'remember_token' => str_random(10),
     ];

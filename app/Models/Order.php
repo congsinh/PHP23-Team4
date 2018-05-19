@@ -20,6 +20,9 @@ class Order extends Model
         return $this->belongsToMany('App\Models\Product','order_details','order_id','product_id')->withPivot('quantity')->withTimestamps();
     }
 
+    public function sumQuantity(){
+        return $this->hasMany('App\Models\OrderDetail','order_id','id')->sum('quantity');
+    }
     public static function getListStatuses(){
         return [
             self::IS_DRAFT => trans('labels.orders.'.self::IS_DRAFT),

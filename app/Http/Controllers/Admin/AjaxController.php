@@ -35,8 +35,10 @@ class AjaxController extends Controller
                     'Kích thước' => '',
                 ];
                 break;
-            case '3':
-                $configurations = [];
+            default :
+                $configurations = [
+                    '' => ''
+                ];
                 break;
         }
         $view = view('admin.ajax.components.config',compact(['configurations']))->render();

@@ -29,25 +29,25 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header active"><h4>Menu</h4></li>
-            <li class="">
+            <li class="header"><h4>Menu</h4></li>
+            <li class="{{ Request::path() == 'admin/dashboard' ? 'active' : '' }}">
                 <a href="{{route('dashboard')}}"> <i class="fa fa-dashboard"></i> <span>Thống kê</span>
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
             </li>
-            <li  class="" >
+            <li  class="{{ Request::path() == 'admin/category' ? 'active' : '' }}" >
                 <a href="{{route('category.index')}}"><i class="fa fa-th"></i> <span>Danh mục</span></a>
             </li>
-            <li  class="" >
+            <li  class="{{ Request::path() == 'admin/products' ? 'active' : '' }}" >
                 <a href="{{route('products.index')}}"><i class="fa fa-product-hunt"></i> <span>Sản phẩm</span></a>
             </li>
-            <li  class="" >
+            <li class="{{ Request::path() == 'admin/orders' ? 'active' : '' }}" >
                 <a href="{{route('orders.index')}}"><i class="fa fa-shopping-cart"></i> <span>Đơn hàng</span></a>
             </li>
-            <li  class="" >
+            <li  class="{{ Request::path() == 'admin/manufacturer' ? 'active' : '' }}" >
                 <a href="{{route('manufacturer.index')}}"><i class="fa fa-link"></i> <span>Nhà cung cấp</span></a>
             </li>
-            <li  class="" >
+            <li  class="{{ Request::path() == 'admin/users' ? 'active' : '' }}" >
                 <a href="{{route('users-index')}}"><i class="fa fa-user"></i> <span>Thành viên</span></a>
             </li>
 

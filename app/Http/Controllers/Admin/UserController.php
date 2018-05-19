@@ -22,9 +22,7 @@ class UserController extends Controller
                 ->orWhere('email', 'like','%'. $request->search.'%');
         }
         if(!empty($request->date_start) && !empty($request->date_end)){
-            $date_start = $request->date_start;
-            $date_end = $request->date_end;
-            $query = $query->whereBetween('created_at', [$date_start, $date_end]);
+            $query = $query->whereBetween('created_at', [ $request->date_start, $request->date_end ]);
         }
         if($request->ajax()){
             $users = $query->orderByDesc('created_at')
