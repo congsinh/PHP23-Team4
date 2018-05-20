@@ -8,9 +8,8 @@
 <body>
 <header class="clearfix">
     <div id="logo">
-        <img src="{{asset('admin/bower_components/print-order/logo.png')}}">
+        <img src="{{asset('img/logo.png')}}" width='180px' height="30px">
         <div id="company">
-            <h2 class="name">Eshop</h2>
             <div>92 Quang Trung, Q. Hải Châu, TP. Đà Nẵng</div>
             <div>02363 888 279</div>
             <div><a href="mailto:phanvan91@gmail.com">phanvan91@gmail.com</a></div>
@@ -24,15 +23,15 @@
 </header>
 <main>
     <div id="details" class="clearfix">
-        <div id="client">
+        <div id="client" class="">
             <div class="notice">Thông tin khách hàng:</div>
             <div>Họ tên: <span class="name">{{ $order->name }}</span> </div>
             <div>Số điện thoại: <span class="phone">{{ $order->phone }}</span></div>
             <div>Địa chỉ: <span class="address">{{ $order->address }}</span></div>
         </div>
-        <div id="client" style="margin-left: 100px">
+        <div id="client" style="margin-left: 100px; max-width: 250px" class="">
             <div class="notice">Ghi chú:</div>
-            <div >Miễn phí giao hàng</div>
+            <div >{{ $order->note }}</div>
         </div>
     </div>
     <table border="0" cellspacing="0" cellpadding="0">

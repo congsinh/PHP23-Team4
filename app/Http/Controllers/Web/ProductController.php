@@ -13,6 +13,9 @@ class ProductController extends Controller
     public function index($name)
     {
         $cate = Category::where('slug',$name)->with(['subcate','productsByParent'])->first();
+        if(!$cate){
+            return view('errors.404');
+        }
         $products = $cate->productsByParent()->paginate(16);
         return view('pages.shop',compact(['cate','products']));
     }
@@ -28,7 +31,11 @@ class ProductController extends Controller
     }
     public function getProductsBySub(Request $request,$slug){
         $category = Category::with('category')->where('slug',$slug)->first();
+        if(!$category){
+            return view('errors.404');
+        }
         $cate = $category->category;
+
         $products = $category->products()->paginate(15)->appends(request()->query());
         if($request->ajax()){
             $view = view('pages.layouts.products',compact(['products']))->render();

@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title')
-    Dashboard
+    Thống kê
 @endsection
 @section('content')
 
@@ -21,7 +21,7 @@
                             <div class="icon">
                                 <i class="{{ $box['icon'] }}"></i>
                             </div>
-                            <a href="{{ $box['url'] }}" class="small-box-footer">More info <i
+                            <a href="{{ $box['url'] }}" class="small-box-footer">Chi tiết <i
                                         class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>

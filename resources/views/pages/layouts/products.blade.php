@@ -3,8 +3,11 @@
         <div class="wp_product">
             <div class="single-shop-product">
                 <div class="product-upper">
-                    <img class='image' src="@if($product->imageDetail()->first()) {{ asset('uploads/images/products/'.$product->imageDetail()->first()->image_detail) }} @endif" alt="">
-                    <h4 class="pt-5 text-center"><a href="{{ asset('product/' . $product->id )}}">{{$product->name}}</a></h4>
+                    <img class='image'
+                         src="@if($product->imageDetail()->first()) {{ asset('uploads/images/products/'.$product->imageDetail()->first()->image_detail) }} @endif"
+                         alt="">
+                    <h4 class="pt-5 text-center"><a href="{{ asset('product/' . $product->id )}}">{{$product->name}}</a>
+                    </h4>
                     <div class="product-carousel-price pt-5">
                         <ins class="price">{{ number_format($product->price) }}đ</ins>
                     </div>
@@ -16,7 +19,6 @@
                               style="padding:15px 5px 0px 0px">Sales: {{ $product->sales }}</span>
                     </div>
                 </div>
-
             </div>
         </div>
     @empty

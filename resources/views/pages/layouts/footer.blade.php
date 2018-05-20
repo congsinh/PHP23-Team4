@@ -14,7 +14,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-3 col-sm-6">
                 <div class="footer-menu">
                     <h2 class="footer-wid-title">Điều hướng</h2>
@@ -24,11 +23,9 @@
                         <li><a href="#">Chính sách bảo hành</a></li>
                         <li><a href="#">Chính sách thanh toán</a></li>
                         <li><a href="#">Liên hệ</a></li>
-
                     </ul>
                 </div>
             </div>
-
             <div class="col-md-3 col-sm-6">
                 <div class="footer-menu">
                     <h2 class="footer-wid-title">Danh mục</h2>
@@ -39,7 +36,6 @@
                     </ul>
                 </div>
             </div>
-
             <div class="col-md-3 col-sm-6">
                 <div class="footer-newsletter">
                     <h2 class="footer-wid-title">Góp ý, khiếu nại</h2>

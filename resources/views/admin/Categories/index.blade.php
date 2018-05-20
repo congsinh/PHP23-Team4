@@ -15,7 +15,7 @@
     <section class="content container-fluid">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Category Parent</h3>
+                <h3 class="box-title">Danh mục</h3>
             </div>
             <div class="box-body">
                 <div class="dataTables_wrapper form-inline dt-bootstrap">
@@ -26,7 +26,7 @@
                                 <thead>
                                 <tr>
                                     <th width="10%">STT</th>
-                                    <th>name</th>
+                                    <th>Tên</th>
                                     <th width="30%" class="text-center"><button id="add-category" class="btn btn-primary btn-xs">Thêm</button></th>
                                 </tr>
                                 </thead>
@@ -52,7 +52,7 @@
 
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Category Children</h3>
+                <h3 class="box-title">Danh mục con</h3>
             </div>
             <div class="box-body">
                 <div class="dataTables_wrapper form-inline dt-bootstrap">
@@ -63,8 +63,8 @@
                                 <thead>
                                 <tr>
                                     <th width="10%">STT</th>
-                                    <th>name</th>
-                                    <th>Category Parent</th>
+                                    <th>Tên</th>
+                                    <th>Danh mục</th>
                                     <th width="30%" class="text-center"><button id="add-category-children" class="btn btn-primary btn-xs" >Thêm</button></th>
                                 </tr>
                                 </thead>
@@ -102,13 +102,13 @@
                     <form id="categoryForm">
                         <div class="modal-body">
                             <div class="form-group" id="after-category">
-                                <label for="name">Name</label>
+                                <label for="name">Tên</label>
                                 <input type="text" id="name-category" class="form-control" name="name" >
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-outline" id="btn-save" data-id="">Save changes</button>
+                            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-outline" id="btn-save" data-id="">Lưu thay đổi</button>
                         </div>
                     </form>
                 </div>
@@ -145,11 +145,11 @@
                     <form id="categoryChildrenForm">
                         <div class="modal-body">
                             <div class="form-group" id="after-category">
-                                <label for="name">Name</label>
+                                <label for="name">Tên</label>
                                 <input type="text" id="name-category-children" class="form-control" name="name_category_children" >
                             </div>
                             <div class="form-group">
-                                <label for="select-category">Categoty</label>
+                                <label for="select-category">Danh mục</label>
                                 <select class="form-control" name="parent_id" id="parent-id" >
                                     @foreach($categories_parent as $value)
                                         <option value="{{$value->id}}">{{$value->name}}</option>
@@ -158,8 +158,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-outline" id="btn-save-category-children" data-id="">Save changes</button>
+                            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Đóng</button>
+                            <button type="submit" class="btn btn-outline" id="btn-save-category-children" data-id="">Lưu</button>
                         </div>
                     </form>
                 </div>
@@ -191,7 +191,7 @@
             });
             //Thêm category
             $("body").on('click','#add-category',function(){
-                $('#title-modal').html("Create Category");
+                $('#title-modal').html("Thêm danh mục");
                 $('#categoryForm').trigger("reset");
                 $('#modal-info').modal('show');
                 $('#btn-save').val('add-category');
@@ -282,7 +282,7 @@
             })
             //Sửa Category
             $("body").on('click','.edit-category',function(){
-                $('#title-modal').html("Edit Category");
+                $('#title-modal').html("Sửa danh mục");
                 $('#categoryForm').trigger("reset");
                 $('#modal-info').modal('show');
                 $('#btn-save').val('edit-category');
