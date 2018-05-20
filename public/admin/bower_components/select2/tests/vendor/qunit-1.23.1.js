@@ -550,7 +550,7 @@ extend( QUnit, {
 	load: function() {
 		config.pageLoaded = true;
 
-		// Initialize the configuration options
+		// Initialize the components options
 		extend( config, {
 			stats: { all: 0, bad: 0 },
 			moduleStats: { all: 0, bad: 0 },
@@ -2360,7 +2360,7 @@ if ( typeof window === "undefined" || !window.document ) {
 }
 
 // Deprecated QUnit.init - Ref #530
-// Re-initialize the configuration options
+// Re-initialize the components options
 QUnit.init = function() {
 	var config = QUnit.config;
 

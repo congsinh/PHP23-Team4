@@ -1,229 +1,161 @@
 @extends('pages.layouts.master')
+{{--@section('style')--}}
+    {{--<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />--}}
+    {{--<style>--}}
+        {{--#toast-container > .toast {--}}
+            {{--background-image: none !important;--}}
+        {{--}--}}
+
+        {{--#toast-container > .toast:before {--}}
+            {{--position: fixed;--}}
+            {{--font-family: FontAwesome;--}}
+            {{--font-size: 24px;--}}
+            {{--line-height: 18px;--}}
+            {{--float: left;--}}
+            {{--color: #FFF;--}}
+            {{--padding-right: 0.5em;--}}
+            {{--margin: auto 0.5em auto -1.5em;--}}
+        {{--}--}}
+        {{--#toast-container > .toast-warning:before {--}}
+            {{--content: "\f003";--}}
+        {{--}--}}
+        {{--#toast-container > .toast-error:before {--}}
+            {{--content: "\f001";--}}
+        {{--}--}}
+        {{--#toast-container > .toast-info:before {--}}
+            {{--content: "\f005";--}}
+        {{--}--}}
+        {{--#toast-container > .toast-success:before {--}}
+            {{--content: "\f002";--}}
+        {{--}--}}
+        {{--#toast-container{margin-top:60px}--}}
+    {{--</style>--}}
+{{--@stop--}}
 @section('content')
-<div class="product-big-title-area">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="product-bit-title text-center">
-                    <h2>Shop</h2>
-                </div>
+            <div class="col-md-12 ">
+                <img class="banner" src="{{asset('img/banner1.png')}}" width="50%"/>
+                <img class="banner" src="{{asset('img/banner2.png')}}" width="50%"/>
             </div>
+        </div>
+        <div class="pt-10">
+            <ul class="filter">
+                <li class="fmanu pull-left">
+                    @foreach($cate->subcate as $subcates )
+                        <a href="" class="prevent subcate @if($loop->first) active @endif" data-slug="{{ $subcates->slug }}">{{ $subcates->name }}</a>
+                    @endforeach
+                </li>
+                <li class="frange pull-right">
+                    <a href="" class="prevent search-price" data-id="3">
+                        Dưới 3 triệu
+                    </a>
+                    <a href="" class="prevent search-price" data-id="5">
+                        Từ 3 - 5 triệu
+                    </a>
+                    <a href="" class="prevent search-price" data-id="8">
+                        Từ 5 - 8 triệu
+                    </a>
+                    <a href="" class="prevent search-price" data-id="15">
+                        Từ 8 - 15 triệu
+                    </a>
+                    <a href="" class="prevent search-price" data-id="more">
+                        Trên 15 triệu
+                    </a>
+                </li>
+                <!--#endregion-->
+            </ul>
+        </div>
+        <div id="wp-product" >
+            @include('pages.layouts.products')
         </div>
     </div>
-</div>
-
-
-<div class="single-product-area">
-    <div class="zigzag-bottom"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
-                    <div class="product-upper">
-                        <img src="{{asset("img/product-2.jpg")}}" alt="">
-                    </div>
-                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-
-                    <div class="product-option-shop">
-                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
-                    <div class="product-upper">
-                        <img src="{{asset("img/product-1.jpg")}}" alt="">
-                    </div>
-                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-
-                    <div class="product-option-shop">
-                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
-                    <div class="product-upper">
-                        <img src="{{asset("img/product-3.jpg")}}" alt="">
-                    </div>
-                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-
-                    <div class="product-option-shop">
-                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
-                    <div class="product-upper">
-                        <img src="{{asset("img/product-4.jpg")}}" alt="">
-                    </div>
-                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-
-                    <div class="product-option-shop">
-                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
-                    <div class="product-upper">
-                        <img src="{{asset("img/product-2.jpg")}}" alt="">
-                    </div>
-                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-
-                    <div class="product-option-shop">
-                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
-                    <div class="product-upper">
-                        <img src="{{asset("img/product-1.jpg")}}" alt="">
-                    </div>
-                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-
-                    <div class="product-option-shop">
-                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
-                    <div class="product-upper">
-                        <img src="{{asset("img/product-3.jpg")}}" alt="">
-                    </div>
-                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-
-                    <div class="product-option-shop">
-                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
-                    <div class="product-upper">
-                        <img src="{{asset("img/product-4.jpg")}}" alt="">
-                    </div>
-                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-
-                    <div class="product-option-shop">
-                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
-                    <div class="product-upper">
-                        <img src="{{asset("img/product-2.jpg")}}" alt="">
-                    </div>
-                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-
-                    <div class="product-option-shop">
-                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
-                    <div class="product-upper">
-                        <img src="{{asset("img/product-1.jpg")}}" alt="">
-                    </div>
-                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-
-                    <div class="product-option-shop">
-                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
-                    <div class="product-upper">
-                        <img src="{{asset("img/product-3.jpg")}}" alt="">
-                    </div>
-                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-
-                    <div class="product-option-shop">
-                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
-                    <div class="product-upper">
-                        <img src="{{asset("img/product-4.jpg")}}" alt="">
-                    </div>
-                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-
-                    <div class="product-option-shop">
-                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="product-pagination text-center">
-                    <nav>
-                        <ul class="pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
+@section('script')
+    {{--<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>--}}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            {{--$(function() {--}}
+                {{--function Toast(type, css, msg) {--}}
+                    {{--this.type = type;--}}
+                    {{--this.css = css;--}}
+                    {{--this.msg = msg;--}}
+                {{--}--}}
+                {{--var toasts = [--}}
+                    {{--new Toast('info', 'toast-top-full-width', 'Bạn đã mua sản phẩm thành công'),--}}
+                {{--];--}}
+
+                {{--toastr.options.positionClass = 'toast-top-full-width';--}}
+                {{--toastr.options.extendedTimeOut = 0; //1000;--}}
+                {{--toastr.options.timeOut = 1000;--}}
+                {{--toastr.options.fadeOut = 250;--}}
+                {{--toastr.options.fadeIn = 250;--}}
+
+                {{--var i = 0;--}}
+
+                {{--$('.tryMe').click(function () {--}}
+                    {{--var id = $(this).val();--}}
+                    {{--$.ajax({--}}
+                        {{--type: 'GET',--}}
+                        {{--url:'{{url('/buy-product')}}',--}}
+                        {{--data: {id:id},--}}
+                        {{--dataType:'json',--}}
+                        {{--success:function(data){--}}
+                            {{--var edit = '<div class="shopping-item" id="shopping-item">\n' +--}}
+                                {{--'                    <a href="">Cart - <span class="cart-amunt">'+data[3]+' VND</span> <i class="fa fa-shopping-cart"></i> <span class="product-count"> '+data[2]+' </span></a>\n' +--}}
+                                {{--'                </div>';--}}
+
+
+                            {{--$("#shopping-item").replaceWith(edit);--}}
+                            {{--// console.log(data);--}}
+                        {{--},error: function (data) {--}}
+                            {{--console.log('Error:', data);--}}
+                        {{--}--}}
+                    {{--})--}}
+
+
+                    {{--delayToasts();--}}
+                {{--});--}}
+
+                {{--function delayToasts() {--}}
+                    {{--if (i === toasts.length) { return; }--}}
+                    {{--var delay = i === 0 ? 0 : 2100;--}}
+                    {{--window.setTimeout(function () { showToast(); }, delay);--}}
+
+                    {{--// re-enable the button--}}
+                    {{--if (i === toasts.length-1) {--}}
+                        {{--window.setTimeout(function () {--}}
+                            {{--$('#tryMe').prop('disabled', false);--}}
+                            {{--i = 0;--}}
+                        {{--}, delay + 1000);--}}
+                    {{--}--}}
+                {{--}--}}
+
+
+                function showToast() {
+                    var t = toasts[i];
+                    toastr.options.positionClass = t.css;
+                    toastr[t.type](t.msg);
+                    i++;
+                    delayToasts();
+                }
+
+            $('a.subcate').on('click', function(e){
+                e.preventDefault();
+                $('a.subcate').removeClass('active');
+                var slug = $(this).attr('data-slug');
+                $.ajax({
+                    url : '/subcate/' + slug,
+                    type : 'GET',
+                    success : function(data){
+                       console.log(data);
+                       $('#wp-product').html(data.view);
+                    }
+                });
+                $(this).addClass('active');
+            });
+        });
+    </script>
+@endsection
+
+

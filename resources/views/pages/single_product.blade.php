@@ -1,253 +1,129 @@
 @extends('pages.layouts.master')
 @section('content')
-    <div class="product-big-title-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-bit-title text-center">
-                        <h2>Shop</h2>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <img class="banner" src="{{asset('img/banner1.png')}}" width="50%"/>
+                <img class="banner" src="{{asset('img/banner2.png')}}" width="50%"/>
             </div>
         </div>
-    </div>
-
-
-    <div class="single-product-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="single-sidebar">
-                        <h2 class="sidebar-title">Search Products</h2>
-                        <form action="">
-                            <input type="text" placeholder="Search products...">
-                            <input type="submit" value="Search">
-                        </form>
-                    </div>
-
-                    <div class="single-sidebar">
-                        <h2 class="sidebar-title">Products</h2>
-                        <div class="thubmnail-recent">
-                            <img src="{{asset("img/product-thumb-1.jpg")}}" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
+        <div class="single-product-area">
+            <div class="zigzag-bottom"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="product-content-right">
+                            <div class="product-breadcroumb">
+                                <a href="">Trang chủ</a>
+                                <a href="">{{ $product->category->name  }}</a>
+                                <a href="">{{$product->name}}</a>
                             </div>
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="{{asset("img/product-thumb-1.jpg")}}" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="{{asset("img/product-thumb-1.jpg")}}" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="{{asset("img/product-thumb-1.jpg")}}" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="single-sidebar">
-                        <h2 class="sidebar-title">Recent Posts</h2>
-                        <ul>
-                            <li><a href="">Sony Smart TV - 2015</a></li>
-                            <li><a href="">Sony Smart TV - 2015</a></li>
-                            <li><a href="">Sony Smart TV - 2015</a></li>
-                            <li><a href="">Sony Smart TV - 2015</a></li>
-                            <li><a href="">Sony Smart TV - 2015</a></li>
-                        </ul>
-                    </div>
-                </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="product-images">
+                                        <div class="product-main-img">
+                                            <img src="@if($product->imageDetail->first()){{asset("uploads/images/products/" . $product->imageDetail->first()->image_detail)}} @endif" alt="">
+                                        </div>
 
-                <div class="col-md-8">
-                    <div class="product-content-right">
-                        <div class="product-breadcroumb">
-                            <a href="">Home</a>
-                            <a href="">Category Name</a>
-                            <a href="">Sony Smart TV - 2015</a>
-                        </div>
+                                        <div class="product-gallery text-center">
+                                            @foreach($product->imageDetail as $key => $image)
+                                                @if($key > 0)
+                                                    <img src="{{asset("uploads/images/products/" . $image->image_detail)}}" alt="">
+                                                @endif
+                                            @endforeach
 
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="product-images">
-                                    <div class="product-main-img">
-                                        <img src="{{asset("img/product-2.jpg")}}" alt="">
-                                    </div>
 
-                                    <div class="product-gallery">
-                                        <img src="{{asset("img/product-thumb-1.jpg")}}" alt="">
-                                        <img src="{{asset("img/product-thumb-2.jpg")}}" alt="">
-                                        <img src="{{asset("img/product-thumb-3.jpg")}}" alt="">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="col-sm-6">
-                                <div class="product-inner">
-                                    <h2 class="product-name">Sony Smart TV - 2015</h2>
-                                    <div class="product-inner-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div>
-
-                                    <form action="" class="cart">
-                                        <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
-                                        </div>
-                                        <button class="add_to_cart_button" type="submit">Add to cart</button>
-                                    </form>
-
-                                    <div class="product-inner-category">
-                                        <p>Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
-                                    </div>
-
-                                    <div role="tabpanel">
-                                        <ul class="product-tab" role="tablist">
-                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
-                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Reviews</a></li>
-                                        </ul>
-                                        <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                                <h2>Product Description</h2>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>
-
-                                                <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+                                <div class="col-sm-6">
+                                    <div class="product-inner">
+                                        <h2 class="product-name">{{$product->name}}</h2>
+                                        <div class="product-inner-price">
+                                            <ins style="font-size:20px">{{ number_format($product->price) }}đ</ins>
+                                            <div class="pull-right">
+                                                @if($product->quantity_store == 0)
+                                                    {!! trans('labels.status-product.2' ) !!}
+                                                @else
+                                                    {!! trans('labels.status-product.1' ) !!}
+                                                @endif
                                             </div>
-                                            <div role="tabpanel" class="tab-pane fade" id="profile">
-                                                <h2>Reviews</h2>
-                                                <div class="submit-review">
-                                                    <p><label for="name">Name</label> <input name="name" type="text"></p>
-                                                    <p><label for="email">Email</label> <input name="email" type="email"></p>
-                                                    <div class="rating-chooser">
-                                                        <p>Your rating</p>
+                                        </div>
 
-                                                        <div class="rating-wrap-post">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
+                                        <form action="" class="cart">
+                                            <button class="add_to_cart_button" type="submit">Thêm giỏ hàng</button>
+                                        </form>
+                                        <div class="config">
+                                            <h3 class="">Thông số kỹ thuật</h3>
+                                            <ul class="parameter">
+                                                @foreach($product->configuration as $key => $value)
+                                                    <li class="g92_94_93">
+                                                        <span>{{ $key }}</span>
+                                                        <div>
+                                                            {{ $value }}
                                                         </div>
-                                                    </div>
-                                                    <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
-                                                    <p><input type="submit" value="Submit"></p>
-                                                </div>
-                                            </div>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
                                         </div>
                                     </div>
-
                                 </div>
+
                             </div>
+                            <div class='row' role="tabpanel">
+                                <p>{!! $product->description  !!}</p>
+                            </div>
+                            <div id="fb-root"></div>
+                            <div id='fb-comments' class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
+                            <script>
+                                (function(d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id)) return;
+                                    js = d.createElement(s); js.id = id;
+                                    js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.0';
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-sidebar">
+                            <h2 class="sidebar-title">Sản phẩm khác</h2>
+                            @foreach($related as $product)
+                                <div class="thubmnail-recent">
+                                    <img src="@if($product->imageDetail->first()) {{asset("uploads/images/products/" . $product->imageDetail->first()->image_detail )}} @endif" class="recent-thumb" alt="">
+                                    <h2><a href="">{{ $product->name }}</a></h2>
+                                    <div class="product-sidebar-price">
+                                        <ins>{{ number_format( $product->price ) }}đ</ins>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="single-sidebar">
+                            <h2 class="sidebar-title">Top mua nhiều nhất</h2>
+                            @foreach($topsales as $product)
+                                <div class="thubmnail-recent">
+                                    <img src="@if($product->imageDetail->first()) {{asset("uploads/images/products/" . $product->imageDetail->first()->image_detail )}} @endif" class="recent-thumb" alt="">
+                                    <h2><a href="">{{ $product->name }}</a></h2>
+                                    <div class="product-sidebar-price">
+                                        <ins>{{ number_format( $product->price ) }}đ</ins>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
 
-
-                        <div class="related-products-wrapper">
-                            <h2 class="related-products-title">Related Products</h2>
-                            <div class="related-products-carousel">
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="{{asset("img/product-2.jpg")}}" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Sony Smart TV - 2015</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div>
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="{{asset("img/product-2.jpg")}}" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                                    <div class="product-carousel-price">
-                                        <ins>$899.00</ins> <del>$999.00</del>
-                                    </div>
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="{{asset("img/product-3.jpg")}}" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Apple new i phone 6</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$400.00</ins> <del>$425.00</del>
-                                    </div>
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="{{asset("img/product-4.jpg")}}" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Sony playstation microsoft</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$200.00</ins> <del>$225.00</del>
-                                    </div>
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="{{asset("img/product-5.jpg")}}" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Sony Smart Air Condtion</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$1200.00</ins> <del>$1355.00</del>
-                                    </div>
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="{{asset("img/product-6.jpg")}}" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Samsung gallaxy note 4</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$400.00</ins>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+<script>
+    $(document).ready(function(){
+        document.getElementById("fb-comments").setAttribute("data-href",window.location.href );
+    });
+</script>
 @endsection

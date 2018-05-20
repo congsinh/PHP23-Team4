@@ -15,20 +15,20 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('slug')->unique();
             $table->text('configuration');
-            $table->string('description');
+            $table->text('description');
             $table->integer('quantity_store');
-            $table->integer('price');
-            $table->integer('rating');
-            $table->integer('sales');
+            $table->integer('price')->nullable()->default(0);
+            $table->decimal('rating',2,1)->nullable()->default(0);
+            $table->integer('sales')->nullable()->default(0);
             $table->string('image');
             $table->integer('category_id')->unsigned();;
             $table->integer('manufacture_id')->unsigned();;
 
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('manufacture_id')->references('id')->on('manufacturers')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('manufacture_id')->references('id')->on('manufacturers')->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -83,7 +83,14 @@ jQuery(document).ready(function($){
     $('body').scrollspy({ 
         target: '.navbar-collapse',
         offset: 95
-    })      
+    })
+
+
+    $(document).on('click', function (e) {
+        if ($(e.target).closest(".wp-search").length === 0) {
+            $(".wp-search").hide();
+        }
+    });
 });
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

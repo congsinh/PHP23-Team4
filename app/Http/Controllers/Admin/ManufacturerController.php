@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Manufacturer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ManufacturerRequest;
 class ManufacturerController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class ManufacturerController extends Controller
      */
     public function index()
     {
-        //
+        $manufacturers = Manufacturer::all();
+        return view('admin.Manufacturer.index',compact('manufacturers'));
     }
 
     /**
@@ -23,7 +26,8 @@ class ManufacturerController extends Controller
      */
     public function create()
     {
-        //
+        $manufacturers = Manufacturer::select('name')->get();
+        return response()->json($manufacturers);
     }
 
     /**
@@ -32,9 +36,13 @@ class ManufacturerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ManufacturerRequest $request)
     {
-        //
+        $manufacturer_array = $request->all();
+        $manufacturer_array['slug'] = $request->name;
+        $manufacturer = Manufacturer::create($manufacturer_array);
+        $count = Manufacturer::count();
+        return response()->json([$manufacturer,$count],200);
     }
 
     /**
@@ -45,7 +53,8 @@ class ManufacturerController extends Controller
      */
     public function show($id)
     {
-        //
+        $manufacturer = Manufacturer::findorFail($id);
+        return response()->json($manufacturer,200);
     }
 
     /**
@@ -66,9 +75,13 @@ class ManufacturerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ManufacturerRequest $request, $id)
     {
-        //
+        $manufacturer_array = $request->all();
+        $manufacturer_array['slug'] = str_slug($request->name);
+        $manufacturer = Manufacturer::findorFail($id);
+        $manufacturer->update($manufacturer_array);
+        return response()->json($manufacturer,200);
     }
 
     /**
@@ -79,6 +92,7 @@ class ManufacturerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $manufacturer = Manufacturer::destroy($id);
+        return response()->json($manufacturer,200);
     }
 }

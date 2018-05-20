@@ -25,17 +25,10 @@ class AdminController extends Controller
      */
     public function getLogin()
     {
-        if(Auth::viaRemember()){
+        if(Auth::viaRemember() || Auth::check()){
             return redirect('admin/dashboard');
         }
-        else{
-            if(Auth::check()){
-                return redirect('admin/dashboard');
-            }
-            else{
-                return view('admin.login');
-            }
-        }
+        return view('admin.login');
     }
 
     /**
@@ -60,13 +53,5 @@ class AdminController extends Controller
         return redirect('admin/login')->with('success','Đăng xuất thành công!');
     }
     
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('admin.dashboard');
-    }
+
 }
