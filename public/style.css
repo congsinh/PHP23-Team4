@@ -744,7 +744,7 @@ width: 10px;
 .single-product-area {
   padding-top: 20px;
 }
-.area_articleFull img{
+#description img{
     width: 100% !important;
 
 }

@@ -45,7 +45,7 @@
                 <small>@yield('action')</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+                <li><a href="#"><i class="fa fa-dashboard"></i>Admin</a></li>
                 <li class="active">@yield('title')</li>
                 <li class="active">@yield('action')</li>
             </ol>

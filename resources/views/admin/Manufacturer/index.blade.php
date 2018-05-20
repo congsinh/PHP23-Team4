@@ -14,7 +14,7 @@
     <section class="content container-fluid">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Bảng Nhà sản xuất</h3>
+                <h3 class="box-title">Hãng sản xuất</h3>
             </div>
 
             <div class="box-body">
@@ -26,7 +26,7 @@
                                 <thead>
                                 <tr>
                                     <th width="10%">STT</th>
-                                    <th>Name</th>
+                                    <th>Tên</th>
                                     <th width="30%" class="text-center"><button id="add-manufacturer" class="btn btn-primary btn-xs">Thêm</button></th>
                                 </tr>
                                 </thead>
@@ -58,19 +58,19 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Success Modal</h4>
+                    <h4 class="modal-title" id="title-modal">Thêm hãng sản xuất</h4>
                 </div>
                 <form id="manufacturerForm">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">Tên</label>
                             <input type="text" class="form-control" name="name" id="name-manufacturer">
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-outline" id="save-manufacturer" data-id="">Save changes</button>
+                        <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-outline" id="save-manufacturer" data-id="">Lưu </button>
                     </div>
                 </form>
             </div>
@@ -85,7 +85,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Danger Modal</h4>
+                    <h4 class="modal-title">Xóa hãng sản xuất</h4>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Đóng</button>
@@ -114,7 +114,7 @@
                 }
             });
             $("body").on('click','#add-manufacturer',function(){
-                $('#title-modal').html("Create Manufacturer");
+                $('#title-modal').html("Thêm hãng sản xuất");
                 $('#manufacturerForm').trigger("reset");
                 $('#modal-manufacturer').modal('show');
                 $('#save-manufacturer').val('add-manufacturer');
@@ -195,7 +195,7 @@
             })
 
             $("body").on('click','.edit-manufacturer',function(){
-                $('#title-modal').html("Edit Manufacturer");
+                $('#title-modal').html("Sửa hãng sản xuất");
                 $('#manufacturerForm').trigger("reset");
                 $('#modal-manufacturer').modal('show');
                 $('#name-manufacturer-error').remove();
