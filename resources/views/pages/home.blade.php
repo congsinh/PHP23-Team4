@@ -219,7 +219,7 @@
                         <a href="" class="wid-view-more">View All</a>
                         @foreach($new_products as $new)
                             <div class="single-wid-product">
-                                <a href="single_product.blade.php"><img src="@if(!empty($new->imageDetail->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first())  }} @endif" alt="" class="product-thumb"></a>
+                                <a href="{{ route('product-detail',[ 'id' => $new->id ]) }}"><img src="@if(!empty($new->imageDetail()->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
                                 <h2><a href="single_product.blade.php">{{$new->name}}</a></h2>
                                 <div class="product-wid-rating">
                                     <i class="fa fa-star"></i>
@@ -290,7 +290,7 @@
 
                         @foreach($news as $new)
                         <div class="single-wid-product">
-                            <a href="single_product.blade.php"><img src="@if(!empty($new->imageDetail->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first())  }} @endif" alt="" class="product-thumb"></a>
+                            <a href="{{ route('product-detail',[ 'id' => $new->id ]) }}"><img src="@if(!empty($new->imageDetail()->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
                             <h2><a href="single_product.blade.php">{{$new->name}}</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
