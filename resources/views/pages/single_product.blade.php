@@ -51,8 +51,8 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <form action="" class="cart">
-                                            <button class="add_to_cart_button" type="submit">Thêm giỏ hàng</button>
+                                        <form class="cart">
+                                            <button class="add_to_cart_button tryMe"  value="{{ $product->id }}"  type="button">Thêm giỏ hàng</button>
                                         </form>
                                         <div class="config">
                                             <h3 class="">Thông số kỹ thuật</h3>
