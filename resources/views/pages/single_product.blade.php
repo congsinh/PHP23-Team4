@@ -15,7 +15,7 @@
                         <div class="product-content-right">
                             <div class="product-breadcroumb">
                                 <a href="">Trang chủ</a>
-                                <a href="">{{ $product->category->name  }}</a>
+                                <a href="{{ route('subcate-products', ['slug' => $product->category->slug ]) }}">{{ $product->category->name  }}</a>
                                 <a href="">{{$product->name}}</a>
                             </div>
                             <div class="row">
