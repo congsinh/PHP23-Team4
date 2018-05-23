@@ -40,7 +40,6 @@ class ProductsRequest extends FormRequest
             'image_detail' => $rule_image,
             'image_detail.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'price' => 'required|numeric|min:1000',
-            'manufacture_id' => 'required',
             'configuration' => 'required'
         ];
     }
