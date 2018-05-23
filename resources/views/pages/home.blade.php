@@ -7,8 +7,21 @@
             font-size:0;
             outline:none;
         }
+        .fix-font a{
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        .product-f-image{
+            overflow: hidden;
+        }
+        /*img {*/
+        /*width: 20%;*/
+        /*height: auto;*/
+        /*}*/
     </style>
-    @stop
+@stop
 @section('content')
     <div class="slider-area">
         <!-- Slider -->
@@ -18,7 +31,7 @@
                     <img src="{{asset("img/h4-slide.png")}}" alt="Slide">
                     <div class="caption-group">
                         <h2 class="caption title">
-                             <span class="primary">iPhone 6 <strong>Plus</strong></span>
+                            <span class="primary">iPhone 6 <strong>Plus</strong></span>
                         </h2>
                         <h4 class="caption subtitle">Dual SIM</h4>
                         <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
@@ -97,26 +110,26 @@
                         <h2 class="section-title">ĐIỆN THOẠI HOT</h2>
                         <div class="product-carousel">
                             @foreach($products[0] as $item)
-                                    <div class="single-product">
-                                        <div class="product-f-image mb-5">
-                                            <img class='img-product' src="@if(!empty($item->imageDetail()->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
-                                            <div class="product-hover">
-                                                <button type="button" value="{{ $item->id }}" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
-                                                <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                        </div>
-                                        <h5><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}">{{$item->name}}</a></h5>
-                                        <div class="product-carousel-price">
-                                            <ins class="price">{{ number_format($item->price) }}đ</ins>
-                                            <div class="pull-right">
-                                                @if($item->quantity_store == 0)
-                                                    {!! trans('labels.status-product.2' ) !!}
-                                                @else
-                                                    {!! trans('labels.status-product.1' ) !!}
-                                                @endif
-                                            </div>
+                                <div class="single-product">
+                                    <div class="product-f-image mb-5">
+                                        <img class='img-product' src="@if(!empty($item->imageDetail()->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
+                                        <div class="product-hover">
+                                            <button type="button" value="{{ $item->id }}" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
+                                            <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
+                                    <h5 class="fix-font"><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" title="{{$item->name}}">{{$item->name}}</a></h5>
+                                    <div class="product-carousel-price">
+                                        <ins class="price">{{ number_format($item->price) }}đ</ins>
+                                        <div class="pull-right">
+                                            @if($item->quantity_store == 0)
+                                                {!! trans('labels.status-product.2' ) !!}
+                                            @else
+                                                {!! trans('labels.status-product.1' ) !!}
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </div>
                     </div>
@@ -135,7 +148,7 @@
                                             <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
-                                    <h5><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}">{{$item->name}}</a></h5>
+                                    <h5 class="fix-font"><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" title="{{$item->name}}">{{$item->name}}</a></h5>
                                     <div class="product-carousel-price">
                                         <ins class="price">{{ number_format($item->price) }}đ</ins>
                                         <div class="pull-right">
@@ -166,7 +179,7 @@
                                             <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
-                                    <h5><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}">{{$item->name}}</a></h5>
+                                    <h5 class="fix-font"><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" title="{{$item->name}}">{{$item->name}}</a></h5>
                                     <div class="product-carousel-price">
                                         <ins class="price">{{ number_format($item->price) }}đ</ins>
                                         <div class="pull-right">
@@ -289,20 +302,20 @@
                         <a href="#" class="wid-view-more">View All</a>
 
                         @foreach($news as $new)
-                        <div class="single-wid-product">
-                            <a href="{{ route('product-detail',[ 'id' => $new->id ]) }}"><img src="@if(!empty($new->imageDetail()->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
-                            <h2><a href="single_product.blade.php">{{$new->name}}</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+                            <div class="single-wid-product">
+                                <a href="{{ route('product-detail',[ 'id' => $new->id ]) }}"><img src="@if(!empty($new->imageDetail()->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
+                                <h2><a href="single_product.blade.php">{{$new->name}}</a></h2>
+                                <div class="product-wid-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product-wid-price">
+                                    <ins>{{number_format($new->price,0)}} VND</ins> <del>{{number_format($new->sales,0)}} VND</del>
+                                </div>
                             </div>
-                            <div class="product-wid-price">
-                                <ins>{{number_format($new->price,0)}} VND</ins> <del>{{number_format($new->sales,0)}} VND</del>
-                            </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>
