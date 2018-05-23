@@ -25,7 +25,7 @@ class CreateProductsTable extends Migration
             $table->integer('sales')->nullable()->default(0);
             $table->string('image');
             $table->integer('category_id')->unsigned();
-            $table->integer('manufacture_id')->unsigned()->nullable();
+            $table->integer('manufacture_id')->unsigned();
 
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('manufacture_id')->references('id')->on('manufacturers')->onUpdate('cascade');
