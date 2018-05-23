@@ -1,4 +1,14 @@
 @extends('pages.layouts.master')
+@section('style')
+    <style>
+        .thubmnail-recent h4 a{
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+@stop
 @section('content')
     <div class="container">
         <div class="row">
@@ -96,7 +106,7 @@
                                 <div class="thubmnail-recent">
                                     <img src="@if($product->imageDetail->first()) {{asset("uploads/images/products/" . $product->imageDetail->first()->image_detail )}} @endif"
                                          class="recent-thumb" alt="">
-                                    <h2><a href="">{{ $product->name }}</a></h2>
+                                    <h5><a href="">{{ $product->name }}</a></h5>
                                     <div class="product-sidebar-price">
                                         <ins>{{ number_format( $product->price ) }}đ</ins>
                                     </div>
@@ -109,7 +119,7 @@
                                 <div class="thubmnail-recent">
                                     <img src="@if($product->imageDetail->first()) {{asset("uploads/images/products/" . $product->imageDetail->first()->image_detail )}} @endif"
                                          class="recent-thumb" alt="">
-                                    <h2><a href="">{{ $product->name }}</a></h2>
+                                    <h5><a href="">{{ $product->name }}</a></h5>
                                     <div class="product-sidebar-price">
                                         <ins>{{ number_format( $product->price ) }}đ</ins>
                                     </div>
