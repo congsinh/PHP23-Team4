@@ -534,12 +534,14 @@ z-index: 999;}
 .maincontent-area {padding-bottom: 50px; padding-top:20px;}
 
 .product-wid-title {
-  font-family: raleway;
+  font-family:  "Times New Roman", serif;
   font-size: 30px;
   font-weight: 100;
   margin-bottom: 40px;
 }
-
+.textarea-mail{
+    width:100%;
+}
 
 .single-wid-product {
     margin-bottom: 31px;
@@ -1276,6 +1278,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 img.img-product{
     object-fit: contain;
     padding:10px;
+    height:100%;
 }
 .product-upper img.image{
     height:300px !important;

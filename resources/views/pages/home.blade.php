@@ -114,8 +114,8 @@
                                     <div class="product-f-image mb-5">
                                         <img class='img-product' src="@if(!empty($item->imageDetail()->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
                                         <div class="product-hover">
-                                            <button type="button" value="{{ $item->id }}" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
-                                            <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                            <button type="button" value="{{ $item->id }}" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a></button>
+                                            <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i>Xem chi tiết</a>
                                         </div>
                                     </div>
                                     <h5 class="fix-font"><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" title="{{$item->name}}">{{$item->name}}</a></h5>
@@ -144,8 +144,8 @@
                                     <div class="product-f-image mb-5">
                                         <img class='img-product' src="@if(!empty($item->imageDetail()->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
                                         <div class="product-hover">
-                                            <button type="button" value="{{ $item->id }}" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
-                                            <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                            <button type="button" value="{{ $item->id }}" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a></button>
+                                            <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i>Chi tiết</a>
                                         </div>
                                     </div>
                                     <h5 class="fix-font"><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" title="{{$item->name}}">{{$item->name}}</a></h5>
@@ -175,8 +175,8 @@
                                     <div class="product-f-image mb-5">
                                         <img class='img-product' src="@if(!empty($item->imageDetail()->first())) {{ asset('uploads/images/products/'.$item->imageDetail->first()->image_detail)  }} @endif" alt="">
                                         <div class="product-hover">
-                                            <button type="button" value="{{ $item->id }}" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a></button>
-                                            <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                            <button type="button" value="{{ $item->id }}" class="tryMe button-hidden"><a class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a></button>
+                                            <a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" class="view-details-link"><i class="fa fa-link"></i>Chi tiết</a>
                                         </div>
                                     </div>
                                     <h5 class="fix-font"><a href="{{ route('product-detail',[ 'id' => $item->id ]) }}" title="{{$item->name}}">{{$item->name}}</a></h5>
@@ -228,21 +228,14 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="single-product-widget">
-                        <h2 class="product-wid-title">Top Sellers</h2>
-                        <a href="" class="wid-view-more">View All</a>
+                        <h2 class="product-wid-title">Bán chạy nhất</h2>
+                        <a href="" class="wid-view-more">Xem tất cả</a>
                         @foreach($new_products as $new)
                             <div class="single-wid-product">
                                 <a href="{{ route('product-detail',[ 'id' => $new->id ]) }}"><img src="@if(!empty($new->imageDetail()->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
                                 <h2><a href="single_product.blade.php">{{$new->name}}</a></h2>
-                                <div class="product-wid-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                                 <div class="product-wid-price">
-                                    <ins>{{number_format($new->price,0)}} VND</ins> <del>{{number_format($new->sales,0)}} VND</del>
+                                    <ins>{{number_format($new->price,0)}} VND</ins>
                                 </div>
                             </div>
                         @endforeach
@@ -251,7 +244,7 @@
                 <div class="col-md-4">
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Recently Viewed</h2>
-                        <a href="#" class="wid-view-more">View All</a>
+                        <a href="#" class="wid-view-more">Xem tất cả</a>
                         <div class="single-wid-product">
                             <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-4.jpg")}}" alt="" class="product-thumb"></a>
                             <h2><a href="single_product.blade.php">Sony playstation microsoft</a></h2>
@@ -263,7 +256,7 @@
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>$400.00</ins>
                             </div>
                         </div>
                         <div class="single-wid-product">
@@ -277,7 +270,7 @@
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>$400.00</ins>
                             </div>
                         </div>
                         <div class="single-wid-product">
@@ -291,29 +284,22 @@
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>$400.00</ins>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="single-product-widget">
-                        <h2 class="product-wid-title">Top New</h2>
-                        <a href="#" class="wid-view-more">View All</a>
+                        <h2 class="product-wid-title">Sản phẩm mới</h2>
+                        <a href="#" class="wid-view-more">Xem tất cả</a>
 
                         @foreach($news as $new)
                             <div class="single-wid-product">
                                 <a href="{{ route('product-detail',[ 'id' => $new->id ]) }}"><img src="@if(!empty($new->imageDetail()->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
                                 <h2><a href="single_product.blade.php">{{$new->name}}</a></h2>
-                                <div class="product-wid-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                                 <div class="product-wid-price">
-                                    <ins>{{number_format($new->price,0)}} VND</ins> <del>{{number_format($new->sales,0)}} VND</del>
+                                    <ins>{{number_format($new->price,0)}} VND</ins>
                                 </div>
                             </div>
                         @endforeach
