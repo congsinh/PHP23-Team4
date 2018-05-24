@@ -144,7 +144,7 @@
                 $(this).parent().remove();
                 var id = $(this).parent().attr('id');
                 list_id.push(id);
-                $('#id_del').val(list_id);
+                $('#id_del_image').val(list_id);
             });
 
             // ckeditor

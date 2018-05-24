@@ -42,7 +42,7 @@
                     <p>Nếu có bất kỳ ý kiến góp ý hay khiếu nại vấn đề gì, xin hãy gửi mail vê cho chúng tôi!</p>
                     <div class="newsletter-form">
                         <form action="#">
-                            <input type="email" placeholder="Nhập email">
+                            <textarea placeholder="Ý kiến đóng góp" name='mail' class="textarea-mail"></textarea>
                             <input type="submit" value="Gửi">
                         </form>
                     </div>

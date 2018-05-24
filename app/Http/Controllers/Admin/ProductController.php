@@ -160,7 +160,7 @@ class ProductController extends Controller
             $data['slug'] = str_slug($request->name);
             $data['configuration'] = $configuration;
             $product->update($data);
-            $images = $request->file('image_detail');
+            $images_del = $request->id_del_image;
             if(!empty($images_del)){
                 $array_img = explode(',',$images_del);
                 foreach($array_img as $id_del){
@@ -172,6 +172,7 @@ class ProductController extends Controller
                     $img->delete();
                 }
             }
+            $images = $request->file('image_detail');
             if($images){
                 foreach ($images as $image){
                     $name = time() . "_" . $image->getClientOriginalName();
