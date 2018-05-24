@@ -234,13 +234,6 @@
                             <div class="single-wid-product">
                                 <a href="{{ route('product-detail',[ 'id' => $new->id ]) }}"><img src="@if(!empty($new->imageDetail()->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
                                 <h2><a href="single_product.blade.php">{{$new->name}}</a></h2>
-                                <div class="product-wid-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                                 <div class="product-wid-price">
                                     <ins>{{number_format($new->price,0)}} VND</ins>
                                 </div>
@@ -305,13 +298,6 @@
                             <div class="single-wid-product">
                                 <a href="{{ route('product-detail',[ 'id' => $new->id ]) }}"><img src="@if(!empty($new->imageDetail()->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
                                 <h2><a href="single_product.blade.php">{{$new->name}}</a></h2>
-                                <div class="product-wid-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                                 <div class="product-wid-price">
                                     <ins>{{number_format($new->price,0)}} VND</ins>
                                 </div>
