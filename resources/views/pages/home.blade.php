@@ -16,6 +16,9 @@
         .product-f-image{
             overflow: hidden;
         }
+        .single-product-widget h2{
+            font-family: "Times New Roman", serif;
+        }
     </style>
 @stop
 @section('content')
@@ -229,7 +232,7 @@
                         @foreach($new_products as $new)
                             <div class="single-wid-product">
                                 <a href="{{ route('product-detail',[ 'id' => $new->id ]) }}"><img src="@if(!empty($new->imageDetail()->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
-                                <h2 class="fix-font"><a href="single_product.blade.php" title="{{$new->name}}">{{$new->name}}</a></h2>
+                                <h2 class="fix-font"><a href="{{ route('product-detail',[ 'id' => $new->id ]) }}" title="{{$new->name}}">{{$new->name}}</a></h2>
                                 <div class="product-wid-price">
                                     <ins>{{number_format($new->price,0)}} VND</ins>
                                 </div>
@@ -241,48 +244,15 @@
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Recently Viewed</h2>
                         <a href="#" class="wid-view-more">Xem tất cả</a>
+                        @foreach($recently as $value)
                         <div class="single-wid-product">
-                            <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-4.jpg")}}" alt="" class="product-thumb"></a>
-                            <h2><a href="single_product.blade.php">Sony playstation microsoft</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
+                            <a href="{{ route('product-detail',[ 'id' => $value->id ]) }}"><img src="@if(!empty($value->imageDetail()->first())) {{ asset('uploads/images/products/'.$value->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
+                            <h2 class="fix-font"><a href="{{ route('product-detail',[ 'id' => $value->id ]) }}">{{$value->name}}</a></h2>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins>
+                                <ins>{{number_format($value->price,0)}} VND</ins>
                             </div>
                         </div>
-                        <div class="single-wid-product">
-                            <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-1.jpg")}}" alt="" class="product-thumb"></a>
-                            <h2><a href="single_product.blade.php">Sony Smart Air Condtion</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins>
-                            </div>
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single_product.blade.php"><img src="{{asset("img/product-thumb-2.jpg")}}" alt="" class="product-thumb"></a>
-                            <h2><a href="single_product.blade.php">Samsung gallaxy note 4</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -293,7 +263,7 @@
                         @foreach($news as $new)
                             <div class="single-wid-product">
                                 <a href="{{ route('product-detail',[ 'id' => $new->id ]) }}"><img src="@if(!empty($new->imageDetail()->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
-                                <h2 class="fix-font"><a href="single_product.blade.php" title="{{$new->name}}">{{$new->name}}</a></h2>
+                                <h2 class="fix-font"><a href="{{ route('product-detail',[ 'id' => $new->id ]) }}" title="{{$new->name}}">{{$new->name}}</a></h2>
                                 <div class="product-wid-price">
                                     <ins>{{number_format($new->price,0)}} VND</ins>
                                 </div>
