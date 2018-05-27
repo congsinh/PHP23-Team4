@@ -25,9 +25,10 @@ class HomeController extends Controller
             $laptops->productsByParent,
             $accessories->productsByParent
         ];
+        $recently = Product::orderByRaw("RAND()")->limit(3)->get();
         $news = Product::with('imageDetail')->limit(3)->get();
         $new_products = Product::all()->sortByDesc('sales')->take(3);
-        return view('pages.home',compact(['products','news', 'new_products']));
+        return view('pages.home',compact(['products','news', 'new_products','recently']));
     }
   
     public function search(Request $request){
