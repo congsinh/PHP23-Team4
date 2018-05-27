@@ -16,10 +16,6 @@
         .product-f-image{
             overflow: hidden;
         }
-        /*img {*/
-        /*width: 20%;*/
-        /*height: auto;*/
-        /*}*/
     </style>
 @stop
 @section('content')
@@ -233,7 +229,7 @@
                         @foreach($new_products as $new)
                             <div class="single-wid-product">
                                 <a href="{{ route('product-detail',[ 'id' => $new->id ]) }}"><img src="@if(!empty($new->imageDetail()->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
-                                <h2><a href="single_product.blade.php">{{$new->name}}</a></h2>
+                                <h2 class="fix-font"><a href="single_product.blade.php" title="{{$new->name}}">{{$new->name}}</a></h2>
                                 <div class="product-wid-price">
                                     <ins>{{number_format($new->price,0)}} VND</ins>
                                 </div>
@@ -297,7 +293,7 @@
                         @foreach($news as $new)
                             <div class="single-wid-product">
                                 <a href="{{ route('product-detail',[ 'id' => $new->id ]) }}"><img src="@if(!empty($new->imageDetail()->first())) {{ asset('uploads/images/products/'.$new->imageDetail->first()->image_detail)  }} @endif" alt="" class="product-thumb"></a>
-                                <h2><a href="single_product.blade.php">{{$new->name}}</a></h2>
+                                <h2 class="fix-font"><a href="single_product.blade.php" title="{{$new->name}}">{{$new->name}}</a></h2>
                                 <div class="product-wid-price">
                                     <ins>{{number_format($new->price,0)}} VND</ins>
                                 </div>
