@@ -181,9 +181,7 @@ z-index: 999;}
 .mainmenu-area .nav > li > a:focus {color: #FFF;}
 
 .slider-area { width:80%; position:relative; margin:0 auto; padding:5px;}
-/*-------------------------
-[9. Block slider]
----------------------------*/
+
 .block-slider{
 	border:none;
 	width: 100%;
