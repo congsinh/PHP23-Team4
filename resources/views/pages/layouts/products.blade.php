@@ -6,8 +6,8 @@
                     <img class='image'
                          src="@if($product->imageDetail()->first()) {{ asset('uploads/images/products/'.$product->imageDetail()->first()->image_detail) }} @endif"
                          alt="">
-                    <h4 class="pt-5 text-center"><a href="{{ asset('product/' . $product->id )}}">{{$product->name}}</a>
-                    </h4>
+                    <h5 class="pt-5 text-center fix-font"><a title="{{$product->name}}" href="{{ asset('product/' . $product->id )}}">{{$product->name}}</a>
+                    </h5>
                     <div class="product-carousel-price pt-5">
                         <ins class="price">{{ number_format($product->price) }}đ</ins>
                     </div>
