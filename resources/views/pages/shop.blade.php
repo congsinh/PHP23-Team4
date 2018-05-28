@@ -1,4 +1,14 @@
 @extends('pages.layouts.master')
+@section('style')
+    <style>
+        .fix-font a{
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+    @stop
 @section('content')
     <div class="container">
         <div class="row">
