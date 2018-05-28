@@ -1183,10 +1183,13 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .banner{
     height:100%;
     float:left;
+
 }
 .wp_product{
-    width:20%;
     float:left;
+    padding: 5px;
+    width: 19.5%;
+    display: inline-block;
 }
 .image{
     width:100%;
@@ -1360,18 +1363,18 @@ img.img-product{
 }
 @media only screen and (min-width: 960px) and (max-width: 1200px) {
     .wp_product{
-        width:25%;
+        width:24.5%;
     }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 960px) {
     .wp_product{
-        width:33%;
+        width:32.5%;
     }
 }
 @media only screen and (max-width: 480px)
 {
     .wp_product{
-        width:50%;
+        width:49.5%;
     }
 }

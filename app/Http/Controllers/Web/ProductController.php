@@ -16,7 +16,7 @@ class ProductController extends Controller
         if(!$cate){
             return view('errors.404');
         }
-        $products = $cate->productsByParent()->paginate(16);
+        $products = $cate->productsByParent()->paginate(15);
         return view('pages.shop',compact(['cate','products']));
     }
     public function show($id)
