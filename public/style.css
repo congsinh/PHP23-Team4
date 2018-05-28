@@ -534,14 +534,12 @@ z-index: 999;}
 .maincontent-area {padding-bottom: 50px; padding-top:20px;}
 
 .product-wid-title {
-  font-family:  "Times New Roman", serif;
+  font-family: raleway;
   font-size: 30px;
   font-weight: 100;
   margin-bottom: 40px;
 }
-.textarea-mail{
-    width:100%;
-}
+
 
 .single-wid-product {
     margin-bottom: 31px;
@@ -1183,13 +1181,10 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .banner{
     height:100%;
     float:left;
-
 }
 .wp_product{
+    width:20%;
     float:left;
-    padding: 5px;
-    width: 19.5%;
-    display: inline-block;
 }
 .image{
     width:100%;
@@ -1281,7 +1276,6 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 img.img-product{
     object-fit: contain;
     padding:10px;
-    height:100%;
 }
 .product-upper img.image{
     height:300px !important;
@@ -1363,18 +1357,18 @@ img.img-product{
 }
 @media only screen and (min-width: 960px) and (max-width: 1200px) {
     .wp_product{
-        width:24.5%;
+        width:25%;
     }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 960px) {
     .wp_product{
-        width:32.5%;
+        width:33%;
     }
 }
 @media only screen and (max-width: 480px)
 {
     .wp_product{
-        width:49.5%;
+        width:50%;
     }
 }
