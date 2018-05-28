@@ -1,4 +1,4 @@
-<div class="pt-10 animated fadeIn">
+<div class="pt-10 animated fadeIn row">
     @forelse($products as $product)
         <div class="wp_product">
             <div class="single-shop-product">

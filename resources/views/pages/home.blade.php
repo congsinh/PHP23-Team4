@@ -106,7 +106,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="latest-product">
-                        <h2 class="section-title">ĐIỆN THOẠI HOT</h2>
+                        <a  href="{{ route('category-products', ['category' => 'dien-thoai']) }}"><h2 class="section-title">ĐIỆN THOẠI HOT</h2></a>
                         <div class="product-carousel">
                             @foreach($products[0] as $item)
                                 <div class="single-product">
@@ -136,7 +136,7 @@
 
                 <div class="col-md-12">
                     <div class="latest-product">
-                        <h2 class="section-title">Laptop HOT</h2>
+                        <a  href="{{ route('category-products', ['category' => 'laptop']) }}"><h2 class="section-title">Laptop HOT</h2></a>
                         <div class="product-carousel">
                             @foreach($products[1] as $item)
                                 <div class="single-product">
@@ -167,7 +167,7 @@
 
                 <div class="col-md-12">
                     <div class="latest-product">
-                        <h2 class="section-title">Phụ Kiện HOT</h2>
+                        <a  href="{{ route('category-products', ['category' => 'phu-kien']) }}"><h2 class="section-title">Phụ Kiện HOT</h2></a>
                         <div class="product-carousel">
                             @foreach($products[2] as $item)
                                 <div class="single-product">
